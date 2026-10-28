@@ -8,7 +8,7 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg?style=for-the-badge&logo=python)](https://python.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
 
-<p align="center"><img src="docs/img/demo-resume.png" alt="Career Engine web CV in dark mode with the DE/EN language switch and PDF download button" width="760"></p>
+<p align="center"><img src="assets/readme/demo-resume.png" alt="Career Engine web CV in dark mode with the DE/EN language switch and PDF download button" width="760"></p>
 
 ## Why
 
