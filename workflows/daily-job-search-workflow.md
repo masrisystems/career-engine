@@ -19,7 +19,7 @@ Discover, qualify, and prepare complete, factual application packages (canonical
 Use the installed skills in this order: `daily-job-workflow`, `job-description-analyzer`, `resume-tailor`, `resume-bullet-writer`, `cover-letter-generator`, and `humanize`. Treat `index.html`, canonical role definitions (`jobs/roles/*.json`), and private work notes as factual sources; never invent experience, skills, metrics, dates, titles, salary evidence, vacancy status, or distance.
 
 ## Scope & Safety Rules
-- **Workspace Scope:** Work in the resume project root (`resume-template/`).
+- **Workspace Scope:** Work in the resume project root (`career-engine/`).
 - **Single Source of Truth (SSOT):** All candidate details, invariants, search preferences, and platform query templates are defined in `config/profile.json` (fallback: `config/profile.example.json`). Never hardcode candidate data.
 - **Zero Scratch Scripts Mandate:** Never write temporary scratch scripts (`test_*.py`, `inspect_*.py`). All resume generation, DOM validation, cover letter templating, originality overlap checking, and headless PDF exports MUST be executed exclusively via the unified engine: `python jobs/engine.py run --config jobs/configs/YYYY-MM-DD_[company_slug].json`.
 - **Canonical Role Archetypes Architecture:** Instead of re-generating bespoke, slightly divergent resumes per company, the candidate maintains a discrete catalog of 5 pre-validated, high-impact Role Archetypes under `jobs/roles/`:

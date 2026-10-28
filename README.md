@@ -1,32 +1,44 @@
-# 🌐 Interactive Web Resume & ATS Career Engine
+# Career Engine
+
+**Open-source resume and cover letter generator for the German job market: bilingual web CV (DE/EN), DIN 5008 cover letters and ATS-friendly PDFs, all from one JSON profile.**
+
+**[Live demo](https://career.masrisystems.com/resume.html)** (example persona) · [Project page](https://career.masrisystems.com) · [Onboarding guide](ONBOARDING.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE.txt)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg?style=for-the-badge&logo=python)](https://python.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
 
-> **Modern, responsive, bilingual web resume and automated job application engine.** Designed for high performance, ATS readability, dual PDF export, and SSOT-driven customization.
+<p align="center"><img src="docs/img/demo-resume.png" alt="Career Engine web CV in dark mode with the DE/EN language switch and PDF download button" width="760"></p>
 
----
+## Why
 
-## 🌟 Key Features
+Applying for jobs in Germany comes with its own conventions: a Lebenslauf with a photo, a cover letter in DIN 5008 layout, notice period and salary expectation stated up front, and often a German and an English version of everything. Most resume builders ignore these, or let you design for free and then charge for the PDF.
 
-- **🎯 Single Source of Truth (`config/profile.json`)**: Configure candidate contact details, target compensation, notice period, search preferences, and search platform queries in one central place.
-- **🌐 Dynamic Bilingual Switcher (DE / EN)**: Instant seamless client-side toggle between German and English without page reloads.
-- **🌓 Dark & Light Theme**: Persistent system-aware theme toggle with smooth transitions and Tailwind CSS styling.
-- **📄 Dual PDF Export Strategy**:
-  - **Client-side Direct Export**: One-click PDF generation via `html2canvas` and `jsPDF`.
-  - **Headless Chrome / Edge Export**: High-fidelity, print-ready PDF export via `jobs/engine.py` using standard A4 sizing.
-- **🤖 Unified Application Engine (`jobs/engine.py`)**:
-  - Automatically compiles and validates tailored HTML and PDF resumes.
-  - Automatically generates DIN-5008 compliant German cover letters with strict quality and invariant checks.
-  - Automatically renders daily job discovery link dashboards (`daily-job-search-links.md`).
-- **🏆 Pre-Validated Canonical Roles**: Includes 5 pre-configured, high-impact role archetypes in `jobs/roles/` for rapid tailoring.
+Career Engine keeps your career data in one file and generates everything else from it. No account, no subscription, no watermark.
 
----
+## Features
 
-## 🚀 Quick Start
+- **One profile (`config/profile.json`)**: contact details, target salary, notice period, search preferences and search queries in one place.
+- **Bilingual web CV**: switches between German and English in the browser, with light and dark mode.
+- **Tailored applications per job**: `jobs/engine.py` builds a tailored resume and a DIN 5008 cover letter for a target company and checks them before export.
+- **ATS-friendly PDFs**: single-column semantic HTML exported to A4 through headless Chrome/Edge, so the text stays selectable for applicant tracking systems. A one-click browser export (`html2canvas` + `jsPDF`) is also built in.
+- **Daily job search links**: generates a dashboard of search links for LinkedIn, StepStone, Indeed, XING and the Arbeitsagentur from your keywords and locations (`daily-job-search-links.md`).
+- **5 role templates** in `jobs/roles/` as starting points for tailoring.
+- **AI prompt library**: prompts for onboarding (turn an old CV into the profile file), cover letters, tailoring and interview prep in `jobs/prompts/`.
 
-> 💡 **New here? Check out the [Onboarding Guide (ONBOARDING.md)](ONBOARDING.md)** for a guided 5-minute setup using our interactive AI onboarding prompt (paste your existing resume or answer 7 quick questions).
+## Run it with Docker
+
+```bash
+git clone https://github.com/masrisystems/career-engine.git
+cd career-engine
+docker compose up --build
+```
+
+Then open `http://localhost` for the project page and `http://localhost/resume.html` for the web CV.
+
+## Quick Start (Python engine)
+
+> **New here?** The [Onboarding Guide (ONBOARDING.md)](ONBOARDING.md) walks you through a 5-minute setup with an AI onboarding prompt (paste your existing resume or answer 7 quick questions).
 
 ### 1. Clone & Setup Configuration
 Choose from one of the pre-configured profile templates:
@@ -70,10 +82,10 @@ The engine will generate, validate, and export:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
-resume-template/
+career-engine/
 ├── config/
 │   ├── profile.example.json     # Authoritative SSOT schema & defaults
 │   └── profile.json             # Active candidate profile
@@ -96,6 +108,10 @@ resume-template/
 
 ---
 
-## 📄 License
+## License
 
 This project is open-source and available under the [MIT License](LICENSE.txt).
+
+## Professional setup
+
+Want Career Engine set up for you, adapted to your industry, or hosted for a team or career service? [Masri Systems](https://masrisystems.com) offers setup and custom development.

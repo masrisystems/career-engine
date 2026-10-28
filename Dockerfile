@@ -24,7 +24,7 @@ COPY assets ./assets
 COPY workflows ./workflows
 COPY robots.txt ./robots.txt
 COPY jobs/roles ./jobs/roles
-COPY --from=builder /build/download/resume-template-starter.zip ./download/resume-template-starter.zip
+COPY --from=builder /build/download/career-engine-starter.zip ./download/career-engine-starter.zip
 
 # Copy Caddyfile configuration
 COPY Caddyfile /etc/caddy/Caddyfile

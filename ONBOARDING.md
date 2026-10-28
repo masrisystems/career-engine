@@ -1,6 +1,6 @@
-# WebResume & ATS Career Engine: Onboarding Guide
+# Career Engine: Onboarding Guide
 
-Welcome to **WebResume & ATS Career Engine**! This guide walks you through setting up your personal resume, configuring your contractual invariants, generating your first DIN-5008 cover letter, and starting your daily application routine.
+Welcome to **Career Engine**! This guide walks you through setting up your personal resume, configuring your contractual invariants, generating your first DIN-5008 cover letter, and starting your daily application routine.
 
 ---
 
@@ -21,7 +21,7 @@ Open your preferred LLM (ChatGPT, Claude, Gemini, or local Ollama) and paste the
 
 ```text
 # Role & Persona: Senior Technical Recruiter & ATS Systems Engineer
-# Mission: Onboard the candidate to WebResume & ATS Career Engine.
+# Mission: Onboard the candidate to Career Engine.
 # Input: Either paste your existing resume / LinkedIn profile text, OR say "Interview me".
 ```
 
@@ -64,7 +64,7 @@ Open `config/profile.json` in your editor and adjust your contact information, t
 
 ---
 
-## 🛠️ Step 2: Build & Verify Your Career Hub
+## 🛠️ Step 2: Build & Verify Your Career Engine
 
 Once `config/profile.json` is saved, run the automation engine from the project root:
 

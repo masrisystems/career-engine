@@ -6,7 +6,7 @@ def build_starter_kit():
     root_dir = Path(__file__).resolve().parent.parent
     output_dir = root_dir / "download"
     output_dir.mkdir(parents=True, exist_ok=True)
-    zip_path = output_dir / "resume-template-starter.zip"
+    zip_path = output_dir / "career-engine-starter.zip"
 
     # Specific files and directories to include
     include_files = [
@@ -42,7 +42,7 @@ def build_starter_kit():
         for rel_file in include_files:
             file_path = root_dir / rel_file
             if file_path.exists():
-                z.write(file_path, arcname=f"resume-template/{rel_file}")
+                z.write(file_path, arcname=f"career-engine/{rel_file}")
                 count += 1
 
         # Add directory trees
@@ -59,7 +59,7 @@ def build_starter_kit():
                         if rel_dir == "config" and file == "profile.json":
                             continue
                         full_path = Path(root) / file
-                        arcname = f"resume-template/{full_path.relative_to(root_dir)}"
+                        arcname = f"career-engine/{full_path.relative_to(root_dir)}"
                         z.write(full_path, arcname=arcname)
                         count += 1
 

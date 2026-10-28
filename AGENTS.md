@@ -1,6 +1,6 @@
-# WebResume & ATS Career Engine Guidelines
+# Career Engine Guidelines
 
-This repository (`resume-template`) contains an interactive bilingual web resume, ATS-optimized portfolio, and automated job application engine driven by a central Single Source of Truth (`config/profile.json` / `config/profile.example.json`).
+This repository (`career-engine`) contains an interactive bilingual web resume, ATS-optimized portfolio, and automated job application engine driven by a central Single Source of Truth (`config/profile.json` / `config/profile.example.json`).
 
 ---
 
@@ -50,7 +50,7 @@ All candidate details, invariants, search parameters, and platform links are con
 ## 3. Directory Layout & Workflow Structure
 
 ```text
-resume-template/
+career-engine/
 ├── config/
 │   ├── profile.example.json     # Authoritative SSOT schema & template defaults
 │   └── profile.json             # Active user profile (copied from example)

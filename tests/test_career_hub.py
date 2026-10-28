@@ -10,7 +10,7 @@ class TestCareerHub(unittest.TestCase):
         self.index_path = os.path.join(self.root_dir, "index.html")
         self.style_path = os.path.join(self.root_dir, "style.css")
         self.hub_js_path = os.path.join(self.root_dir, "hub.js")
-        self.zip_path = os.path.join(self.root_dir, "download", "resume-template-starter.zip")
+        self.zip_path = os.path.join(self.root_dir, "download", "career-engine-starter.zip")
 
     def test_01_hub_structure_and_anchors(self):
         self.assertTrue(os.path.exists(self.index_path), "index.html must exist")
@@ -177,13 +177,13 @@ class TestCareerHub(unittest.TestCase):
         # Hero GitHub link & SVG
         hero_gh = soup.select_one("#hero .btn-hero-gh")
         self.assertIsNotNone(hero_gh, "Missing GitHub link in #hero")
-        self.assertEqual(hero_gh.get("href"), "https://github.com/masrisystems/resume-template")
+        self.assertEqual(hero_gh.get("href"), "https://github.com/masrisystems/career-engine")
         self.assertIsNotNone(hero_gh.find("svg"), "Hero GitHub button must contain SVG icon")
 
         # Footer GitHub link & SVG
         footer_gh = soup.select_one("footer .footer-gh-link")
         self.assertIsNotNone(footer_gh, "Missing GitHub link in footer")
-        self.assertEqual(footer_gh.get("href"), "https://github.com/masrisystems/resume-template")
+        self.assertEqual(footer_gh.get("href"), "https://github.com/masrisystems/career-engine")
         self.assertIsNotNone(footer_gh.find("svg"), "Footer GitHub link must contain SVG icon")
 
     def test_12_workflow_simulation_deck(self):

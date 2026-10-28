@@ -109,7 +109,7 @@
 
 ## Goals
 **Business goal:** Establish Masri Systems as the leading German and European authority on developer career automation and AI engineering.  
-**Conversion action:** Download the starter kit (`resume-template-starter.zip`), star the GitHub repository, or connect for bespoke AI systems.  
+**Conversion action:** Download the starter kit (`career-engine-starter.zip`), star the GitHub repository, or connect for bespoke AI systems.  
 **Current metrics:** Production deployment at `career.masrisystems.com`.  
 
 ## Changelog
