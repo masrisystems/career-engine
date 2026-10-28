@@ -36,6 +36,8 @@ docker compose up --build
 
 Then open `http://localhost` for the project page and `http://localhost/resume.html` for the web CV.
 
+Port 80 already in use (e.g. by Laravel Herd, IIS or another web server)? Pick another port: `PORT=8080 docker compose up --build` (PowerShell: `$env:PORT=8080; docker compose up --build`), then open `http://localhost:8080`.
+
 ## Quick Start (Python engine)
 
 > **New here?** The [Onboarding Guide (ONBOARDING.md)](ONBOARDING.md) walks you through a 5-minute setup with an AI onboarding prompt (paste your existing resume or answer 7 quick questions).

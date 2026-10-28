@@ -36,3 +36,4 @@ A visitor goes from `git clone` to the web resume in the browser with one comman
 Use `ports: ["${PORT:-8080}:80"]`, test in `git worktree add ../career-engine-test`, then record the commands that actually worked into the README.
 
 ## Kommentare
+- 2026-10-28: `docker-compose.yml` port is now `${PORT:-80}:80` (default unchanged for Coolify). Found locally: Laravel Herd nginx holds 127.0.0.1:80, so `localhost` hit Herd and returned 404; `PORT=8080` works. README documents the override.
