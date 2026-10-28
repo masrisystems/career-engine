@@ -5,8 +5,8 @@
 - Typ:            chore
 - Status:         proposed
 - Erstellt:       2026-10-28
-- Erstellt von:   Mohamad Masri
-- Verantwortlich: Mohamad Masri
+- Erstellt von:   Masri Systems
+- Verantwortlich: Masri Systems
 - Referenzen:     README.md (Quick Start) · docker-compose.yml · Dockerfile · ONBOARDING.md · jobs/engine.py
 
 ## Kontext

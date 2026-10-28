@@ -5,8 +5,8 @@
 - Typ:            chore
 - Status:         review
 - Erstellt:       2026-10-28
-- Erstellt von:   Mohamad Masri
-- Verantwortlich: Mohamad Masri
+- Erstellt von:   Masri Systems
+- Verantwortlich: Masri Systems
 - Referenzen:     README.md · docker-compose.yml (service `career-hub`) · docs/marketing/where-to-share.md ("WebResume") · .github/workflows/docker-publish.yml (ghcr image `resume-template`) · Obsidian note "Career Hub"
 
 ## Kontext

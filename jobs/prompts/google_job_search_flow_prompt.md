@@ -14,8 +14,8 @@ You are an Executive Tech Sourcing Specialist and Google Search Architect. Your 
 Read the candidate profile in `@config/profile.json` (or use the following parameters):
 - Target Profession: {{PROFESSION}} (e.g., Junior / Associate Fullstack Softwareentwickler, Frontend Developer, Cloud DevOps)
 - Target Technologies: {{TECH_STACK}} (e.g., TypeScript, Vue.js, React, Python, PHP/Laravel, Docker)
-- Target Location & Commute: {{LOCATION}} (e.g., Oldenburg + 25 km commute or 100% Remote Germany)
-- Target Salary / Invariant: {{TARGET_SALARY}} (e.g., 52.500 € gross/year)
+- Target Location & Commute: {{LOCATION}} (e.g., Berlin + 25 km commute or 100% Remote Germany)
+- Target Salary / Invariant: {{TARGET_SALARY}} (e.g., 58.000 € gross/year)
 - Notice Period / Availability: {{NOTICE_PERIOD}} (e.g., 3 Monate zum Monatsende)
 
 ---
@@ -58,7 +58,7 @@ For every promising employer found, run a 60-second background check:
    - Evaluate Score (Target: >= 3.7 / 5.0) and recommendation rate (>= 70%).
 2. **Salary Reality Benchmark:**
    Google query: `site:kununu.com/de "{{COMPANY_NAME}}" "Gehalt" OR "{{PROFESSION}}"`
-   - Verify if their typical compensation matches the candidate's target invariant (e.g., ~52.500 €).
+   - Verify if their typical compensation matches the candidate's target invariant (e.g., ~58.000 €).
 
 ---
 

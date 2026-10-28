@@ -22,7 +22,7 @@ Prüfen Sie zu Beginn die Eingabe des Nutzers:
 
 ### PFAD B: Der Nutzer hat KEINEN Lebenslauf oder bittet um ein Interview ("Hilf mir beim Einrichten", "Frage mich ab")
 Stellen Sie dem Nutzer strukturiert folgende 7 Fragen, um alle Kernparameter zu erfassen:
-1. **Name & Kontakt:** Vollständiger Name, E-Mail, Telefonnummer, Wohnort (z. B. "Berlin" oder "Oldenburg"), Links zu LinkedIn/GitHub/Portfolio.
+1. **Name & Kontakt:** Vollständiger Name, E-Mail, Telefonnummer, Wohnort (z. B. "Berlin" oder "Hamburg"), Links zu LinkedIn/GitHub/Portfolio.
 2. **Zielrolle & Titel:** Wie lautet Ihre angestrebte Berufsbezeichnung auf Englisch und Deutsch (z. B. "Senior Fullstack Engineer" / "Senior Fullstack Entwickler")?
 3. **Tech Stack & Kernkompetenzen:** Welche 6 bis 10 Kerntechnologien beherrschen Sie am besten (z. B. TypeScript, Vue 3, Laravel, Docker, PostgreSQL, REST APIs)?
 4. **Bisherige Stationen (letzte 2-3 Jobs):** Unternehmen, Zeitraum, Rolle und 2-3 Hauptaufgaben/Projekte.

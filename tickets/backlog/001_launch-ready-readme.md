@@ -5,8 +5,8 @@
 - Typ:            chore
 - Status:         doing
 - Erstellt:       2026-10-28
-- Erstellt von:   Mohamad Masri
-- Verantwortlich: Mohamad Masri
+- Erstellt von:   Masri Systems
+- Verantwortlich: Masri Systems
 - Referenzen:     README.md · docs/marketing/where-to-share.md · https://career.masrisystems.com · https://github.com/masrisystems/resume-template
 
 ## Kontext
@@ -39,4 +39,4 @@ A first-time visitor understands within 10 seconds what the project does and who
 Record with ScreenToGif from the local Docker build, save it as `docs/demo.gif`, then set topics and the homepage with `gh repo edit --add-topic ... --homepage https://career.masrisystems.com`.
 
 ## Kommentare
-- 2026-10-28: README rewritten (problem-first intro, live demo link, screenshot `assets/readme/demo-resume.png`, Why section, Docker quick start, Masri Systems CTA). Topics and website field set. Live demo confirmed to show the example persona Stefan Kramer. Open: demo GIF (static screenshot for now); demo GIF only. Recruiter claims confirmed by Mohamad (real recruiter reviews), kept.
+- 2026-10-28: README rewritten (problem-first intro, live demo link, screenshot `assets/readme/demo-resume.png`, Why section, Docker quick start, Masri Systems CTA). Topics and website field set. Live demo confirmed to show the example persona Stefan Kramer. Open: demo GIF (static screenshot for now); demo GIF only. Recruiter claims confirmed by the maintainer (real recruiter reviews), kept.

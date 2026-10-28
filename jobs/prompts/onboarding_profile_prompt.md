@@ -47,7 +47,7 @@ Ask these 7 structured questions clearly:
 3. Core Tech Stack: Top 6 to 10 technologies, languages, and frameworks.
 4. Work Experience: Last 2-3 companies, dates, roles, and key systems built.
 5. Quantified Impact: Any numbers, scale metrics, or business results achieved.
-6. Contractual Invariants: Target gross annual salary (e.g. "65.000 €" or "52.500 €") and contractual notice period (e.g. "3 months to month-end" or "available immediately").
+6. Contractual Invariants: Target gross annual salary (e.g. "65.000 €" or "58.000 €") and contractual notice period (e.g. "3 months to month-end" or "available immediately").
 7. Search Preferences: Target city, commute radius in km, and remote/hybrid preference.
 
 ---

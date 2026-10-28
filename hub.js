@@ -205,17 +205,17 @@ const BRIEFS = {
     target: "Daily Job Discovery & Application Preparation (Target: 2 qualifying roles scoring >= 9.0/10)",
     result: "2 complete, fully verified application packages generated, validated, and exported to print-ready HTML and high-fidelity PDF.",
     pkg1: {
-      company: "energy & meteo systems GmbH (Priority 1 · Oldenburg Local)",
+      company: "Beispiel Energy Systems GmbH (Priority 1 · Berlin Local)",
       role: "Fullstack Softwareentwickler / Software Engineer (w/m/d)",
-      location: "Oskar-Homt-Str. 1, 26131 Oldenburg · Priority 1 Local Commute (~2,5 km, 5-7 min)",
+      location: "Beispielstraße 1, 10115 Berlin · Priority 1 Local Commute (~2,5 km, 5-7 min)",
       score: "9.8 / 10",
-      justification: "Hervorragender lokaler Oldenburger Match für Python, TypeScript, Java (B.Sc. Informatik Äquivalenz), REST APIs, relationales Datenbankdesign (PostgreSQL/MySQL), Redis & RabbitMQ Message Queues und Docker Containerisierung im Bereich SaaS für erneuerbare Energien.",
+      justification: "Hervorragender lokaler Berliner Match für Python, TypeScript, Java (B.Sc. Informatik Äquivalenz), REST APIs, relationales Datenbankdesign (PostgreSQL/MySQL), Redis & RabbitMQ Message Queues und Docker Containerisierung im Bereich SaaS für erneuerbare Energien.",
       keywords: "Python, TypeScript, Java, REST APIs, PostgreSQL",
       gap: "Große verteilte Kafka-Cluster im Produktiveinsatz (durch RabbitMQ, Redis Queues und asynchrone Ereignisverarbeitung nahtlos überbrückt).",
-      salary: "46.500 € – 74.000 € (kununu Ø 59.900 € brutto/Jahr für Softwareentwickler). Zielvergütung: 52.500 € brutto/Jahr.",
-      apply: "jobs@energymeteo.de · Ansprechpartnerin: Frau Alexandra Jobst",
-      assets: ["energy_meteo_systems.html", "energy_meteo_systems.pdf", "2026-09-26_energy_meteo_systems.html", "2026-09-26_energy_meteo_systems.pdf", "energy_meteo_systems.txt"],
-      qa: "222 Wörter (DIN-5008 < 300) · 0 Gedankenstriche · 0 Semikolons · Burstiness-Spannweite = 28 Wörter · 0 8-Wort Überlappung · Invariante 52.500 € brutto/Jahr · 3 Monate Kündigungsfrist"
+      salary: "46.500 € – 74.000 € (kununu Ø 59.900 € brutto/Jahr für Softwareentwickler). Zielvergütung: 58.000 € brutto/Jahr.",
+      apply: "jobs@example.com · Ansprechpartnerin: Frau Erika Mustermann",
+      assets: ["beispiel_energy_systems.html", "beispiel_energy_systems.pdf", "2026-09-26_beispiel_energy_systems.html", "2026-09-26_beispiel_energy_systems.pdf", "beispiel_energy_systems.txt"],
+      qa: "222 Wörter (DIN-5008 < 300) · 0 Gedankenstriche · 0 Semikolons · Burstiness-Spannweite = 28 Wörter · 0 8-Wort Überlappung · Invariante 58.000 € brutto/Jahr · 3 Monate Kündigungsfrist"
     },
     pkg2: {
       company: "LEONEX Internet GmbH (Priority 2 · 100% Remote Deutschland)",
@@ -225,14 +225,14 @@ const BRIEFS = {
       justification: "Direkter Treffer für individuelle Shopware 6 Plugin-Entwicklung (DAL, Flow Builder, CLI), PHP 8+, Symfony, Vue 3, Twig Storefronts, ERP- und PIM-Anbindungen (Pimcore) sowie asynchrone Redis Job Queues.",
       keywords: "Shopware 6, PHP 8+, Symfony, MySQL, Vue.js",
       gap: "Spezifische Shopware 4 Legacy-Migrationsskripte (durch fundiertes Verständnis der Shopware 6 DAL sofort adaptierbar).",
-      salary: "55.000 € – 68.000 € (Markt- und Agentur-Benchmark für Shopware 6 & PHP Entwickler). Zielvergütung: 52.500 € brutto/Jahr.",
+      salary: "55.000 € – 68.000 € (Markt- und Agentur-Benchmark für Shopware 6 & PHP Entwickler). Zielvergütung: 58.000 € brutto/Jahr.",
       apply: "Portal Apply & jobs@leonex.de · Ansprechpartner: Recruiting Team LEONEX",
       assets: ["leonex.html", "leonex.pdf", "2026-09-26_leonex.html", "2026-09-26_leonex.pdf", "leonex.txt"],
-      qa: "242 Wörter (DIN-5008 < 300) · 0 Gedankenstriche · 0 Semikolons · Burstiness-Spannweite = 31 Wörter · 0 8-Wort Überlappung · Invariante 52.500 € brutto/Jahr · 3 Monate Kündigungsfrist"
+      qa: "242 Wörter (DIN-5008 < 300) · 0 Gedankenstriche · 0 Semikolons · Burstiness-Spannweite = 31 Wörter · 0 8-Wort Überlappung · Invariante 58.000 € brutto/Jahr · 3 Monate Kündigungsfrist"
     },
     checklist: {
       availability: "3 Monate zum Monatsende (im Einvernehmen gern auch kurzfristiger durch Aufhebungsvereinbarung). Frühester regulärer Starttermin: 01.01.2027.",
-      salary: "52.500 € brutto / Jahr (52.500 Euro)",
+      salary: "58.000 € brutto / Jahr (58.000 Euro)",
       uploads: "Anschreiben-PDF + Lebenslauf-PDF + ZAB Zeugnisbewertung (B.Sc. Informatik Gleichwertigkeit)"
     },
     maintenance: "No master-resume change recommended today. Netto-Änderung Sektionen: 0 · Netto-Änderung Bullets: 0 · Wortanzahl-Delta: 0. Master index.html bleibt unberührt und geschützt."
@@ -435,14 +435,14 @@ function switchBrief(briefKey) {
 // Cover Letter Data Across 4 Archetypes
 const COVER_LETTERS = {
   fullstack: {
-    sender: "Alex Morgan · Bloherfelder Straße 190 · 26131 Oldenburg · +49 151 23456789 · alex.morgan@example.com",
-    recipient: "energy & meteo systems GmbH\nFrau Alexandra Jobst\nOskar-Homt-Str. 1\n26131 Oldenburg",
-    date: "Oldenburg, 26. September 2026",
+    sender: "Alex Morgan · Musterstraße 12 · 10115 Berlin · +49 151 23456789 · alex.morgan@example.com",
+    recipient: "Beispiel Energy Systems GmbH\nFrau Erika Mustermann\nBeispielstraße 1\n10115 Berlin",
+    date: "Berlin, 26. September 2026",
     subject: "Bewerbung als Fullstack Softwareentwickler (w/m/d) · Referenz #EMS-2026-98",
-    salutation: "Sehr geehrte Frau Jobst,",
+    salutation: "Sehr geehrte Frau Mustermann,",
     p1: "die präzise Integration von Einspeiseprognosen und virtuellen Kraftwerken verlangt hochgradig verlässliche Daten-Pipelines und agile Microservices. Als Fullstack Entwickler mit solider Praxis in Python, TypeScript, REST APIs und relationalem Datenbankdesign verbinde ich robuste Backend-Architekturen mit performanten Webanwendungen. Genau diese Erfahrung möchte ich gewinnbringend in Ihr Team einbringen.",
     p2: "In meinen vergangenen Projekten lag der Fokus auf datenintensiven Workflows und skalierbaren SaaS-Systemen. Bei der Verarbeitung kontinuierlicher Telemetriedaten konnte ich mit Redis und asynchronen RabbitMQ Message Queues Latenzen signifikant reduzieren und tausende parallele Events stabil persistieren. Im Backend setze ich auf testgetriebene Entwicklung (PyTest, Vitest), saubere Domänenmodelle und automatisierte CI/CD Pipelines mit Docker Containerisierung. Stabilität und Wartbarkeit stehen für mich im laufenden Betrieb an erster Stelle. Pragmatische Lösungen liegen mir.",
-    p3: "Meine Gehaltserwartung liegt bei 52.500 Euro brutto im Jahr. Meine Kündigungsfrist beträgt drei Monate zum Monatsende, wobei wir einen früheren Beginn bei Bedarf gerne individuell vereinbaren können. Weiterführende technische Referenzen und Live-Projekte finden Sie unter https://links.masrisystems.com. Über die Gelegenheit, mich Ihnen persönlich vorzustellen, freue ich mich sehr.",
+    p3: "Meine Gehaltserwartung liegt bei 58.000 Euro brutto im Jahr. Meine Kündigungsfrist beträgt drei Monate zum Monatsende, wobei wir einen früheren Beginn bei Bedarf gerne individuell vereinbaren können. Weiterführende technische Referenzen und Live-Projekte finden Sie unter https://alexmorgan.example.com. Über die Gelegenheit, mich Ihnen persönlich vorzustellen, freue ich mich sehr.",
     closing: "Mit freundlichen Grüßen,\nAlex Morgan"
   },
   devops: {
@@ -453,7 +453,7 @@ const COVER_LETTERS = {
     salutation: "Sehr geehrtes Platform Team,",
     p1: "FinTech Plattformen mit hohem Transaktionsvolumen fordern kompromisslose Ausfallsicherheit, Zero-Trust Sicherheitsarchitekturen und vollautomatisierte Deployment-Zyklen. Als Cloud DevOps Architektin mit mehrjähriger Praxis in Multi-Region Kubernetes Clustern, Infrastructure as Code mit Terraform und observablen Cloud Systemen auf AWS begleite ich skalierende Plattformen verlässlich in die Cloud.",
     p2: "In meiner letzten Station verantwortete ich den Übergang zu einem deklarativen GitOps Workflow mit ArgoCD für über 40 Microservices. Dadurch sank die mittlere Deployment-Dauer von Stunden auf unter 8 Minuten bei 99.98% Service Availability. Prometheus, Grafana und Datadog sicherten die unterbrechungsfreie Erkennung von Lastspitzen. Automatisierte Canary Rollouts verhinderten Regressionen in Kundenumgebungen. Belastbare Systeme schaffen Vertrauen.",
-    p3: "Meine Gehaltserwartung beläuft sich auf 68.000 Euro brutto im Jahr. Meine Kündigungsfrist beträgt drei Monate zum Monatsende, im Einvernehmen gern auch kurzfristiger. Vertiefende Architekturdokumentationen und Codebeispiele finden Sie unter https://links.masrisystems.com. Ich freue mich auf das gemeinsame Fachgespräch.",
+    p3: "Meine Gehaltserwartung beläuft sich auf 68.000 Euro brutto im Jahr. Meine Kündigungsfrist beträgt drei Monate zum Monatsende, im Einvernehmen gern auch kurzfristiger. Vertiefende Architekturdokumentationen und Codebeispiele finden Sie unter https://alexmorgan.example.com. Ich freue mich auf das gemeinsame Fachgespräch.",
     closing: "Mit freundlichen Grüßen,\nElena Becker"
   },
   designer: {
@@ -464,7 +464,7 @@ const COVER_LETTERS = {
     salutation: "Sehr geehrtes Design-Team,",
     p1: "moderne Web- und No-Code Plattformen begeistern Nutzer dann, wenn mächtige Funktionen durch intuitive, barrierefreie und konsistente User Interfaces fast mühelos bedienbar werden. Als Product Designer mit starkem Fokus auf Design Systems, WCAG 2.1 AA Barrierefreiheit und User Testing schaffe ich die nahtlose Brücke zwischen Nutzerbedürfnis, Figma Komponentenbibliothek und Frontend Implementierung.",
     p2: "Zuletzt habe ich ein Multi-Brand Design System von Grund auf neu strukturiert. Über semantische Design Tokens (Style Dictionary) konnten Produkt-Squads und Entwickler neue Features in halber Zeit fehlerfrei implementieren. In iterativen Usability Tests mit realen Endnutzern identifizierten wir Reibungspunkte frühzeitig und steigerten die Onboarding Conversion messbar um 24 Prozent. Gutes Design löst echte Probleme messbar.",
-    p3: "Meine Gehaltserwartung liegt bei 62.000 Euro brutto im Jahr. Meine Kündigungsfrist beträgt drei Monate zum Monatsende, im Einvernehmen gern auch kurzfristiger. Mein interaktives Portfolio mit detaillierten Case Studies steht unter https://links.masrisystems.com bereit. Ich freue mich sehr auf das persönliche Kennenlernen.",
+    p3: "Meine Gehaltserwartung liegt bei 62.000 Euro brutto im Jahr. Meine Kündigungsfrist beträgt drei Monate zum Monatsende, im Einvernehmen gern auch kurzfristiger. Mein interaktives Portfolio mit detaillierten Case Studies steht unter https://alexmorgan.example.com bereit. Ich freue mich sehr auf das persönliche Kennenlernen.",
     closing: "Mit freundlichen Grüßen,\nJulian Richter"
   },
   engineering: {
@@ -475,7 +475,7 @@ const COVER_LETTERS = {
     salutation: "Sehr geehrte Damen und Herren,",
     p1: "die Energiewende gelingt nur mit sicheren, hochverfügbaren und thermisch optimierten Großbatteriespeichern im Megawatt-Bereich. Als Entwicklungsingenieur Maschinenbau mit fundierter Spezialisierung in CAD Konstruktion, CFD Strömungssimulation (Ansys Fluent) und thermischem Batteriemanagement entwickle ich marktreife Speichersysteme von der ersten Auslegung bis zur VDE-Konformität.",
     p2: "In der industriellen Produktentwicklung leitete ich die thermische Auslegung von Lithium-Eisenphosphat (LFP) Container-Speichern. Durch gezielte Strömungsleitsysteme und transiente thermische Simulationen gelang es, Temperaturspreizungen zwischen Batteriezellen auf unter 2.5 Kelvin zu begrenzen, was die prognostizierte Zelllebensdauer signifikant verlängerte. Pragmatische Ingenieurpraxis, standardisierte Fertigungsgerechtheit und strikte Sicherheitsanalysen prägen meine Arbeit.",
-    p3: "Meine Gehaltserwartung liegt bei 72.000 Euro brutto im Jahr. Meine Kündigungsfrist beträgt drei Monate zum Monatsende, im Einvernehmen gern auch kurzfristiger. Ausführliche technische Berechnungsbeispiele und Projektübersichten finden Sie unter https://links.masrisystems.com. Ich freue mich auf den fachlichen Dialog mit Ihrem Team.",
+    p3: "Meine Gehaltserwartung liegt bei 72.000 Euro brutto im Jahr. Meine Kündigungsfrist beträgt drei Monate zum Monatsende, im Einvernehmen gern auch kurzfristiger. Ausführliche technische Berechnungsbeispiele und Projektübersichten finden Sie unter https://alexmorgan.example.com. Ich freue mich auf den fachlichen Dialog mit Ihrem Team.",
     closing: "Mit freundlichen Grüßen,\nStefan Kramer"
   }
 };
@@ -529,11 +529,11 @@ const SIM_STAGES = [
     tagline: "Scanned 14 newly posted openings across Google, LinkedIn & StepStone · 12 duplicates skipped",
     logLines: [
       { tag: "CHECK", cls: "text-blue-500", text: "Reading jobs/job_matches.md application tracker to prevent double applications." },
-      { tag: "SEARCH", cls: "text-amber-500", text: "Google & LinkedIn Query: (\"Fullstack Entwickler\" OR \"Python\") Oldenburg (Last 24h)" },
+      { tag: "SEARCH", cls: "text-amber-500", text: "Google & LinkedIn Query: (\"Fullstack Entwickler\" OR \"Python\") Berlin (Last 24h)" },
       { tag: "DISCOVERY", cls: "text-sky-400", text: "Discovered 14 active job postings matching degree & core stack." },
       { tag: "FILTER", cls: "text-purple-400", text: "12 companies already in your tracking ledger -> Skipped automatically." },
-      { tag: "TOP PICK 1", cls: "text-emerald-400", text: "energy & meteo systems GmbH · Full-Stack Softwareentwickler (Oldenburg)" },
-      { tag: "TOP PICK 2", cls: "text-emerald-400", text: "CEWE Stiftung & Co. KGaA · Senior Fullstack Entwickler (Oldenburg)" }
+      { tag: "TOP PICK 1", cls: "text-emerald-400", text: "Beispiel Energy Systems GmbH · Full-Stack Softwareentwickler (Berlin)" },
+      { tag: "TOP PICK 2", cls: "text-emerald-400", text: "Musterfoto Digital GmbH · Senior Fullstack Entwickler (Berlin)" }
     ],
     stats: [
       { label: "Portals Scanned", value: "3 Portals" },
@@ -552,8 +552,8 @@ const SIM_STAGES = [
       { tag: "ANALYZE", cls: "text-blue-500", text: "Evaluating job requirements against candidate profile (@config/profile.json)..." },
       { tag: "MUST HAVES", cls: "text-emerald-400", text: "Required Skills (70%): Python (1.0), TypeScript (1.0), PostgreSQL (1.0) -> 100% Match!" },
       { tag: "NICE TO HAVES", cls: "text-emerald-400", text: "Preferred Skills (30%): Docker & CI/CD Pipelines (1.0), Redis (0.9) -> 95% Match!" },
-      { tag: "COMMUTE", cls: "text-amber-400", text: "Priority 1 Local Commute: ~2.5 km in Oldenburg (5-7 min bike ride)" },
-      { tag: "SALARY", cls: "text-sky-400", text: "Kununu check: 54.000 € – 62.000 € -> Matches candidate invariant (52.500 € brutto)" },
+      { tag: "COMMUTE", cls: "text-amber-400", text: "Priority 1 Local Commute: ~2.5 km in Berlin (5-7 min bike ride)" },
+      { tag: "SALARY", cls: "text-sky-400", text: "Kununu check: 54.000 € – 62.000 € -> Matches candidate invariant (58.000 € brutto)" },
       { tag: "FIT SCORE", cls: "text-emerald-300 font-bold", text: "Overall Fit Score: 9.8 / 10 -> Meets the 9/10 Quality Rule! Ready to generate." }
     ],
     stats: [
@@ -570,11 +570,11 @@ const SIM_STAGES = [
     title: "Stage 3 · Auto-Generate Resume & Cover Letter",
     tagline: "Zero manual Word editing: Tailored ATS Resume + DIN-5008 Cover Letter + High-Res PDF",
     logLines: [
-      { tag: "ENGINE", cls: "text-blue-500", text: "Running unified engine: python jobs/engine.py run --config 2026-09-26_energymeteo.json" },
-      { tag: "PROFILE", cls: "text-purple-400", text: "Candidate: Mohamad Masri | Notice Period: 3 Monate | Target: 52.500 € brutto" },
-      { tag: "RESUME", cls: "text-emerald-400", text: "Generated tailored HTML resume: jobs/resumes/2026-09-26_energymeteo.html (ATS-compliant)" },
+      { tag: "ENGINE", cls: "text-blue-500", text: "Running unified engine: python jobs/engine.py run --config 2026-09-26_beispiel_energy.json" },
+      { tag: "PROFILE", cls: "text-purple-400", text: "Candidate: Alex Morgan | Notice Period: 3 Monate | Target: 58.000 € brutto" },
+      { tag: "RESUME", cls: "text-emerald-400", text: "Generated tailored HTML resume: jobs/resumes/2026-09-26_beispiel_energy.html (ATS-compliant)" },
       { tag: "COVER LETTER", cls: "text-emerald-400", text: "Crafted DIN-5008 letter: STAR achievement hook, 3 key problems solved, 284 words" },
-      { tag: "PDF EXPORT", cls: "text-sky-400", text: "Headless Chromium rendered A4 DIN-5008 PDF: Mohamad_Masri_Lebenslauf.pdf (38.4 KB)" },
+      { tag: "PDF EXPORT", cls: "text-sky-400", text: "Headless Chromium rendered A4 DIN-5008 PDF: Alex_Morgan_Lebenslauf.pdf (38.4 KB)" },
       { tag: "QUALITY GATE", cls: "text-emerald-300 font-bold", text: "0 formatting errors, 0 robotic buzzwords, 100% ATS DOM Parity -> Ready to submit!" }
     ],
     stats: [
@@ -591,8 +591,8 @@ const SIM_STAGES = [
     title: "Stage 4 · Submit, Record It & You're Done!",
     tagline: "Uploaded to company portal · Logged in tracking ledger · Done in 18 minutes!",
     logLines: [
-      { tag: "SUBMIT", cls: "text-blue-500", text: "Uploaded PDF resume & cover letter to energy & meteo systems official portal." },
-      { tag: "TRACKER", cls: "text-sky-400", text: "Logged in jobs/job_matches.md: | 2026-09-26 | energy & meteo systems | 9.8/10 | Applied |" },
+      { tag: "SUBMIT", cls: "text-blue-500", text: "Uploaded PDF resume & cover letter to Beispiel Energy Systems official portal." },
+      { tag: "TRACKER", cls: "text-sky-400", text: "Logged in jobs/job_matches.md: | 2026-09-26 | Beispiel Energy Systems | 9.8/10 | Applied |" },
       { tag: "INTEGRITY", cls: "text-emerald-400", text: "Master resume protected: 0 new sections, 0 new bullets, 0 word-count growth." },
       { tag: "COMPLIANCE", cls: "text-emerald-400", text: "Spaced compounds verified: REST APIs, CI/CD Pipelines, MCP Tools, Fullstack Entwickler." },
       { tag: "SUCCESS", cls: "text-emerald-300 font-bold", text: "2 High-Fit Applications Sent in 18m 42s · Enjoy your morning coffee!" }
