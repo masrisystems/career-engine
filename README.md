@@ -8,7 +8,11 @@
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg?style=for-the-badge&logo=python)](https://python.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
 
-<p align="center"><img src="assets/readme/demo-resume.png" alt="Career Engine web CV in dark mode with the DE/EN language switch and PDF download button" width="760"></p>
+<p align="center"><img src="assets/readme/landing.png" alt="Career Engine project page with links to the AI prompts, the web resume and GitHub" width="820"></p>
+
+| Web CV (German) | DIN 5008 cover letter | Daily job search routine |
+| --- | --- | --- |
+| <img src="assets/readme/resume-de.png" alt="Web CV switched to German, with the EN/DE switch and PDF download button" width="300"> | <img src="assets/readme/cover-letters.png" alt="Generated German cover letter in DIN 5008 layout" width="300"> | <img src="assets/readme/daily-workflow.png" alt="20-minute daily job search routine with the two top matches of the day" width="300"> |
 
 ## Why
 

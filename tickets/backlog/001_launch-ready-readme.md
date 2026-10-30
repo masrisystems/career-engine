@@ -3,7 +3,7 @@
 ## Meta
 - ID:             001
 - Typ:            chore
-- Status:         doing
+- Status:         done
 - Erstellt:       2026-10-28
 - Erstellt von:   Masri Systems
 - Verantwortlich: Masri Systems
@@ -24,10 +24,10 @@ A first-time visitor understands within 10 seconds what the project does and who
 - Remove or soften unverifiable claims in README and `docs/marketing/`.
 
 ## Akzeptanzkriterien
-- [ ] GIF renders at the top of the README on github.com (light and dark GitHub theme).
-- [ ] `gh repo view` shows topics and a homepage URL.
-- [ ] Demo link and Masri Systems link both work.
-- [ ] No "recruiter approved" style claims left without a source.
+- [x] Screenshots render at the top of the README on github.com (decision 2026-10-30: screenshots instead of a GIF).
+- [x] `gh repo view` shows topics and a homepage URL.
+- [x] Demo link and Masri Systems link both work.
+- [x] No "recruiter approved" style claims left without a source.
 
 ## Risiken
 - A GIF that's too large loads slowly on mobile; keep it under 5 MB or use an MP4 in a GitHub-hosted video.
@@ -40,3 +40,4 @@ Record with ScreenToGif from the local Docker build, save it as `docs/demo.gif`,
 
 ## Kommentare
 - 2026-10-28: README rewritten (problem-first intro, live demo link, screenshot `assets/readme/demo-resume.png`, Why section, Docker quick start, Masri Systems CTA). Topics and website field set. Live demo confirmed to show the example persona Stefan Kramer. Open: demo GIF (static screenshot for now); demo GIF only. Recruiter claims confirmed by the maintainer (real recruiter reviews), kept.
+- 2026-10-30: Replaced the GIF requirement with 4 screenshots in `assets/readme/` (landing page, German web CV, DIN 5008 cover letter, daily routine). Fixed the doubled "· ·" separator in the engineering profile data. Recruiter claims kept (confirmed real). Done.
