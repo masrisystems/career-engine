@@ -149,16 +149,25 @@
         <img src="./assets/masrisystems-logo-light.webp" alt="Masri Systems" class="nav-logo nav-logo-light" />
         <img src="./assets/masrisystems-logo-dark.webp" alt="Masri Systems" class="nav-logo nav-logo-dark" />
         <span class="nav-brand-title">Career Engine</span>
-        <span class="nav-tag">Open Source</span>
       </a>
       <ul class="nav-links desktop-nav-links">
-        <li><a href="#daily-workflow" class="nav-link">Daily Routine</a></li>
-        <li><a href="#brief-showcase" class="nav-link">Results</a></li>
-        <li><a href="#prompts" class="nav-link">AI Prompts</a></li>
-        <li><a href="#cover-letters" class="nav-link">Cover Letters</a></li>
-        <li><a href="#engine" class="nav-link">CLI Engine</a></li>
-        <li><a href="#workflows" class="nav-link">Skills</a></li>
-        <li><a href="#resume" class="nav-link">Web Resume</a></li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-menu-guide">Guide <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+          <ul id="nav-menu-guide" class="nav-dropdown-menu">
+            <li><a href="#daily-workflow" class="nav-dropdown-link">Daily Routine</a></li>
+            <li><a href="#brief-showcase" class="nav-dropdown-link">Results</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-menu-toolkit">Toolkit <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+          <ul id="nav-menu-toolkit" class="nav-dropdown-menu">
+            <li><a href="#prompts" class="nav-dropdown-link">AI Prompts</a></li>
+            <li><a href="#cover-letters" class="nav-dropdown-link">Cover Letters</a></li>
+            <li><a href="#engine" class="nav-dropdown-link">CLI Engine</a></li>
+            <li><a href="#workflows" class="nav-dropdown-link">Skills</a></li>
+            <li><a href="#resume" class="nav-dropdown-link">Web Resume</a></li>
+          </ul>
+        </li>
         <li><a href="#faq" class="nav-link">FAQ</a></li>
       </ul>
       <div class="nav-controls">
@@ -188,13 +197,27 @@
     <div id="nav-drawer" class="nav-drawer no-print" aria-hidden="true">
       <div class="nav-drawer-inner">
         <ul class="nav-links mobile-nav-links">
-          <li><a href="#daily-workflow" class="drawer-link" onclick="closeMobileNav()">Daily Routine</a></li>
-          <li><a href="#brief-showcase" class="drawer-link" onclick="closeMobileNav()">Results</a></li>
-          <li><a href="#prompts" class="drawer-link" onclick="closeMobileNav()">AI Prompts</a></li>
-          <li><a href="#cover-letters" class="drawer-link" onclick="closeMobileNav()">Cover Letters</a></li>
-          <li><a href="#engine" class="drawer-link" onclick="closeMobileNav()">CLI Engine</a></li>
-          <li><a href="#workflows" class="drawer-link" onclick="closeMobileNav()">Skills</a></li>
-          <li><a href="#resume" class="drawer-link" onclick="closeMobileNav()">Web Resume</a></li>
+          <li>
+            <details class="drawer-group">
+              <summary class="drawer-link drawer-group-toggle">Guide <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+              <ul class="drawer-group-links">
+                <li><a href="#daily-workflow" class="drawer-link drawer-sublink" onclick="closeMobileNav()">Daily Routine</a></li>
+                <li><a href="#brief-showcase" class="drawer-link drawer-sublink" onclick="closeMobileNav()">Results</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="drawer-group">
+              <summary class="drawer-link drawer-group-toggle">Toolkit <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+              <ul class="drawer-group-links">
+                <li><a href="#prompts" class="drawer-link drawer-sublink" onclick="closeMobileNav()">AI Prompts</a></li>
+                <li><a href="#cover-letters" class="drawer-link drawer-sublink" onclick="closeMobileNav()">Cover Letters</a></li>
+                <li><a href="#engine" class="drawer-link drawer-sublink" onclick="closeMobileNav()">CLI Engine</a></li>
+                <li><a href="#workflows" class="drawer-link drawer-sublink" onclick="closeMobileNav()">Skills</a></li>
+                <li><a href="#resume" class="drawer-link drawer-sublink" onclick="closeMobileNav()">Web Resume</a></li>
+              </ul>
+            </details>
+          </li>
           <li><a href="#faq" class="drawer-link" onclick="closeMobileNav()">FAQ</a></li>
         </ul>
         <div class="nav-drawer-actions">
@@ -384,13 +407,16 @@
         <h2 class="text-3xl font-semibold mb-1" style="border-bottom:none;">Workflow Results Showcase</h2>
         <p class="text-sm text-gray-600 max-w-2xl">Interactive Morning Action Brief generated by the daily automation engine. Demonstrates verified atomic application packages across diverse technical disciplines.</p>
       </div>
-      <!-- Domain Tabs -->
-      <div class="brief-tabs flex items-center gap-1 bg-slate-100 dark:bg-[#131b26] p-1 rounded-md border border-slate-200 dark:border-[#223145]">
-        <button class="btn-pill-sm active" data-brief="fullstack">Fullstack (Production Run)</button>
-        <button class="btn-pill-sm" data-brief="devops">Cloud DevOps</button>
-        <button class="btn-pill-sm" data-brief="designer">Product Design</button>
-        <button class="btn-pill-sm" data-brief="engineering">Renewable Energy</button>
-      </div>
+      <!-- Domain Switcher -->
+      <label class="role-select-field">
+        <span class="role-select-label">Role</span>
+        <select id="brief-select" class="role-select" aria-label="Results role">
+          <option value="fullstack" selected>Fullstack (Production Run)</option>
+          <option value="devops">Cloud DevOps</option>
+          <option value="designer">Product Design</option>
+          <option value="engineering">Renewable Energy</option>
+        </select>
+      </label>
     </div>
 
     <!-- Brief Paper / Terminal Card -->
@@ -777,6 +803,11 @@ Format top qualifying opportunities as continuous Markdown rows ready to be appe
         <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
       </div>
 
+    </div>
+
+    <details class="fold-group fold-more">
+      <summary class="fold-summary">Show 5 more prompts <span class="fold-count">5</span></summary>
+      <div class="prompt-grid fold-body">
       <!-- Prompt 6: Daily Job Workflow -->
       <div class="prompt-card surface-soft">
         <div>
@@ -912,6 +943,10 @@ Erstellen Sie ein valides JSON-Dokument unter 'jobs/roles/{{ROLE_ID}}.json' mit 
 1. Spacing-Invariante: NIEMALS Bindestriche für technische Komposita verwenden (REST APIs, CI/CD Pipelines, MCP Tools, Cloud Architekturen).
 2. Authentizität: Nur Fähigkeiten aufnehmen, die durch reale Projekte und nachweisbare Meilensteine belegt werden können.
 3. DOM-Parität: Sicherstellen, dass die Skills nahtlos in das 4-Kategorien-Schema von resume.html und engine.py passen.</pre>
+        </div>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+      </div>
+
       <!-- Prompt 9: Salary Negotiation & Counter-Offer -->
       <div class="prompt-card surface-peach">
         <div>
@@ -984,7 +1019,8 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
         </div>
         <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
       </div>
-    </div>
+      </div>
+    </details>
   </section>
 
   <!-- DIN-5008 Cover Letter Showcase Section -->
@@ -997,13 +1033,16 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
         </div>
         <p class="text-sm text-gray-600 max-w-2xl">Production-grade German cover letters audited and approved by senior recruiters and HR consultants. Formatted in accordance with DIN-5008, featuring STAR achievement hooks, technical problem solving, and automated contractual invariants injection.</p>
       </div>
-      <!-- Cover Letter Persona Switcher Tabs -->
-      <div class="cover-letter-tabs flex items-center gap-1 bg-slate-100 dark:bg-[#131b26] p-1 rounded-md border border-slate-200 dark:border-[#223145]">
-        <button class="btn-pill-sm active" data-letter="fullstack">Fullstack Developer</button>
-        <button class="btn-pill-sm" data-letter="designer">Product Designer</button>
-        <button class="btn-pill-sm" data-letter="devops">DevOps Engineer</button>
-        <button class="btn-pill-sm" data-letter="engineering">Mechanical Engineer</button>
-      </div>
+      <!-- Cover Letter Persona Switcher -->
+      <label class="role-select-field">
+        <span class="role-select-label">Role</span>
+        <select id="cover-letter-select" class="role-select" aria-label="Cover letter role">
+          <option value="fullstack" selected>Fullstack Developer</option>
+          <option value="designer">Product Designer</option>
+          <option value="devops">DevOps Engineer</option>
+          <option value="engineering">Mechanical Engineer</option>
+        </select>
+      </label>
     </div>
 
     <!-- DIN-5008 Letter Paper -->
@@ -1067,44 +1106,47 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
     </div>
     <p class="text-sm text-gray-600 mb-6 max-w-3xl">The repository includes a decoupled Python automation engine (<code class="font-mono text-xs">jobs/engine.py</code> and <code class="font-mono text-xs">engine/*</code>). It automates candidate config hydration, canonical role compilation, ATS structural validation, DIN-5008 cover letter rendering, and headless Chromium vector PDF compilation.</p>
 
-    <!-- Architecture Modules Grid -->
-    <div class="engine-architecture-grid">
-      <div class="engine-module-card">
-        <span class="engine-module-name">engine/config.py</span>
-        <span class="engine-module-role">SSOT Loader &amp; Invariant Validator</span>
-        <span class="engine-module-desc">Parses <code class="font-mono text-xs">config/profile.json</code> (with fallback to <code class="font-mono text-xs">profile.example.json</code>). Validates schema, resolves candidate contractual invariants (salary, notice period, portfolio links), and catches prohibited domains.</span>
-      </div>
+    <!-- Architecture Modules (collapsed) -->
+    <details class="fold-group mb-8">
+      <summary class="fold-summary">Architecture modules <span class="fold-count">6</span></summary>
+      <div class="engine-architecture-grid fold-body">
+        <div class="engine-module-card">
+          <span class="engine-module-name">engine/config.py</span>
+          <span class="engine-module-role">SSOT Loader &amp; Invariant Validator</span>
+          <span class="engine-module-desc">Parses <code class="font-mono text-xs">config/profile.json</code> (with fallback to <code class="font-mono text-xs">profile.example.json</code>). Validates schema, resolves candidate contractual invariants (salary, notice period, portfolio links), and catches prohibited domains.</span>
+        </div>
 
-      <div class="engine-module-card">
-        <span class="engine-module-name">engine/resume.py</span>
-        <span class="engine-module-role">Tailored Resume Hydration Engine</span>
-        <span class="engine-module-desc">Hydrates <code class="font-mono text-xs">resume.html</code> with targeted keywords and canonical role profiles. Strictly enforces 100% DOM structure parity, tag sequencing, and bilingual attribute preservation.</span>
-      </div>
+        <div class="engine-module-card">
+          <span class="engine-module-name">engine/resume.py</span>
+          <span class="engine-module-role">Tailored Resume Hydration Engine</span>
+          <span class="engine-module-desc">Hydrates <code class="font-mono text-xs">resume.html</code> with targeted keywords and canonical role profiles. Strictly enforces 100% DOM structure parity, tag sequencing, and bilingual attribute preservation.</span>
+        </div>
 
-      <div class="engine-module-card">
-        <span class="engine-module-name">engine/cover_letter.py</span>
-        <span class="engine-module-role">DIN-5008 Cover Letter Compiler</span>
-        <span class="engine-module-desc">Generates print-ready German DIN-5008 HTML cover letters under 300 words. Enforces anti-AI formatting, burstiness variance (&ge; 20 words), and runs 8-word sequence overlap checks against raw job postings.</span>
-      </div>
+        <div class="engine-module-card">
+          <span class="engine-module-name">engine/cover_letter.py</span>
+          <span class="engine-module-role">DIN-5008 Cover Letter Compiler</span>
+          <span class="engine-module-desc">Generates print-ready German DIN-5008 HTML cover letters under 300 words. Enforces anti-AI formatting, burstiness variance (&ge; 20 words), and runs 8-word sequence overlap checks against raw job postings.</span>
+        </div>
 
-      <div class="engine-module-card">
-        <span class="engine-module-name">engine/roles.py</span>
-        <span class="engine-module-role">Canonical Role Archetypes Catalog</span>
-        <span class="engine-module-desc">Builds and manages pre-validated career archetypes (<code class="font-mono text-xs">jobs/roles/*.json</code>). Compiles all role resumes simultaneously to <code class="font-mono text-xs">jobs/roles/html/</code> and vector PDFs.</span>
-      </div>
+        <div class="engine-module-card">
+          <span class="engine-module-name">engine/roles.py</span>
+          <span class="engine-module-role">Canonical Role Archetypes Catalog</span>
+          <span class="engine-module-desc">Builds and manages pre-validated career archetypes (<code class="font-mono text-xs">jobs/roles/*.json</code>). Compiles all role resumes simultaneously to <code class="font-mono text-xs">jobs/roles/html/</code> and vector PDFs.</span>
+        </div>
 
-      <div class="engine-module-card">
-        <span class="engine-module-name">engine/search_links.py</span>
-        <span class="engine-module-role">Boolean Search Query Synthesizer</span>
-        <span class="engine-module-desc">Generates daily job search link dashboards (<code class="font-mono text-xs">daily-job-search-links.md</code> and <code class="font-mono text-xs">workflows/search_links/</code>) with pre-filtered Boolean queries across LinkedIn DE, StepStone, Indeed, Techstars, and HTGF.</span>
-      </div>
+        <div class="engine-module-card">
+          <span class="engine-module-name">engine/search_links.py</span>
+          <span class="engine-module-role">Boolean Search Query Synthesizer</span>
+          <span class="engine-module-desc">Generates daily job search link dashboards (<code class="font-mono text-xs">daily-job-search-links.md</code> and <code class="font-mono text-xs">workflows/search_links/</code>) with pre-filtered Boolean queries across LinkedIn DE, StepStone, Indeed, Techstars, and HTGF.</span>
+        </div>
 
-      <div class="engine-module-card">
-        <span class="engine-module-name">engine/pdf.py</span>
-        <span class="engine-module-role">Headless Chromium PDF Compiler</span>
-        <span class="engine-module-desc">Drives headless Chrome/Chromium via Playwright or subprocess to compile selectable vector A4 PDFs for both resumes and 1-page DIN-5008 cover letters with exact print layout.</span>
+        <div class="engine-module-card">
+          <span class="engine-module-name">engine/pdf.py</span>
+          <span class="engine-module-role">Headless Chromium PDF Compiler</span>
+          <span class="engine-module-desc">Drives headless Chrome/Chromium via Playwright or subprocess to compile selectable vector A4 PDFs for both resumes and 1-page DIN-5008 cover letters with exact print layout.</span>
+        </div>
       </div>
-    </div>
+    </details>
 
     <!-- CLI Commands Grid -->
     <h3 class="text-xl font-semibold mb-2" style="border-bottom:none;">Unified CLI Command Reference</h3>
@@ -1185,198 +1227,176 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
 
     <div>
 
-      <div class="skills-grid">
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">resume-ats-optimizer</div>
-            <div class="skill-item-desc">Optimizes resume bullet points and section layouts for high ATS keyword density and parsing accuracy.</div>
+      <div class="fold-stack">
+      <details class="fold-group" open>
+        <summary class="fold-summary">Resume Optimization <span class="fold-count">8</span></summary>
+        <div class="skills-grid fold-body">
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">resume-ats-optimizer</div>
+              <div class="skill-item-desc">Optimizes resume bullet points and section layouts for high ATS keyword density and parsing accuracy.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">resume-tailor</div>
-            <div class="skill-item-desc">Tailors resume content, summary, and experience to match specific job descriptions.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">resume-tailor</div>
+              <div class="skill-item-desc">Tailors resume content, summary, and experience to match specific job descriptions.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">resume-bullet-writer</div>
-            <div class="skill-item-desc">Rewrites job experience items into punchy, action-oriented, and metric-backed STAR bullet points.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">resume-bullet-writer</div>
+              <div class="skill-item-desc">Rewrites job experience items into punchy, action-oriented, and metric-backed STAR bullet points.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">resume-quantifier</div>
-            <div class="skill-item-desc">Identifies qualitative bullet points and helps calculate measurable percentages, KPIs, and outcomes.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">resume-quantifier</div>
+              <div class="skill-item-desc">Identifies qualitative bullet points and helps calculate measurable percentages, KPIs, and outcomes.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">resume-formatter</div>
-            <div class="skill-item-desc">Enforces consistent typography, dates, spacing, and standard German or English date formatting.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">resume-formatter</div>
+              <div class="skill-item-desc">Enforces consistent typography, dates, spacing, and standard German or English date formatting.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">resume-section-builder</div>
-            <div class="skill-item-desc">Scaffolds new resume sections (e.g. side projects, patents, publications, certifications) with DOM parity.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">resume-section-builder</div>
+              <div class="skill-item-desc">Scaffolds new resume sections (e.g. side projects, patents, publications, certifications) with DOM parity.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">resume-version-manager</div>
-            <div class="skill-item-desc">Tracks, diffs, and manages tailored resume iterations across multiple job applications.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">resume-version-manager</div>
+              <div class="skill-item-desc">Tracks, diffs, and manages tailored resume iterations across multiple job applications.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">tech-resume-optimizer</div>
-            <div class="skill-item-desc">Specialized optimization for software engineers, emphasizing cloud architectures, REST APIs, and pipelines.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">tech-resume-optimizer</div>
+              <div class="skill-item-desc">Specialized optimization for software engineers, emphasizing cloud architectures, REST APIs, and pipelines.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
         </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">cover-letter-generator</div>
-            <div class="skill-item-desc">Drafts DIN-5008 German and English cover letters with compelling hooks and candidate invariants.</div>
+      </details>
+      <details class="fold-group">
+        <summary class="fold-summary">Letters &amp; Applications <span class="fold-count">4</span></summary>
+        <div class="skills-grid fold-body">
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">cover-letter-generator</div>
+              <div class="skill-item-desc">Drafts DIN-5008 German and English cover letters with compelling hooks and candidate invariants.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Letters &amp; Applications</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">application-form-filler</div>
-            <div class="skill-item-desc">Parses complex portal application forms (Workday, Greenhouse) and prepares copy-ready answers.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">application-form-filler</div>
+              <div class="skill-item-desc">Parses complex portal application forms (Workday, Greenhouse) and prepares copy-ready answers.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Letters &amp; Applications</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">portfolio-case-study-writer</div>
-            <div class="skill-item-desc">Structures software and design projects into deep technical case studies with problem, architecture, and impact.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">portfolio-case-study-writer</div>
+              <div class="skill-item-desc">Structures software and design projects into deep technical case studies with problem, architecture, and impact.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Letters &amp; Applications</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">job-application-generator</div>
-            <div class="skill-item-desc">Coordinates end-to-end generation of complete application bundles (Resume, Letter, Config, Match Note).</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">job-application-generator</div>
+              <div class="skill-item-desc">Coordinates end-to-end generation of complete application bundles (Resume, Letter, Config, Match Note).</div>
+            </div>
           </div>
-          <span class="skill-item-category">Letters &amp; Applications</span>
         </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">executive-resume-writer</div>
-            <div class="skill-item-desc">Tailors resumes for leadership, VP, and Director roles focusing on P&amp;L ownership and team scale.</div>
+      </details>
+      <details class="fold-group">
+        <summary class="fold-summary">Career Transitions <span class="fold-count">4</span></summary>
+        <div class="skills-grid fold-body">
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">executive-resume-writer</div>
+              <div class="skill-item-desc">Tailors resumes for leadership, VP, and Director roles focusing on P&amp;L ownership and team scale.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Career Transitions</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">career-changer-translator</div>
-            <div class="skill-item-desc">Translates non-traditional career paths and domain expertise into relevant engineering competencies.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">career-changer-translator</div>
+              <div class="skill-item-desc">Translates non-traditional career paths and domain expertise into relevant engineering competencies.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Career Transitions</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">academic-cv-builder</div>
-            <div class="skill-item-desc">Formats academic curricula vitae including research grants, teaching experience, and peer-reviewed papers.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">academic-cv-builder</div>
+              <div class="skill-item-desc">Formats academic curricula vitae including research grants, teaching experience, and peer-reviewed papers.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Career Transitions</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">creative-portfolio-resume</div>
-            <div class="skill-item-desc">Optimizes portfolio resumes for product designers, creative directors, and frontend visual developers.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">creative-portfolio-resume</div>
+              <div class="skill-item-desc">Optimizes portfolio resumes for product designers, creative directors, and frontend visual developers.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Career Transitions</span>
         </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">interview-coach</div>
-            <div class="skill-item-desc">Simulates behavioral and technical interview questions, grading responses against job requirements.</div>
+      </details>
+      <details class="fold-group">
+        <summary class="fold-summary">Interviews &amp; Offers <span class="fold-count">4</span></summary>
+        <div class="skills-grid fold-body">
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">interview-coach</div>
+              <div class="skill-item-desc">Simulates behavioral and technical interview questions, grading responses against job requirements.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Interviews &amp; Offers</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">interview-prep-generator</div>
-            <div class="skill-item-desc">Generates 5-phase interview cheat sheets with German elevator pitches, STAR stories, and closing questions.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">interview-prep-generator</div>
+              <div class="skill-item-desc">Generates 5-phase interview cheat sheets with German elevator pitches, STAR stories, and closing questions.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Interviews &amp; Offers</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">salary-negotiation-prep</div>
-            <div class="skill-item-desc">Prepares data-driven salary negotiation talk tracks and counter-offers based on German tech benchmarks.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">salary-negotiation-prep</div>
+              <div class="skill-item-desc">Prepares data-driven salary negotiation talk tracks and counter-offers based on German tech benchmarks.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Interviews &amp; Offers</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">offer-comparison-analyzer</div>
-            <div class="skill-item-desc">Compares competing job offers across base salary, bonus, equity, remote flexibility, and benefits.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">offer-comparison-analyzer</div>
+              <div class="skill-item-desc">Compares competing job offers across base salary, bonus, equity, remote flexibility, and benefits.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Interviews &amp; Offers</span>
         </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">daily-job-workflow</div>
-            <div class="skill-item-desc">Drives the daily discovery, qualification, and submission routine from daily-job-search-workflow.md.</div>
+      </details>
+      <details class="fold-group">
+        <summary class="fold-summary">Job Market Intelligence <span class="fold-count">4</span></summary>
+        <div class="skills-grid fold-body">
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">daily-job-workflow</div>
+              <div class="skill-item-desc">Drives the daily discovery, qualification, and submission routine from daily-job-search-workflow.md.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Job Market Intelligence</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">job-description-analyzer</div>
-            <div class="skill-item-desc">Extracts hard skills, soft skills, seniority levels, and hidden requirements from raw job postings.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">job-description-analyzer</div>
+              <div class="skill-item-desc">Extracts hard skills, soft skills, seniority levels, and hidden requirements from raw job postings.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Job Market Intelligence</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">linkedin-profile-optimizer</div>
-            <div class="skill-item-desc">Aligns LinkedIn headlines, About sections, and featured media with the master resume invariants.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">linkedin-profile-optimizer</div>
+              <div class="skill-item-desc">Aligns LinkedIn headlines, About sections, and featured media with the master resume invariants.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Job Market Intelligence</span>
-        </div>
-
-        <div class="skill-item">
-          <div>
-            <div class="skill-item-name">reference-list-builder</div>
-            <div class="skill-item-desc">Generates formatted, professional professional reference dossiers tailored to target positions.</div>
+          <div class="skill-item">
+            <div>
+              <div class="skill-item-name">reference-list-builder</div>
+              <div class="skill-item-desc">Generates formatted, professional professional reference dossiers tailored to target positions.</div>
+            </div>
           </div>
-          <span class="skill-item-category">Job Market Intelligence</span>
         </div>
+      </details>
       </div>
     </div>
   </section>
@@ -1385,14 +1405,16 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
   <section id="resume" class="hub-container section-band">
     <div class="persona-switcher-bar no-print">
       <div class="flex items-center gap-2 flex-wrap">
-        <span class="text-xs font-semibold uppercase text-gray-500">Archetype:</span>
-        <div class="persona-pills">
-          <button class="btn-pill-sm" data-persona="fullstack">Fullstack Engineer</button>
-          <button class="btn-pill-sm" data-persona="devops">DevOps &amp; Cloud</button>
-          <button class="btn-pill-sm" data-persona="designer">Product Designer</button>
-          <button class="btn-pill-sm" data-persona="finance">Finance &amp; Controlling</button>
-          <button class="btn-pill-sm active" data-persona="engineering">Mechanical Systems</button>
-        </div>
+        <label class="role-select-field">
+          <span class="role-select-label">Archetype</span>
+          <select id="persona-select" class="role-select" aria-label="Resume archetype">
+            <option value="fullstack">Fullstack Engineer</option>
+            <option value="devops">DevOps &amp; Cloud</option>
+            <option value="designer">Product Designer</option>
+            <option value="finance">Finance &amp; Controlling</option>
+            <option value="engineering" selected>Mechanical Systems</option>
+          </select>
+        </label>
       </div>
       <div class="flex items-center gap-2 flex-wrap">
         <a id="resume-standalone-link" href="./resume.html" target="_blank" rel="noopener noreferrer" class="btn-pill-sm" style="display:inline-flex; align-items:center; gap:4px; text-decoration:none;">
