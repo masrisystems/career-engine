@@ -706,6 +706,55 @@ html.dark .nav-dropdown-link:focus-visible,
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 }
 
+/* Multilingual Language Switcher Dropdown */
+.lang-select {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 6px 30px 6px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-hairline);
+  background-color: var(--color-canvas);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  color: var(--color-ink);
+  cursor: pointer;
+  max-width: 100%;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.lang-select:hover {
+  border-color: #cbd5e1;
+}
+
+.lang-select:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+html.dark .lang-select,
+.dark .lang-select {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+html.dark .lang-select:hover,
+.dark .lang-select:hover {
+  border-color: #475569;
+}
+
+html.dark .lang-select option,
+.dark .lang-select option {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
 /* Nav Hamburger Toggle Button */
 .nav-toggle-btn {
   display: none;
@@ -881,6 +930,14 @@ html.dark .nav-drawer-actions,
   justify-content: center;
   min-height: 40px;
   font-size: 13.5px;
+}
+
+.drawer-lang-select {
+  flex: 1;
+  min-height: 40px;
+  font-size: 13.5px;
+  padding: 8px 32px 8px 14px;
+  background-position: right 12px center;
 }
 
 .drawer-cta-btn {
@@ -1196,6 +1253,7 @@ html.dark .trust-badge-text,
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: var(--spacing-md);
 }
 
@@ -2857,15 +2915,15 @@ html.dark .faq-card-container,
 
 .faq-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
 
 .faq-item {
   background: #ffffff;
   border: 1px solid var(--color-hairline);
   border-radius: var(--radius-md);
-  padding: 24px;
+  padding: 0;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -2890,9 +2948,89 @@ html.dark .faq-item:hover,
   font-size: 16px;
   font-weight: 600;
   color: var(--color-ink);
-  margin-top: 0;
-  margin-bottom: 8px;
+  margin: 0;
   line-height: 1.4;
+  padding: 20px 56px 20px 24px;
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.faq-question::after {
+  content: "";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-75%) rotate(45deg);
+  transition: transform 0.2s ease;
+  opacity: 0.6;
+}
+
+.faq-item[open] > .faq-question::after {
+  transform: translateY(-25%) rotate(-135deg);
+}
+
+/* Collapsible section groups (Skills, extra Prompts, Engine modules) reuse the FAQ details styling */
+.fold-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: var(--spacing-lg);
+}
+
+.fold-more {
+  margin-top: var(--spacing-lg);
+}
+
+.fold-count {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-muted);
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-pill);
+  vertical-align: middle;
+}
+
+html.dark .fold-count,
+.dark .fold-count {
+  background: #0f172a;
+  border-color: #334155;
+  color: #94a3b8;
+}
+
+.fold-group > .fold-body {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 24px 24px;
+}
+
+/* Keep the 360px prompt cards from overflowing inside the padded fold on phones */
+.fold-group > .prompt-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+}
+
+@media (max-width: 640px) {
+  .fold-group > .fold-body {
+    padding: 0 12px 12px;
+  }
+}
+
+.faq-question:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: -2px;
+  border-radius: var(--radius-md);
 }
 
 html.dark .faq-question,
@@ -2905,6 +3043,7 @@ html.dark .faq-question,
   color: var(--color-body);
   line-height: 1.6;
   margin: 0;
+  padding: 0 24px 20px;
 }
 
 html.dark .faq-answer,
@@ -3122,5 +3261,73 @@ html.dark .fold-count,
     margin: 0 !important;
     padding: 0 !important;
     box-shadow: none !important;
+  }
+}
+
+/* Step-by-step setup guide (#setup) */
+.setup-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.setup-step {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+.setup-step-num {
+  flex: 0 0 auto;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.setup-step-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.setup-step-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 4px 0 6px;
+  border-bottom: none !important;
+}
+
+.setup-step-desc,
+.setup-substeps {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-body);
+  max-width: 48rem;
+}
+
+.setup-substeps {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 8px 0 0;
+}
+
+.setup-step .engine-command-code {
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .setup-step {
+    flex-direction: column;
+    gap: var(--spacing-xs);
   }
 }
