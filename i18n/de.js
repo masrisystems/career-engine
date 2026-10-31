@@ -145,6 +145,7 @@
     },
 
     briefs: {
+      roleLabel: "Rolle",
       title: "Workflow Ergebnis Showcase",
       badge: "Produktionslauf",
       desc: "Interaktives Morning Action Brief, generiert von der täglichen Automatisierungs Engine. Zeigt verifizierte, atomare Bewerbungspakete aus verschiedenen technischen Disziplinen.",
@@ -265,6 +266,7 @@
     },
 
     coverLetters: {
+      roleLabel: "Rolle",
       title: "DIN-5008 Anschreiben Showcase",
       badge: "DIN-5008 Standardkonform",
       desc: "Produktionsreife deutsche Anschreiben nach DIN-5008 Geschäftsstandard mit STAR-Erfolgshooks, technischer Problemlösungskompetenz und automatisierter Invarianten Injektion.",
