@@ -4,15 +4,85 @@
  * Zero external framework dependencies. Zero emojis.
  */
 
+// Safe translation helper with fallback and parameter interpolation
+function i18nTranslate(key, fallback, vars, altKey) {
+  if (typeof window !== 'undefined' && window.CareerI18n && typeof window.CareerI18n.t === 'function') {
+    let res = window.CareerI18n.t(key, undefined, vars);
+    if ((res === undefined || res === key) && altKey) {
+      res = window.CareerI18n.t(altKey, undefined, vars);
+    }
+    if (res !== undefined && res !== key && res !== altKey) {
+      return res;
+    }
+  }
+
+  let result = fallback !== undefined ? fallback : key;
+  if (vars && typeof vars === 'object' && typeof result === 'string') {
+    for (let param in vars) {
+      if (Object.prototype.hasOwnProperty.call(vars, param)) {
+        result = result.replace(new RegExp('\\{\\{?\\s*' + param + '\\s*\\}\\}?', 'g'), vars[param]);
+      }
+    }
+  }
+  return result;
+}
+
+// Register toast aliases with CareerI18n if available
+function registerHubI18nAliases() {
+  if (typeof window !== 'undefined' && window.CareerI18n && typeof window.CareerI18n.registerTranslation === 'function') {
+    window.CareerI18n.registerTranslation('en', {
+      ui: {
+        toastPromptCopied: 'Prompt copied to clipboard!',
+        toastCommandCopied: 'Command copied to clipboard!',
+        toastCopyFailed: 'Failed to copy',
+        toastPressCtrlC: 'Press Ctrl+C to copy',
+        toastAtsActive: 'ATS plain-text preview active',
+        toastAtsStandard: 'Standard visual layout active',
+        toastSwitchedPreview: 'Switched preview to {name} ({key})',
+        toastLoadedCoverLetter: 'Loaded cover letter: {key}',
+        toastLoadedBrief: 'Loaded results: {key}',
+        toastLinkCopied: 'Link copied to clipboard! Share it with your friends.'
+      }
+    });
+    window.CareerI18n.registerTranslation('de', {
+      ui: {
+        toastPromptCopied: 'Prompt in die Zwischenablage kopiert!',
+        toastCommandCopied: 'Befehl in die Zwischenablage kopiert!',
+        toastCopyFailed: 'Kopieren fehlgeschlagen',
+        toastPressCtrlC: 'Drücken Sie Strg+C zum Kopieren',
+        toastAtsActive: 'ATS Nur Text Vorschau aktiv',
+        toastAtsStandard: 'Standard Layout aktiv',
+        toastSwitchedPreview: 'Vorschau gewechselt zu {name} ({key})',
+        toastLoadedCoverLetter: 'Anschreiben geladen: {key}',
+        toastLoadedBrief: 'Ergebnisse geladen: {key}',
+        toastLinkCopied: 'Link in die Zwischenablage kopiert!'
+      }
+    });
+  }
+}
+registerHubI18nAliases();
+
 // Toast notification helper
-function showToast(message) {
+function showToast(message, vars) {
   let toast = document.getElementById('hub-toast');
   if (!toast) {
     toast = document.createElement('div');
     toast.id = 'hub-toast';
     document.body.appendChild(toast);
   }
-  toast.textContent = message;
+  let text = message;
+  if (typeof text === 'string') {
+    if (text.startsWith('ui.') && window.CareerI18n && typeof window.CareerI18n.t === 'function') {
+      text = window.CareerI18n.t(text, text, vars);
+    } else if (vars && typeof vars === 'object') {
+      for (let param in vars) {
+        if (Object.prototype.hasOwnProperty.call(vars, param)) {
+          text = text.replace(new RegExp('\\{\\{?\\s*' + param + '\\s*\\}\\}?', 'g'), vars[param]);
+        }
+      }
+    }
+  }
+  toast.textContent = text;
   toast.classList.add('show');
   setTimeout(() => {
     toast.classList.remove('show');
@@ -29,18 +99,31 @@ function copyPrompt(btn) {
   
   if (!textToCopy) return;
 
+  const copiedLabel = (window.CareerI18n && window.CareerI18n.t)
+    ? window.CareerI18n.t('ui.copied', 'Copied!')
+    : 'Copied!';
+  const promptCopiedMsg = (window.CareerI18n && window.CareerI18n.t)
+    ? window.CareerI18n.t('ui.toastPromptCopied', window.CareerI18n.t('ui.promptCopiedToast', 'Prompt copied to clipboard!'))
+    : 'Prompt copied to clipboard!';
+  const pressCtrlCMsg = (window.CareerI18n && window.CareerI18n.t)
+    ? window.CareerI18n.t('ui.toastPressCtrlC', window.CareerI18n.t('ui.pressToCopy', 'Press Ctrl+C to copy'))
+    : 'Press Ctrl+C to copy';
+  const copyFailedMsg = (window.CareerI18n && window.CareerI18n.t)
+    ? window.CareerI18n.t('ui.toastCopyFailed', window.CareerI18n.t('ui.copyFailed', 'Failed to copy'))
+    : 'Failed to copy';
+
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(textToCopy).then(() => {
       const originalText = btn.innerHTML;
-      btn.textContent = 'Copied!';
-      showToast('Prompt copied to clipboard!');
+      btn.textContent = copiedLabel;
+      showToast(promptCopiedMsg);
       setTimeout(() => {
         btn.innerHTML = originalText;
         if (window.lucide) lucide.createIcons();
       }, 2000);
     }).catch(err => {
       console.error('Failed to copy text: ', err);
-      showToast('Press Ctrl+C to copy');
+      showToast(pressCtrlCMsg);
     });
   } else {
     const textArea = document.createElement('textarea');
@@ -49,9 +132,9 @@ function copyPrompt(btn) {
     textArea.select();
     try {
       document.execCommand('copy');
-      showToast('Prompt copied to clipboard!');
+      showToast(promptCopiedMsg);
     } catch (err) {
-      showToast('Failed to copy');
+      showToast(copyFailedMsg);
     }
     document.body.removeChild(textArea);
   }
@@ -66,16 +149,31 @@ function copyEngineCommand(btn) {
   const textToCopy = codeEl ? codeEl.textContent.trim() : '';
   if (!textToCopy) return;
 
+  const copiedLabel = (window.CareerI18n && window.CareerI18n.t)
+    ? window.CareerI18n.t('ui.copied', 'Copied!')
+    : 'Copied!';
+  const commandCopiedMsg = (window.CareerI18n && window.CareerI18n.t)
+    ? window.CareerI18n.t('ui.toastCommandCopied', window.CareerI18n.t('ui.commandCopiedToast', 'Command copied to clipboard!'))
+    : 'Command copied to clipboard!';
+  const pressCtrlCMsg = (window.CareerI18n && window.CareerI18n.t)
+    ? window.CareerI18n.t('ui.toastPressCtrlC', window.CareerI18n.t('ui.pressToCopy', 'Press Ctrl+C to copy'))
+    : 'Press Ctrl+C to copy';
+  const copyFailedMsg = (window.CareerI18n && window.CareerI18n.t)
+    ? window.CareerI18n.t('ui.toastCopyFailed', window.CareerI18n.t('ui.copyFailed', 'Failed to copy'))
+    : 'Failed to copy';
+
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(textToCopy).then(() => {
       const originalText = btn.innerHTML;
-      btn.textContent = 'Copied!';
-      showToast('Command copied to clipboard!');
+      btn.textContent = copiedLabel;
+      showToast(commandCopiedMsg);
       setTimeout(() => {
         btn.innerHTML = originalText;
+        if (window.lucide) lucide.createIcons();
       }, 2000);
     }).catch(err => {
-      showToast('Press Ctrl+C to copy');
+      console.error('Failed to copy text: ', err);
+      showToast(pressCtrlCMsg);
     });
   } else {
     const textArea = document.createElement('textarea');
@@ -84,9 +182,9 @@ function copyEngineCommand(btn) {
     textArea.select();
     try {
       document.execCommand('copy');
-      showToast('Command copied to clipboard!');
+      showToast(commandCopiedMsg);
     } catch (err) {
-      showToast('Failed to copy');
+      showToast(copyFailedMsg);
     }
     document.body.removeChild(textArea);
   }
@@ -132,8 +230,12 @@ const ARCHETYPES = {
 };
 
 // Persona Switcher for Live Resume
-function switchPersona(personaKey) {
-  const data = ARCHETYPES[personaKey];
+let currentPersonaKey = 'engineering';
+
+function switchPersona(personaKey, options) {
+  if (personaKey) currentPersonaKey = personaKey;
+  const key = currentPersonaKey;
+  const data = ARCHETYPES[key];
   if (!data) return;
 
   const frame = document.getElementById('resumeFrame');
@@ -146,16 +248,42 @@ function switchPersona(personaKey) {
     standaloneLink.href = data.file;
   }
 
-  // Update pill active states
-  document.querySelectorAll('.persona-pills .btn-pill-sm').forEach(pill => {
-    if (pill.dataset.persona === personaKey) {
-      pill.classList.add('active');
+  // Update standalone link title and accessible role title in sync with active language
+  const currentLang = (window.CareerI18n && typeof window.CareerI18n.getLanguage === 'function')
+    ? window.CareerI18n.getLanguage()
+    : 'en';
+  const roleTitle = currentLang === 'de'
+    ? (data.title_de || data.title_en)
+    : (data.title_en || data.title_de);
+
+  if (standaloneLink) {
+    standaloneLink.setAttribute('title', roleTitle);
+    standaloneLink.setAttribute('aria-label', roleTitle);
+  }
+
+  // Keep persona pills in sync
+  document.querySelectorAll('.persona-pills [data-persona]').forEach(btn => {
+    if (btn.getAttribute('data-persona') === key) {
+      btn.classList.add('active');
     } else {
-      pill.classList.remove('active');
+      btn.classList.remove('active');
     }
   });
 
-  showToast(`Switched preview to ${data.name} (${personaKey})`);
+  // Keep the dropdown in sync
+  const personaSelect = document.getElementById('persona-select');
+  if (personaSelect) personaSelect.value = key;
+
+  if (!options || !options.silent) {
+    const toastMsg = (window.CareerI18n && window.CareerI18n.t)
+      ? window.CareerI18n.t(
+          'ui.toastSwitchedPreview',
+          window.CareerI18n.t('ui.switchPreviewToast', 'Switched preview to {name} ({key})', { name: data.name, key: key }),
+          { name: data.name, key: key }
+        )
+      : `Switched preview to ${data.name} (${key})`;
+    showToast(toastMsg);
+  }
 }
 
 // Print Resume Frame
@@ -195,7 +323,17 @@ function toggleAtsMode() {
     if (!isAts) isAts = paper.classList.contains('ats-plain-mode');
   }
 
-  showToast(isAts ? 'ATS plain-text preview active' : 'Standard visual layout active');
+  const toastMsg = (window.CareerI18n && window.CareerI18n.t)
+    ? window.CareerI18n.t(
+        isAts ? 'ui.toastAtsActive' : 'ui.toastAtsStandard',
+        window.CareerI18n.t(
+          isAts ? 'ui.atsActiveToast' : 'ui.atsStandardToast',
+          isAts ? 'ATS plain-text preview active' : 'Standard visual layout active'
+        )
+      )
+    : (isAts ? 'ATS plain-text preview active' : 'Standard visual layout active');
+
+  showToast(toastMsg);
 }
 
 // Action Brief Data Across Multiple Domains
@@ -350,18 +488,28 @@ const BRIEFS = {
   }
 };
 
+let currentBriefKey = 'fullstack';
+
 // Function to switch Morning Action Brief interactive preview
-function switchBrief(briefKey) {
-  const data = BRIEFS[briefKey];
+function switchBrief(briefKey, options) {
+  if (briefKey) currentBriefKey = briefKey;
+  const key = currentBriefKey;
+  const data = BRIEFS[key];
   if (!data) return;
+
+  const currentLang = (window.CareerI18n && typeof window.CareerI18n.getLanguage === 'function')
+    ? window.CareerI18n.getLanguage()
+    : 'en';
+
+  const localizedData = (currentLang === 'de' && data.de) ? data.de : data;
 
   const titleEl = document.getElementById('brief-headline');
   const targetEl = document.getElementById('brief-target');
   const resultEl = document.getElementById('brief-result');
 
-  if (titleEl) titleEl.textContent = data.title;
-  if (targetEl) targetEl.textContent = data.target;
-  if (resultEl) resultEl.textContent = data.result;
+  if (titleEl) titleEl.textContent = localizedData.title || data.title;
+  if (targetEl) targetEl.textContent = localizedData.target || data.target;
+  if (resultEl) resultEl.textContent = localizedData.result || data.result;
 
   // Package 1
   const pkg1Company = document.getElementById('pkg1-company');
@@ -420,16 +568,39 @@ function switchBrief(briefKey) {
   if (chkUp) chkUp.textContent = data.checklist.uploads;
   if (maintEl) maintEl.textContent = data.maintenance;
 
-  // Update tabs active state
-  document.querySelectorAll('.brief-tabs .btn-pill-sm').forEach(btn => {
-    if (btn.dataset.brief === briefKey) {
-      btn.classList.add('active');
+  // Keep tabs in sync
+  document.querySelectorAll('[data-brief]').forEach(tab => {
+    if (tab.getAttribute('data-brief') === key) {
+      tab.classList.add('active');
     } else {
-      btn.classList.remove('active');
+      tab.classList.remove('active');
     }
   });
 
-  showToast(`Loaded results: ${briefKey}`);
+  // Keep the dropdown in sync
+  const briefSelect = document.getElementById('brief-select');
+  if (briefSelect) briefSelect.value = key;
+
+  if (!options || !options.silent) {
+    const toastMsg = (window.CareerI18n && window.CareerI18n.t)
+      ? window.CareerI18n.t(
+          'ui.toastLoadedBrief',
+          window.CareerI18n.t('ui.briefLoadedToast', 'Loaded results: {key}', { key: key }),
+          { key: key }
+        )
+      : `Loaded results: ${key}`;
+    showToast(toastMsg);
+  }
+}
+
+// Alias for switchActionBrief
+function switchActionBrief(briefKey, options) {
+  switchBrief(briefKey, options);
+}
+
+// Re-render current brief on language change
+function renderCurrentBrief() {
+  switchBrief(currentBriefKey, { silent: true });
 }
 
 // Cover Letter Data Across 4 Archetypes
@@ -480,9 +651,13 @@ const COVER_LETTERS = {
   }
 };
 
+let currentCoverLetterKey = 'fullstack';
+
 // Function to switch Cover Letter persona
-function switchCoverLetterPersona(personaKey) {
-  const data = COVER_LETTERS[personaKey];
+function switchCoverLetterPersona(personaKey, options) {
+  if (personaKey) currentCoverLetterKey = personaKey;
+  const key = currentCoverLetterKey;
+  const data = COVER_LETTERS[key];
   if (!data) return;
 
   const senderEl = document.getElementById('din-sender');
@@ -505,16 +680,35 @@ function switchCoverLetterPersona(personaKey) {
   if (p3El) p3El.textContent = data.p3;
   if (closeEl) closeEl.textContent = data.closing;
 
-  // Update tabs active state
-  document.querySelectorAll('.cover-letter-tabs .btn-pill-sm').forEach(btn => {
-    if (btn.dataset.letter === personaKey) {
-      btn.classList.add('active');
+  // Keep tabs in sync
+  document.querySelectorAll('[data-letter], [data-cover-letter]').forEach(tab => {
+    const tabKey = tab.getAttribute('data-letter') || tab.getAttribute('data-cover-letter');
+    if (tabKey === key) {
+      tab.classList.add('active');
     } else {
-      btn.classList.remove('active');
+      tab.classList.remove('active');
     }
   });
 
-  showToast(`Loaded cover letter: ${personaKey}`);
+  // Keep the dropdown in sync
+  const letterSelect = document.getElementById('cover-letter-select');
+  if (letterSelect) letterSelect.value = key;
+
+  if (!options || !options.silent) {
+    const toastMsg = (window.CareerI18n && window.CareerI18n.t)
+      ? window.CareerI18n.t(
+          'ui.toastLoadedCoverLetter',
+          window.CareerI18n.t('ui.coverLetterLoadedToast', 'Loaded cover letter: {key}', { key: key }),
+          { key: key }
+        )
+      : `Loaded cover letter: ${key}`;
+    showToast(toastMsg);
+  }
+}
+
+// Re-render current cover letter on language change
+function renderCurrentCoverLetter() {
+  switchCoverLetterPersona(currentCoverLetterKey, { silent: true });
 }
 
 // ==========================================
@@ -532,7 +726,7 @@ const SIM_STAGES = [
       { tag: "SEARCH", cls: "text-amber-500", text: "Google & LinkedIn Query: (\"Fullstack Entwickler\" OR \"Python\") Berlin (Last 24h)" },
       { tag: "DISCOVERY", cls: "text-sky-400", text: "Discovered 14 active job postings matching degree & core stack." },
       { tag: "FILTER", cls: "text-purple-400", text: "12 companies already in your tracking ledger -> Skipped automatically." },
-      { tag: "TOP PICK 1", cls: "text-emerald-400", text: "Beispiel Energy Systems GmbH · Full-Stack Softwareentwickler (Berlin)" },
+      { tag: "TOP PICK 1", cls: "text-emerald-400", text: "Beispiel Energy Systems GmbH · Fullstack Softwareentwickler (Berlin)" },
       { tag: "TOP PICK 2", cls: "text-emerald-400", text: "Musterfoto Digital GmbH · Senior Fullstack Entwickler (Berlin)" }
     ],
     stats: [
@@ -540,7 +734,27 @@ const SIM_STAGES = [
       { label: "New Postings", value: "14 Found" },
       { label: "Duplicates Skipped", value: "12 Filtered" },
       { label: "Qualifying Leads", value: "2 Targets" }
-    ]
+    ],
+    de: {
+      time: "08:00 Uhr",
+      elapsed: "00:00 / 20:00",
+      title: "Phase 1 · Neue Stellen finden & alte überspringen",
+      tagline: "14 neue Stellen auf Google, LinkedIn & StepStone gescannt · 12 Duplikate übersprungen",
+      logLines: [
+        { tag: "PRÜFUNG", cls: "text-blue-500", text: "Lese jobs/job_matches.md Bewerbungs Tracker, um Doppelbewerbungen zu vermeiden." },
+        { tag: "SUCHE", cls: "text-amber-500", text: "Google & LinkedIn Abfrage: (\"Fullstack Entwickler\" OR \"Python\") Berlin (Letzte 24h)" },
+        { tag: "ENTDECKUNG", cls: "text-sky-400", text: "14 aktive Stellen passend zu Abschluss & Core Stack entdeckt." },
+        { tag: "FILTER", cls: "text-purple-400", text: "12 Unternehmen bereits im Tracking Ledger -> Automatisch übersprungen." },
+        { tag: "TOP TREFFER 1", cls: "text-emerald-400", text: "Beispiel Energy Systems GmbH · Fullstack Softwareentwickler (Berlin)" },
+        { tag: "TOP TREFFER 2", cls: "text-emerald-400", text: "Musterfoto Digital GmbH · Senior Fullstack Entwickler (Berlin)" }
+      ],
+      stats: [
+        { label: "Gescannte Portale", value: "3 Portale" },
+        { label: "Neue Stellen", value: "14 gefunden" },
+        { label: "Übersprungene Duplikate", value: "12 gefiltert" },
+        { label: "Qualifizierte Leads", value: "2 Ziele" }
+      ]
+    }
   },
   {
     step: 2,
@@ -561,7 +775,27 @@ const SIM_STAGES = [
       { label: "Must-Haves Match", value: "100% Fit" },
       { label: "Commute", value: "5 Min Bike" },
       { label: "Kununu Check", value: "Verified Fair" }
-    ]
+    ],
+    de: {
+      time: "08:05 Uhr",
+      elapsed: "05:00 / 20:00",
+      title: "Phase 2 · Eignung prüfen & Top 2 auswählen",
+      tagline: "Passgenauigkeit: 100% Muss Kriterien + 95% Kann Kriterien = 9.8 / 10 Score",
+      logLines: [
+        { tag: "ANALYSE", cls: "text-blue-500", text: "Prüfe Stellenanforderungen gegen Kandidatenprofil (@config/profile.json)..." },
+        { tag: "MUSS KRITERIEN", cls: "text-emerald-400", text: "Muss Kriterien (70%): Python (1.0), TypeScript (1.0), PostgreSQL (1.0) -> 100% Match!" },
+        { tag: "KANN KRITERIEN", cls: "text-emerald-400", text: "Kann Kriterien (30%): Docker & CI/CD Pipelines (1.0), Redis (0.9) -> 95% Match!" },
+        { tag: "ARBEITSWEG", cls: "text-amber-400", text: "Priorität 1 Lokaler Arbeitsweg: ~2,5 km in Berlin (5-7 Min Fahrrad)" },
+        { tag: "GEHALT", cls: "text-sky-400", text: "Kununu Prüfung: 54.000 € – 62.000 € -> Passt zur Gehaltsinvariante (58.000 € brutto)" },
+        { tag: "FIT SCORE", cls: "text-emerald-300 font-bold", text: "Gesamter Fit Score: 9.8 / 10 -> Erfüllt die 9/10 Qualitätsregel! Bereit zur Generierung." }
+      ],
+      stats: [
+        { label: "Fit Score", value: "9.8 / 10" },
+        { label: "Muss Kriterien", value: "100% Match" },
+        { label: "Arbeitsweg", value: "5 Min Rad" },
+        { label: "Kununu Prüfung", value: "Fair geprüft" }
+      ]
+    }
   },
   {
     step: 3,
@@ -582,7 +816,27 @@ const SIM_STAGES = [
       { label: "Cover Letter", value: "DIN-5008 (284w)" },
       { label: "PDF Size", value: "38.4 KB" },
       { label: "Time Saved", value: "~2.5 Hours" }
-    ]
+    ],
+    de: {
+      time: "08:10 Uhr",
+      elapsed: "10:00 / 20:00",
+      title: "Phase 3 · Lebenslauf & Anschreiben automatisch generieren",
+      tagline: "Keine manuelle Word Bearbeitung: Maßgeschneiderter ATS Lebenslauf + DIN-5008 Anschreiben + High Res PDF",
+      logLines: [
+        { tag: "ENGINE", cls: "text-blue-500", text: "Führe Unified Engine aus: python jobs/engine.py run --config 2026-09-26_beispiel_energy.json" },
+        { tag: "PROFIL", cls: "text-purple-400", text: "Kandidat: Alex Morgan | Kündigungsfrist: 3 Monate | Zielgehalt: 58.000 € brutto" },
+        { tag: "LEBENSLAUF", cls: "text-emerald-400", text: "Maßgeschneiderten HTML Lebenslauf erstellt: jobs/resumes/2026-09-26_beispiel_energy.html (ATS konform)" },
+        { tag: "ANSCHREIBEN", cls: "text-emerald-400", text: "DIN-5008 Anschreiben erstellt: STAR Leistungshook, 3 Kernprobleme gelöst, 284 Wörter" },
+        { tag: "PDF EXPORT", cls: "text-sky-400", text: "Headless Chromium renderte A4 DIN-5008 PDF: Alex_Morgan_Lebenslauf.pdf (38.4 KB)" },
+        { tag: "QUALITÄTS GATE", cls: "text-emerald-300 font-bold", text: "0 Formatierungsfehler, 0 Floskeln, 100% ATS DOM Parität -> Bereit zum Einreichen!" }
+      ],
+      stats: [
+        { label: "ATS Lebenslauf", value: "100% Bereit" },
+        { label: "Anschreiben", value: "DIN-5008 (284 W)" },
+        { label: "PDF Dateigröße", value: "38.4 KB" },
+        { label: "Gesparte Zeit", value: "~2,5 Stunden" }
+      ]
+    }
   },
   {
     step: 4,
@@ -602,7 +856,26 @@ const SIM_STAGES = [
       { label: "Total Time", value: "18m 42s" },
       { label: "Tracker Status", value: "Logged" },
       { label: "Next Action", value: "Enjoy Coffee" }
-    ]
+    ],
+    de: {
+      time: "08:15 Uhr",
+      elapsed: "15:00 / 20:00",
+      title: "Phase 4 · Absenden, dokumentieren & fertig!",
+      tagline: "Im Unternehmensportal hochgeladen · Im Tracking Ledger erfasst · Erledigt in 18 Minuten!",
+      logLines: [
+        { tag: "EINREICHEN", cls: "text-blue-500", text: "PDF Lebenslauf & Anschreiben im offiziellen Portal der Beispiel Energy Systems hochgeladen." },
+        { tag: "TRACKER", cls: "text-sky-400", text: "Erfasst in jobs/job_matches.md: | 2026-09-26 | Beispiel Energy Systems | 9.8/10 | Beworben |" },
+        { tag: "INTEGRITÄT", cls: "text-emerald-400", text: "Master Lebenslauf geschützt: 0 neue Sektionen, 0 neue Aufzählungspunkte, 0 Wortzuwachs." },
+        { tag: "COMPLIANCE", cls: "text-emerald-400", text: "Spaced Compounds verifiziert: REST APIs, CI/CD Pipelines, MCP Tools, Fullstack Entwickler." },
+        { tag: "ERFOLG", cls: "text-emerald-300 font-bold", text: "2 hochgradig passende Bewerbungen in 18m 42s versendet · Genießen Sie Ihren Morgenkaffee!" }
+      ],
+      stats: [
+        { label: "Gesendete Bewerbungen", value: "2 komplett" },
+        { label: "Gesamtzeit", value: "18m 42s" },
+        { label: "Tracker Status", value: "Erfasst" },
+        { label: "Nächster Schritt", value: "Kaffee genießen" }
+      ]
+    }
   }
 ];
 
@@ -612,6 +885,7 @@ let simInterval = null;
 let simSpeed = 1;
 
 function escapeSimHtml(str) {
+  if (typeof str !== 'string') return '';
   return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -621,8 +895,24 @@ function escapeSimHtml(str) {
 
 function renderSimStage(stageNum) {
   currentSimStage = stageNum;
-  const stage = SIM_STAGES[stageNum - 1];
-  if (!stage) return;
+  const rawStage = SIM_STAGES[stageNum - 1];
+  if (!rawStage) return;
+
+  const currentLang = (window.CareerI18n && typeof window.CareerI18n.getLanguage === 'function')
+    ? window.CareerI18n.getLanguage()
+    : 'en';
+
+  const localized = (currentLang === 'de' && rawStage.de) ? rawStage.de : rawStage;
+
+  const stage = {
+    step: rawStage.step,
+    time: localized.time || rawStage.time,
+    elapsed: localized.elapsed || rawStage.elapsed,
+    title: (window.CareerI18n && window.CareerI18n.t && window.CareerI18n.t(`workflow.step${stageNum}Title`)) || localized.title || rawStage.title,
+    tagline: (window.CareerI18n && window.CareerI18n.t && window.CareerI18n.t(`workflow.step${stageNum}Tagline`)) || localized.tagline || rawStage.tagline,
+    logLines: localized.logLines || rawStage.logLines,
+    stats: localized.stats || rawStage.stats
+  };
 
   // 1. Update active card highlight
   document.querySelectorAll('.workflow-stage-card').forEach(card => {
@@ -659,14 +949,14 @@ function renderSimStage(stageNum) {
   if (monitor) {
     let statsHtml = stage.stats.map(s => `
       <div class="sim-stat-chip">
-        <span class="sim-stat-label">${s.label}</span>
-        <span class="sim-stat-value">${s.value}</span>
+        <span class="sim-stat-label">${escapeSimHtml(s.label)}</span>
+        <span class="sim-stat-value">${escapeSimHtml(s.value)}</span>
       </div>
     `).join('');
 
     let logHtml = stage.logLines.map(line => `
       <div class="sim-log-row font-mono text-xs">
-        <span class="sim-log-tag ${line.cls}">[${line.tag}]</span>
+        <span class="sim-log-tag ${line.cls}">[${escapeSimHtml(line.tag)}]</span>
         <span class="sim-log-text">${escapeSimHtml(line.text)}</span>
       </div>
     `).join('');
@@ -675,14 +965,20 @@ function renderSimStage(stageNum) {
       <div class="sim-monitor-header">
         <div class="flex items-center gap-2">
           <span class="sim-live-pulse"></span>
-          <span class="font-semibold text-sm text-slate-800 dark:text-slate-100">${stage.title}</span>
+          <span class="font-semibold text-sm text-slate-800 dark:text-slate-100">${escapeSimHtml(stage.title)}</span>
         </div>
-        <div class="text-xs text-slate-500 dark:text-slate-400 font-mono">${stage.tagline}</div>
+        <div class="text-xs text-slate-500 dark:text-slate-400 font-mono">${escapeSimHtml(stage.tagline)}</div>
       </div>
       <div class="sim-stats-grid">${statsHtml}</div>
       <div class="sim-terminal-screen">${logHtml}</div>
     `;
   }
+}
+
+// Re-render current simulation stage on language change
+function renderCurrentStage() {
+  renderSimStage(currentSimStage);
+  updatePlayButtonUI();
 }
 
 function toggleWorkflowSimulation() {
@@ -749,11 +1045,16 @@ function updatePlayButtonUI() {
     if (simPlaying) {
       playIcon.classList.add('hidden');
       pauseIcon.classList.remove('hidden');
-      label.textContent = 'Pause Simulation';
+      label.textContent = (window.CareerI18n && window.CareerI18n.t)
+        ? window.CareerI18n.t('workflow.pauseSim', 'Pause Simulation')
+        : 'Pause Simulation';
     } else {
       playIcon.classList.remove('hidden');
       pauseIcon.classList.add('hidden');
-      label.textContent = currentSimStage === 4 ? 'Replay 20-Min Simulation' : 'Play 20-Min Simulation';
+      const defaultPlayText = currentSimStage === 4 ? 'Replay 20-Min Simulation' : 'Play 20-Min Simulation';
+      label.textContent = (window.CareerI18n && window.CareerI18n.t)
+        ? window.CareerI18n.t('workflow.playSim', defaultPlayText)
+        : defaultPlayText;
     }
   }
 }
@@ -761,14 +1062,18 @@ function updatePlayButtonUI() {
 // 1-Click Clipboard Copy for Share URL
 function copyShareUrl(btn) {
   const urlToCopy = "https://career.masrisystems.com";
+  const successToast = (window.CareerI18n && window.CareerI18n.t)
+    ? window.CareerI18n.t('ui.toastLinkCopied', window.CareerI18n.t('ui.linkCopiedToast', 'Link copied to clipboard! Share it with your friends.'))
+    : 'Link copied to clipboard! Share it with your friends.';
+
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(urlToCopy).then(() => {
-      showToast("Link copied to clipboard! Share it with your friends.");
+      showToast(successToast);
     }).catch(() => {
       showToast("Copy: " + urlToCopy);
     });
   } else {
-    showToast("Copy: " + urlToCopy);
+    showToast(successToast);
   }
 }
 
@@ -815,8 +1120,61 @@ function closeMobileNav() {
   }
 }
 
+// Desktop Nav Dropdown Controller
+function closeNavDropdowns(except) {
+  document.querySelectorAll('.nav-dropdown.is-open').forEach((dropdown) => {
+    if (dropdown === except) return;
+    dropdown.classList.remove('is-open');
+    dropdown.querySelector('.nav-dropdown-toggle')?.setAttribute('aria-expanded', 'false');
+  });
+}
+
+function initNavDropdowns() {
+  document.querySelectorAll('.nav-dropdown').forEach((dropdown) => {
+    const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+    toggle?.addEventListener('click', () => {
+      const isOpen = dropdown.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      closeNavDropdowns(dropdown);
+    });
+    dropdown.querySelectorAll('.nav-dropdown-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        closeNavDropdowns();
+        link.blur();
+      });
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-dropdown')) closeNavDropdowns();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeNavDropdowns();
+  });
+}
+
+// Listen for language change events to re-render dynamic content
+if (typeof window !== 'undefined') {
+  window.addEventListener('career:lang-changed', function () {
+    if (typeof renderCurrentStage === 'function') renderCurrentStage();
+    if (typeof renderCurrentBrief === 'function') renderCurrentBrief();
+    if (typeof renderCurrentCoverLetter === 'function') renderCurrentCoverLetter();
+    if (typeof switchPersona === 'function') switchPersona(currentPersonaKey, { silent: true });
+  });
+
+  window.addEventListener('career_lang_changed', function () {
+    if (typeof renderCurrentStage === 'function') renderCurrentStage();
+    if (typeof renderCurrentBrief === 'function') renderCurrentBrief();
+    if (typeof renderCurrentCoverLetter === 'function') renderCurrentCoverLetter();
+    if (typeof switchPersona === 'function') switchPersona(currentPersonaKey, { silent: true });
+  });
+}
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
+  registerHubI18nAliases();
+  initNavDropdowns();
+
   if (window.lucide) {
     lucide.createIcons();
   }
@@ -862,28 +1220,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Bind persona switcher clicks for resume
-  document.querySelectorAll('.persona-pills .btn-pill-sm').forEach(pill => {
-    pill.addEventListener('click', () => {
-      const key = pill.dataset.persona;
-      if (key) switchPersona(key);
+  // Bind persona switcher dropdown & pills for resume
+  document.getElementById('persona-select')?.addEventListener('change', (e) => {
+    switchPersona(e.target.value);
+  });
+  document.querySelectorAll('.persona-pills [data-persona]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      switchPersona(btn.getAttribute('data-persona'));
     });
   });
 
-  // Bind brief switcher clicks
-  document.querySelectorAll('.brief-tabs .btn-pill-sm').forEach(btn => {
+  // Bind brief switcher dropdown & tabs
+  document.getElementById('brief-select')?.addEventListener('change', (e) => {
+    switchBrief(e.target.value);
+  });
+  document.querySelectorAll('[data-brief]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      const key = btn.dataset.brief;
-      if (key) switchBrief(key);
+      switchBrief(btn.getAttribute('data-brief'));
     });
   });
 
-  // Bind cover letter switcher clicks
-  document.querySelectorAll('.cover-letter-tabs .btn-pill-sm').forEach(btn => {
+  // Bind cover letter switcher dropdown & tabs
+  document.getElementById('cover-letter-select')?.addEventListener('change', (e) => {
+    switchCoverLetterPersona(e.target.value);
+  });
+  document.querySelectorAll('[data-letter], [data-cover-letter]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      const key = btn.dataset.letter;
+      const key = btn.getAttribute('data-letter') || btn.getAttribute('data-cover-letter');
       if (key) switchCoverLetterPersona(key);
     });
   });
 });
-
