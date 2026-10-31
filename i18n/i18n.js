@@ -84,23 +84,18 @@
   }
 
   /**
-   * Retrieves the active translation dictionary for a given language code.
+   * Resolves a key in one language: entries added via registerTranslation first,
+   * then the full window.CAREER_I18N dictionary. Partial registrations (such as the
+   * hub.js toast strings) must not hide the rest of the dictionary.
    */
-  function getDictionary(lang) {
-    if (!lang) return null;
+  function resolveInLanguage(lang, keys) {
+    if (!lang) return undefined;
     var normalized = String(lang).toLowerCase();
-
-    // Check internal registry first
-    if (translations[normalized]) {
-      return translations[normalized];
+    var val = resolvePath(translations[normalized], keys);
+    if (val === undefined && typeof window !== 'undefined' && window.CAREER_I18N) {
+      val = resolvePath(window.CAREER_I18N[normalized], keys);
     }
-
-    // Check window.CAREER_I18N global dictionary
-    if (typeof window !== 'undefined' && window.CAREER_I18N && window.CAREER_I18N[normalized]) {
-      return window.CAREER_I18N[normalized];
-    }
-
-    return null;
+    return val;
   }
 
   /**
@@ -135,12 +130,8 @@
    */
   function getLanguageLabel(code) {
     var normalized = String(code).toLowerCase();
-    var dict = getDictionary(normalized);
-
-    if (dict && dict.meta) {
-      if (dict.meta.label) return dict.meta.label;
-      if (dict.meta.name) return dict.meta.name;
-    }
+    var label = resolveInLanguage(normalized, ['meta', 'label']) || resolveInLanguage(normalized, ['meta', 'name']);
+    if (label) return label;
 
     if (DEFAULT_LANGUAGE_LABELS[normalized]) {
       return DEFAULT_LANGUAGE_LABELS[normalized];
@@ -169,11 +160,11 @@
     var keys = keyPath.split('.');
 
     // 1. Resolve in current active language
-    var val = resolvePath(getDictionary(currentLang), keys);
+    var val = resolveInLanguage(currentLang, keys);
 
     // 2. Fallback to English dictionary if missing in current language
     if (val === undefined && currentLang !== DEFAULT_LANG) {
-      val = resolvePath(getDictionary(DEFAULT_LANG), keys);
+      val = resolveInLanguage(DEFAULT_LANG, keys);
     }
 
     var result = val !== undefined ? val : fb;

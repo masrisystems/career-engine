@@ -84,6 +84,11 @@
     CareerI18n.setLanguage("de");
     assert("Language restored to de", CareerI18n.getLanguage() === "de");
 
+    // 6. Partial registerTranslation must not hide the window.CAREER_I18N dictionary
+    CareerI18n.registerTranslation("de", { ui: { extra: "Zusatz" } });
+    assert("Registered key resolves", CareerI18n.t("ui.extra") === "Zusatz");
+    assert("Global dictionary key still resolves after partial registration", CareerI18n.t("test.title") === "Deutscher Titel");
+
     const allPassed = results.every(r => r.pass);
     const summary = document.createElement("div");
     summary.id = "test-result";
