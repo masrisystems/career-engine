@@ -160,6 +160,7 @@
             <li><a href="#resume" class="nav-dropdown-link" data-i18n="nav.webResume">Web Resume</a></li>
             <li><a href="#brief-showcase" class="nav-dropdown-link" data-i18n="nav.results">Results</a></li>
             <li><a href="#daily-workflow" class="nav-dropdown-link" data-i18n="nav.dailyRoutine">Daily Routine</a></li>
+            <li><a href="#features" class="nav-dropdown-link" data-i18n="nav.features">Features</a></li>
             <li><a href="#setup" class="nav-dropdown-link" data-i18n="nav.getStarted">Get Started</a></li>
           </ul>
         </li>
@@ -208,6 +209,7 @@
                 <li><a href="#resume" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.webResume">Web Resume</a></li>
                 <li><a href="#brief-showcase" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.results">Results</a></li>
                 <li><a href="#daily-workflow" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.dailyRoutine">Daily Routine</a></li>
+                <li><a href="#features" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.features">Features</a></li>
                 <li><a href="#setup" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.getStarted">Get Started</a></li>
               </ul>
             </details>
@@ -259,6 +261,54 @@
           <span data-i18n="hero.github">GitHub</span>
         </a>
       </div>
+      <!-- Product preview tabs -->
+      <div class="hero-showcase">
+        <div class="hero-tabs" role="tablist" aria-label="Product preview" data-i18n-attr="aria-label:hero.tabsLabel">
+          <button type="button" class="hero-tab is-active" role="tab" id="hero-tab-resume" aria-selected="true" aria-controls="hero-panel-resume" data-hero-tab="resume">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+            <span data-i18n="hero.tabResume">Web Resume</span>
+          </button>
+          <button type="button" class="hero-tab" role="tab" id="hero-tab-letter" aria-selected="false" aria-controls="hero-panel-letter" data-hero-tab="letter" tabindex="-1">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span data-i18n="hero.tabLetter">Cover Letters</span>
+          </button>
+          <button type="button" class="hero-tab" role="tab" id="hero-tab-brief" aria-selected="false" aria-controls="hero-panel-brief" data-hero-tab="brief" tabindex="-1">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg>
+            <span data-i18n="hero.tabBrief">Morning Brief</span>
+          </button>
+          <button type="button" class="hero-tab" role="tab" id="hero-tab-prompts" aria-selected="false" aria-controls="hero-panel-prompts" data-hero-tab="prompts" tabindex="-1">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg>
+            <span data-i18n="hero.tabPrompts">AI Prompts</span>
+          </button>
+        </div>
+
+        <div class="hero-preview">
+          <figure class="hero-panel" role="tabpanel" id="hero-panel-resume" aria-labelledby="hero-tab-resume">
+            <div class="browser-frame"><div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="./assets/features/resume.webp" width="818" height="632" alt="Bilingual web resume of the example persona Stefan Kramer" data-i18n-attr="alt:hero.altResume">
+            </div>
+            <figcaption data-i18n="hero.captionResume">Your web resume, switchable between German and English, with one-click A4 PDF export.</figcaption>
+          </figure>
+          <figure class="hero-panel" role="tabpanel" id="hero-panel-letter" aria-labelledby="hero-tab-letter" hidden>
+            <div class="browser-frame"><div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="./assets/features/cover-letter.webp" width="690" height="680" loading="lazy" alt="Generated German cover letter in DIN 5008 layout" data-i18n-attr="alt:hero.altLetter">
+            </div>
+            <figcaption data-i18n="hero.captionLetter">A DIN 5008 cover letter for each job, with your salary and notice period filled in.</figcaption>
+          </figure>
+          <figure class="hero-panel" role="tabpanel" id="hero-panel-brief" aria-labelledby="hero-tab-brief" hidden>
+            <div class="browser-frame"><div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="./assets/features/morning-brief.webp" width="1100" height="792" loading="lazy" alt="Morning Action Brief with two scored application packages" data-i18n-attr="alt:hero.altBrief">
+            </div>
+            <figcaption data-i18n="hero.captionBrief">Every weekday morning: the best new matches, scored, with application packages ready to review.</figcaption>
+          </figure>
+          <figure class="hero-panel" role="tabpanel" id="hero-panel-prompts" aria-labelledby="hero-tab-prompts" hidden>
+            <div class="browser-frame"><div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="./assets/features/prompts.webp" width="1100" height="346" loading="lazy" alt="AI prompt library cards with copy buttons" data-i18n-attr="alt:hero.altPrompts">
+            </div>
+            <figcaption data-i18n="hero.captionPrompts">Copy-ready prompts for onboarding, tailoring, interviews and salary talks.</figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -283,6 +333,161 @@
   </div>
 
   
+
+  <!-- Feature Overview (one profile, every document) -->
+  <section id="features" class="hub-container section-band no-print">
+    <div class="features-head">
+      <span class="feature-eyebrow" data-i18n="features.eyebrow">Built for the German job search</span>
+      <h2 class="features-title" data-i18n="features.title">One profile. Every application document.</h2>
+      <p class="features-desc" data-i18n="features.desc">Career Engine turns one JSON profile into your web resume, DIN 5008 cover letters and a scored list of fresh jobs every morning. It runs on your machine, with no account and no subscription.</p>
+    </div>
+
+    <div class="feature-rows">
+        <article class="feature-row">
+          <div class="feature-copy">
+            <span class="feature-eyebrow" data-i18n="features.resumeEyebrow">Web Resume</span>
+            <h3 class="feature-title" data-i18n="features.resumeTitle">A resume recruiters can read and ATS can parse</h3>
+            <p class="feature-desc" data-i18n="features.resumeDesc">Your Lebenslauf as a fast web page and an A4 PDF, generated from the same profile.</p>
+            <ul class="feature-list">
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.resumeItem1">Switch between German and English with one click</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.resumeItem2">Single column semantic HTML that applicant tracking systems read correctly</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.resumeItem3">Photo, contact details and German Lebenslauf conventions built in</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.resumeItem4">A4 PDF export with selectable text</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.resumeItem5">5 role templates to start from</span></li>
+            </ul>
+            <a href="#resume" class="feature-link"><span data-i18n="features.resumeCta">Preview the web resume</span><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+          <div class="feature-media">
+            <div class="browser-frame"><div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="./assets/features/resume.webp" width="818" height="632" loading="lazy" alt="Bilingual web resume of the example persona Stefan Kramer" data-i18n-attr="alt:features.resumeAlt">
+            </div>
+          </div>
+        </article>
+        <article class="feature-row">
+          <div class="feature-copy">
+            <span class="feature-eyebrow" data-i18n="features.letterEyebrow">Cover Letters</span>
+            <h3 class="feature-title" data-i18n="features.letterTitle">DIN 5008 cover letters, tailored to each job</h3>
+            <p class="feature-desc" data-i18n="features.letterDesc">Each letter follows the German business letter standard and is checked before it is exported.</p>
+            <ul class="feature-list">
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.letterItem1">DIN 5008 layout for sender, recipient, date and subject</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.letterItem2">Salary expectation and notice period filled in from your profile</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.letterItem3">Checked automatically: under 300 words, no phrases copied from the job ad</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.letterItem4">Exported to PDF with headless Chrome or Edge</span></li>
+            </ul>
+            <a href="#cover-letters" class="feature-link"><span data-i18n="features.letterCta">See example cover letters</span><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+          <div class="feature-media">
+            <div class="browser-frame"><div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="./assets/features/cover-letter.webp" width="690" height="680" loading="lazy" alt="Generated German cover letter in DIN 5008 layout" data-i18n-attr="alt:features.letterAlt">
+            </div>
+          </div>
+        </article>
+        <article class="feature-row">
+          <div class="feature-copy">
+            <span class="feature-eyebrow" data-i18n="features.briefEyebrow">Daily Run</span>
+            <h3 class="feature-title" data-i18n="features.briefTitle">Wake up to your best new matches</h3>
+            <p class="feature-desc" data-i18n="features.briefDesc">Your AI agent searches, scores and prepares applications on a schedule. You spend 20 minutes reviewing instead of hours searching.</p>
+            <ul class="feature-list">
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.briefItem1">Fresh roles scored against your profile, only matches from 9.0/10 make the cut</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.briefItem2">A tailored resume and cover letter for each match</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.briefItem3">A tracker in jobs/job_matches.md, so you never apply twice</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.briefItem4">Scheduled every weekday at 07:30 with Task Scheduler, cron or a Claude Code routine</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.briefItem5">Prepares only: you review and send every application yourself</span></li>
+            </ul>
+            <a href="#setup" class="feature-link"><span data-i18n="features.briefCta">Set up the daily run</span><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+          <div class="feature-media">
+            <div class="browser-frame"><div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="./assets/features/morning-brief.webp" width="1100" height="792" loading="lazy" alt="Morning Action Brief with two scored application packages" data-i18n-attr="alt:features.briefAlt">
+            </div>
+          </div>
+        </article>
+        <article class="feature-row">
+          <div class="feature-copy">
+            <span class="feature-eyebrow" data-i18n="features.promptsEyebrow">Prompts and Skills</span>
+            <h3 class="feature-title" data-i18n="features.promptsTitle">Works with the AI you already use</h3>
+            <p class="feature-desc" data-i18n="features.promptsDesc">Copy a prompt into ChatGPT, Claude or Gemini, or let a coding agent run the full workflow with the bundled skills.</p>
+            <ul class="feature-list">
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.promptsItem1">11 copy-ready prompts, from onboarding to salary negotiation</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.promptsItem2">The onboarding prompt turns your old CV into config/profile.json</span></li>
+              <li><svg class="feature-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="features.promptsItem3">24 agent skills for Claude Code, Codex CLI and Gemini CLI</span></li>
+            </ul>
+            <a href="#prompts" class="feature-link"><span data-i18n="features.promptsCta">Browse the prompt library</span><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          </div>
+          <div class="feature-media">
+            <div class="browser-frame"><div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="./assets/features/prompts.webp" width="1100" height="346" loading="lazy" alt="AI prompt library cards with copy buttons" data-i18n-attr="alt:features.promptsAlt">
+            </div>
+          </div>
+        </article>
+    </div>
+
+    <div class="ai-block">
+      <div class="ai-block-head">
+        <h3 class="ai-block-title" data-i18n="features.aiTitle">AI where it saves you time</h3>
+        <p class="ai-block-desc" data-i18n="features.aiDesc">Every step of the application has a prompt or agent skill behind it.</p>
+      </div>
+      <div class="ai-grid">
+          <div class="ai-card">
+            <span class="ai-card-icon"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></span>
+            <div>
+              <h4 class="ai-card-title" data-i18n="features.ai1Title">Profile onboarding</h4>
+              <p class="ai-card-desc" data-i18n="features.ai1Desc">Builds your profile from an old CV or 7 questions</p>
+            </div>
+          </div>
+          <div class="ai-card">
+            <span class="ai-card-icon"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+            <div>
+              <h4 class="ai-card-title" data-i18n="features.ai2Title">Job discovery</h4>
+              <p class="ai-card-desc" data-i18n="features.ai2Desc">Finds fresh roles and scores your fit</p>
+            </div>
+          </div>
+          <div class="ai-card">
+            <span class="ai-card-icon"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
+            <div>
+              <h4 class="ai-card-title" data-i18n="features.ai3Title">Resume tailoring</h4>
+              <p class="ai-card-desc" data-i18n="features.ai3Desc">Matches keywords to each job ad</p>
+            </div>
+          </div>
+          <div class="ai-card">
+            <span class="ai-card-icon"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+            <div>
+              <h4 class="ai-card-title" data-i18n="features.ai4Title">Cover letter writing</h4>
+              <p class="ai-card-desc" data-i18n="features.ai4Desc">Short, specific letters in DIN 5008</p>
+            </div>
+          </div>
+          <div class="ai-card">
+            <span class="ai-card-icon"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+            <div>
+              <h4 class="ai-card-title" data-i18n="features.ai5Title">Interview prep</h4>
+              <p class="ai-card-desc" data-i18n="features.ai5Desc">STAR stories and an elevator pitch</p>
+            </div>
+          </div>
+          <div class="ai-card">
+            <span class="ai-card-icon"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg></span>
+            <div>
+              <h4 class="ai-card-title" data-i18n="features.ai6Title">Salary negotiation</h4>
+              <p class="ai-card-desc" data-i18n="features.ai6Desc">Benchmarks and counter-offer wording</p>
+            </div>
+          </div>
+          <div class="ai-card">
+            <span class="ai-card-icon"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <div>
+              <h4 class="ai-card-title" data-i18n="features.ai7Title">LinkedIn profile</h4>
+              <p class="ai-card-desc" data-i18n="features.ai7Desc">Headline and About section that get found</p>
+            </div>
+          </div>
+          <div class="ai-card">
+            <span class="ai-card-icon"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg></span>
+            <div>
+              <h4 class="ai-card-title" data-i18n="features.ai8Title">Offer comparison</h4>
+              <p class="ai-card-desc" data-i18n="features.ai8Desc">Compares offers side by side</p>
+            </div>
+          </div>
+      </div>
+      <a href="#workflows" class="feature-link"><span data-i18n="features.aiCta">See all 24 skills</span><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </section>
 
 <!-- Live Resume Showcase Section -->
   <section id="resume" class="hub-container section-band">
