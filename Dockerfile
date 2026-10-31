@@ -19,6 +19,7 @@ COPY resume.js ./resume.js
 COPY download.html ./download.html
 COPY style.css ./style.css
 COPY hub.js ./hub.js
+COPY i18n ./i18n
 COPY config ./config
 COPY assets ./assets
 COPY workflows ./workflows

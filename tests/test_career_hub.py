@@ -275,6 +275,23 @@ class TestCareerHub(unittest.TestCase):
         self.assertIn("function toggleMobileNav", js)
         self.assertIn("function closeMobileNav", js)
 
+    def test_15_docker_image_contains_page_scripts_and_styles(self):
+        # Caddy answers missing files with index.html, so a script left out of the
+        # image fails silently in production (this is how i18n/ went missing)
+        with open(os.path.join(self.root_dir, "Dockerfile"), "r", encoding="utf-8") as f:
+            copied = [m.group(1).lstrip("./") for m in re.finditer(r"^COPY (?!--from)(\S+)", f.read(), re.M)]
+        with open(self.index_path, "r", encoding="utf-8") as f:
+            soup = BeautifulSoup(f.read(), "html.parser")
+        refs = [t.get("src") for t in soup.find_all("script")] + [t.get("href") for t in soup.find_all("link", rel="stylesheet")]
+        for ref in refs:
+            if not ref or re.match(r"https?:", ref):
+                continue
+            path = ref.split("?")[0].lstrip("./")
+            self.assertTrue(
+                any(path == c or path.startswith(c.rstrip("/") + "/") for c in copied),
+                f"{path} is loaded by index.html but not copied in the Dockerfile",
+            )
+
 if __name__ == "__main__":
     unittest.main()
 

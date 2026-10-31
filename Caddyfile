@@ -20,11 +20,18 @@
         Permissions-Policy "geolocation=(), camera=(), microphone=()"
     }
 
+    # Scripts and styles have no content hash in their names, so browsers
+    # must revalidate them (ETag) or they keep stale code after a deploy
+    @code {
+        path *.css *.js
+    }
+    header @code Cache-Control "no-cache"
+
     # Static asset caching
     @static {
-        path *.css *.js *.webp *.png *.ico *.zip *.svg
+        path *.webp *.png *.ico *.zip *.svg
     }
-    header @static Cache-Control "public, max-age=31536000, immutable"
+    header @static Cache-Control "public, max-age=86400"
 
     # HTML fresh delivery
     @html {
