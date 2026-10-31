@@ -1107,32 +1107,56 @@ function initNavDropdowns() {
   });
 }
 
-// Hero product preview tabs (arrow keys move between tabs)
-function initHeroTabs() {
-  const tabs = Array.from(document.querySelectorAll('.hero-tab'));
-  if (!tabs.length) return;
+// Tab lists (hero preview and grouped sections); arrow keys move between tabs
+function initTabLists() {
+  document.querySelectorAll('[role="tablist"]').forEach(list => {
+    const tabs = Array.from(list.querySelectorAll('[role="tab"]'));
 
-  const selectTab = (tab, focus) => {
-    tabs.forEach(t => {
-      const active = t === tab;
-      t.classList.toggle('is-active', active);
-      t.setAttribute('aria-selected', active ? 'true' : 'false');
-      t.tabIndex = active ? 0 : -1;
-      const panel = document.getElementById(t.getAttribute('aria-controls'));
-      if (panel) panel.hidden = !active;
-    });
-    if (focus) tab.focus();
-  };
+    const selectTab = (tab, focus) => {
+      tabs.forEach(t => {
+        const active = t === tab;
+        t.classList.toggle('is-active', active);
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+        t.tabIndex = active ? 0 : -1;
+        const panel = document.getElementById(t.getAttribute('aria-controls'));
+        if (panel) panel.hidden = !active;
+      });
+      if (focus) tab.focus();
+    };
 
-  tabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => selectTab(tab));
-    tab.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      e.preventDefault();
-      const step = e.key === 'ArrowRight' ? 1 : tabs.length - 1;
-      selectTab(tabs[(i + step) % tabs.length], true);
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => selectTab(tab));
+      tab.addEventListener('keydown', (e) => {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        e.preventDefault();
+        const step = e.key === 'ArrowRight' ? 1 : tabs.length - 1;
+        selectTab(tabs[(i + step) % tabs.length], true);
+      });
     });
   });
+}
+
+// Open the tab that holds an anchor target, so links like #prompts reach hidden panels
+function revealAnchorTarget(id) {
+  const target = id && document.getElementById(id);
+  const panel = target && target.closest('[role="tabpanel"]');
+  if (!panel || !panel.hidden) return;
+  const tab = document.querySelector(`[role="tab"][aria-controls="${panel.id}"]`);
+  if (tab) tab.click();
+}
+
+function initAnchorReveal() {
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="#"]');
+    if (link) revealAnchorTarget(decodeURIComponent(link.getAttribute('href').slice(1)));
+  }, true);
+  window.addEventListener('hashchange', () => revealAnchorTarget(location.hash.slice(1)));
+  if (location.hash) {
+    const id = location.hash.slice(1);
+    revealAnchorTarget(id);
+    const target = document.getElementById(id);
+    if (target) target.scrollIntoView();
+  }
 }
 
 // Listen for language change events to re-render dynamic content
@@ -1156,7 +1180,8 @@ if (typeof window !== 'undefined') {
 document.addEventListener('DOMContentLoaded', () => {
   registerHubI18nAliases();
   initNavDropdowns();
-  initHeroTabs();
+  initTabLists();
+  initAnchorReveal();
 
   if (window.lucide) {
     lucide.createIcons();

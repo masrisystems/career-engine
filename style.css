@@ -3630,3 +3630,62 @@ html.dark .ai-card-icon,
 .ai-block-title {
   font-variant-ligatures: no-common-ligatures;
 }
+
+/* Grouped sections: one header, tabs, and the former sections as panels */
+.group-section .features-head {
+  margin-bottom: var(--spacing-xl);
+}
+
+.group-tabs {
+  margin: var(--spacing-md) 0 0;
+}
+
+.group-panel > .cream-callout-card,
+.group-panel > .faq-card-container {
+  margin-bottom: 0;
+}
+
+/* Hero fact strip (replaces the coral card) */
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-xs) var(--spacing-lg);
+  margin: var(--spacing-lg) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.hero-facts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-facts svg {
+  color: #15803d;
+}
+
+html.dark .hero-facts svg,
+.dark .hero-facts svg {
+  color: #4ade80;
+}
+
+/* Connect block inside the footer */
+.footer-connect {
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+}
+
+.footer-connect .connect-card {
+  padding: var(--spacing-lg);
+}
+
+@media print {
+  /* The web resume prints even when another demo tab is open */
+  #resume.group-panel {
+    display: block !important;
+  }
+}

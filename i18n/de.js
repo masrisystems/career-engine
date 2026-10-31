@@ -49,6 +49,10 @@
     },
 
     hero: {
+      fact1: "MIT Lizenz",
+      fact2: "Kein Konto nötig",
+      fact3: "Läuft auf Ihrem Rechner",
+      fact4: "DIN 5008 konform",
       tabsLabel: "Produktvorschau",
       tabResume: "Web Lebenslauf",
       tabLetter: "Anschreiben",
@@ -512,6 +516,26 @@
       ai7Desc: "Headline und Info Bereich, die gefunden werden",
       ai8Title: "Angebotsvergleich",
       ai8Desc: "Vergleicht Angebote direkt nebeneinander"
+    },
+
+    groups: {
+      demoEyebrow: "Live ansehen",
+      demoTitle: "Die echten Ergebnisse ausprobieren",
+      demoDesc: "Wechseln Sie Personas, Rollen und Sprachen. Alles hier erzeugt Career Engine aus den Beispielprofilen.",
+      demoTab1: "Web Lebenslauf",
+      demoTab2: "Anschreiben",
+      demoTab3: "Morning Brief",
+      howEyebrow: "So funktioniert es",
+      howTitle: "Einmal einrichten, dann 20 Minuten am Tag",
+      howDesc: "Einmal installieren und das Profil mit KI erstellen. Danach bereitet Ihr Agent jeden Morgen Bewerbungen vor und Sie prüfen sie.",
+      howTab1: "Einmal einrichten",
+      howTab2: "Jeden Morgen",
+      toolkitEyebrow: "Werkzeugkasten",
+      toolkitTitle: "Prompts, Agent Skills und die CLI",
+      toolkitDesc: "Alles, was der Ablauf nutzt, bereit zum Kopieren in Ihren KI Chat, Coding Agenten oder Ihr Terminal.",
+      toolkitTab1: "KI Prompts",
+      toolkitTab2: "Agent Skills",
+      toolkitTab3: "CLI Engine"
     },
 
     resume: {

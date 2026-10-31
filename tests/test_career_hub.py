@@ -162,12 +162,11 @@ class TestCareerHub(unittest.TestCase):
         theme_toggle = soup.find(id="theme-toggle-nav-btn")
         self.assertIsNotNone(theme_toggle, "Missing #theme-toggle-nav-btn in top navigation")
 
-        # Verify .btn-secondary-on-dark is linked to a valid download
-        btn_secondary = soup.select_one(".btn-secondary-on-dark")
-        self.assertIsNotNone(btn_secondary, "Missing .btn-secondary-on-dark")
-        href = btn_secondary.get("href", "")
-        self.assertTrue(href.endswith(".zip"), f".btn-secondary-on-dark href must point to zip file, got '{href}'")
-        self.assertTrue(btn_secondary.has_attr("download"), ".btn-secondary-on-dark should have download attribute")
+        # Verify the closing CTA links to a valid starter kit download
+        download_btn = soup.select_one("#download a[download]")
+        self.assertIsNotNone(download_btn, "Missing download button in #download")
+        href = download_btn.get("href", "")
+        self.assertTrue(href.endswith(".zip"), f"#download button href must point to zip file, got '{href}'")
 
     def test_11_github_icons_and_links(self):
         with open(self.index_path, "r", encoding="utf-8") as f:
