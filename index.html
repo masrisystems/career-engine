@@ -6,11 +6,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
-  <meta name="description" content="Career Engine — Open-source ATS-optimized web resume template, AI prompt library for cover letters & tailoring, 24 career agent skills, and headless PDF automation." />
+  <meta name="description" content="Career Engine — Open-source ATS-optimized web resume template, AI prompt library for cover letters &amp; tailoring, 24 career agent skills, and headless PDF automation." data-i18n-attr="content:meta.description" />
   <meta name="author" content="Masri Systems" />
-  <title>Career Engine | Masri Systems</title>
+  <title data-i18n="meta.pageTitle">Career Engine | Masri Systems</title>
   <link rel="canonical" href="https://career.masrisystems.com/" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <script src="./i18n/en.js" defer></script>
+  <script src="./i18n/de.js" defer></script>
+  <script src="./i18n/i18n.js" defer></script>
   <script src="./hub.js" defer></script>
 
   <!-- Open Graph / Facebook -->
@@ -148,30 +151,30 @@
       <a href="#hero" class="nav-brand" aria-label="Career Engine Homepage">
         <img src="./assets/masrisystems-logo-light.webp" alt="Masri Systems" class="nav-logo nav-logo-light" />
         <img src="./assets/masrisystems-logo-dark.webp" alt="Masri Systems" class="nav-logo nav-logo-dark" />
-        <span class="nav-brand-title">Career Engine</span>
-        <span class="nav-tag">Open Source</span>
+        <span class="nav-brand-title" data-i18n="nav.brandTitle">Career Engine</span>
+        <span class="nav-tag" data-i18n="nav.openSource">Open Source</span>
       </a>
       <ul class="nav-links desktop-nav-links">
-        <li><a href="#daily-workflow" class="nav-link">Daily Routine</a></li>
-        <li><a href="#brief-showcase" class="nav-link">Results</a></li>
-        <li><a href="#prompts" class="nav-link">AI Prompts</a></li>
-        <li><a href="#cover-letters" class="nav-link">Cover Letters</a></li>
-        <li><a href="#engine" class="nav-link">CLI Engine</a></li>
-        <li><a href="#workflows" class="nav-link">Skills</a></li>
-        <li><a href="#resume" class="nav-link">Web Resume</a></li>
-        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#daily-workflow" class="nav-link" data-i18n="nav.dailyRoutine">Daily Routine</a></li>
+        <li><a href="#brief-showcase" class="nav-link" data-i18n="nav.results">Results</a></li>
+        <li><a href="#prompts" class="nav-link" data-i18n="nav.aiPrompts">AI Prompts</a></li>
+        <li><a href="#cover-letters" class="nav-link" data-i18n="nav.coverLetters">Cover Letters</a></li>
+        <li><a href="#engine" class="nav-link" data-i18n="nav.cliEngine">CLI Engine</a></li>
+        <li><a href="#workflows" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#resume" class="nav-link" data-i18n="nav.webResume">Web Resume</a></li>
+        <li><a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
       </ul>
       <div class="nav-controls">
-        <button id="theme-toggle-nav-btn" class="btn-pill-sm" onclick="toggleTheme()" aria-label="Toggle Theme">
-          <span class="theme-label-light hidden dark:inline">Light</span>
-          <span class="theme-label-dark inline dark:hidden">Dark</span>
+        <button id="theme-toggle-nav-btn" class="btn-pill-sm" onclick="toggleTheme()" aria-label="Toggle Theme" data-i18n-attr="aria-label:nav.toggleTheme">
+          <span class="theme-label-light hidden dark:inline" data-i18n="nav.light">Light</span>
+          <span class="theme-label-dark inline dark:hidden" data-i18n="nav.dark">Dark</span>
         </button>
         <div class="nav-desktop-actions">
-          <button id="lang-toggle-nav-btn" class="btn-pill-sm" onclick="switchLanguage()">EN / DE</button>
-          <a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-pill-sm">Portfolio</a>
-          <a href="./download/career-engine-starter.zip" download="career-engine-starter.zip" class="btn-primary btn-nav-cta">Download Kit</a>
+          <select id="lang-select-nav" class="lang-select" aria-label="Select Language" data-i18n-attr="aria-label:ui.selectLanguage"></select>
+          <a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-pill-sm" data-i18n="nav.portfolio">Portfolio</a>
+          <a href="./download/career-engine-starter.zip" download="career-engine-starter.zip" class="btn-primary btn-nav-cta" data-i18n="nav.downloadKit">Download Kit</a>
         </div>
-        <button id="nav-toggle-btn" class="nav-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-drawer" onclick="toggleMobileNav()">
+        <button id="nav-toggle-btn" class="nav-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-drawer" onclick="toggleMobileNav()" data-i18n-attr="aria-label:nav.menuLabel">
           <svg id="nav-icon-menu" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -188,21 +191,21 @@
     <div id="nav-drawer" class="nav-drawer no-print" aria-hidden="true">
       <div class="nav-drawer-inner">
         <ul class="nav-links mobile-nav-links">
-          <li><a href="#daily-workflow" class="drawer-link" onclick="closeMobileNav()">Daily Routine</a></li>
-          <li><a href="#brief-showcase" class="drawer-link" onclick="closeMobileNav()">Results</a></li>
-          <li><a href="#prompts" class="drawer-link" onclick="closeMobileNav()">AI Prompts</a></li>
-          <li><a href="#cover-letters" class="drawer-link" onclick="closeMobileNav()">Cover Letters</a></li>
-          <li><a href="#engine" class="drawer-link" onclick="closeMobileNav()">CLI Engine</a></li>
-          <li><a href="#workflows" class="drawer-link" onclick="closeMobileNav()">Skills</a></li>
-          <li><a href="#resume" class="drawer-link" onclick="closeMobileNav()">Web Resume</a></li>
-          <li><a href="#faq" class="drawer-link" onclick="closeMobileNav()">FAQ</a></li>
+          <li><a href="#daily-workflow" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.dailyRoutine">Daily Routine</a></li>
+          <li><a href="#brief-showcase" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.results">Results</a></li>
+          <li><a href="#prompts" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.aiPrompts">AI Prompts</a></li>
+          <li><a href="#cover-letters" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.coverLetters">Cover Letters</a></li>
+          <li><a href="#engine" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.cliEngine">CLI Engine</a></li>
+          <li><a href="#workflows" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#resume" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.webResume">Web Resume</a></li>
+          <li><a href="#faq" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.faq">FAQ</a></li>
         </ul>
         <div class="nav-drawer-actions">
           <div class="nav-drawer-row">
-            <button class="btn-pill-sm drawer-pill-btn" onclick="switchLanguage()">EN / DE</button>
-            <a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-pill-sm drawer-pill-btn">Portfolio</a>
+            <select id="lang-select-drawer" class="lang-select drawer-lang-select" aria-label="Select Language" data-i18n-attr="aria-label:ui.selectLanguage"></select>
+            <a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-pill-sm drawer-pill-btn" data-i18n="nav.portfolio">Portfolio</a>
           </div>
-          <a href="./download/career-engine-starter.zip" download="career-engine-starter.zip" class="btn-primary drawer-cta-btn">Download Kit</a>
+          <a href="./download/career-engine-starter.zip" download="career-engine-starter.zip" class="btn-primary drawer-cta-btn" data-i18n="nav.downloadKit">Download Kit</a>
         </div>
       </div>
     </div>
@@ -211,23 +214,23 @@
   <!-- Hero Band (White Canvas) -->
   <section id="hero" class="no-print">
     <div class="hub-container">
-      <h1 class="hero-headline">The Open-Source ATS Web Resume &amp; Career Automation Engine</h1>
-      <p class="hero-subhead">A unified career toolkit for tech professionals. Features an interactive DIN-5008 resume template, production-grade LLM prompts for cover letters and tailoring, 24 specialized career agent skills, and headless PDF automation.</p>
+      <h1 class="hero-headline" data-i18n="hero.headline">The Open-Source ATS Web Resume &amp; Career Automation Engine</h1>
+      <p class="hero-subhead" data-i18n="hero.subhead">A unified career toolkit for tech professionals. Features an interactive DIN-5008 resume template, production-grade LLM prompts for cover letters and tailoring, 24 specialized career agent skills, and headless PDF automation.</p>
       <div class="hero-trust-badge">
         <span class="trust-badge-pill">
           <svg class="h-3.5 w-3.5 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
-          <span>Recruiter &amp; Consultant Approved</span>
+          <span data-i18n="hero.trustBadgePill">Recruiter &amp; Consultant Approved</span>
         </span>
-        <span class="trust-badge-text">Audited, tested, and approved by senior tech recruiters and career consultants across Germany &amp; the EU for 100% ATS parser compatibility and DIN-5008 compliance.</span>
+        <span class="trust-badge-text" data-i18n="hero.trustBadgeText">Audited, tested, and approved by senior tech recruiters and career consultants across Germany &amp; the EU for 100% ATS parser compatibility and DIN-5008 compliance.</span>
       </div>
       <div class="hero-cta-cluster">
-        <a href="#prompts" class="btn-primary">Explore AI Prompts</a>
-        <a href="#resume" class="btn-secondary">Preview Web Resume</a>
+        <a href="#prompts" class="btn-primary" data-i18n="hero.ctaPrompts">Explore AI Prompts</a>
+        <a href="#resume" class="btn-secondary" data-i18n="hero.ctaResume">Preview Web Resume</a>
         <a href="https://github.com/masrisystems/career-engine" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-hero-gh" aria-label="GitHub Repository">
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
           </svg>
-          <span>GitHub</span>
+          <span data-i18n="hero.github">GitHub</span>
         </a>
       </div>
     </div>
@@ -236,9 +239,9 @@
   <!-- Signature Coral Voltage Card -->
   <div id="coral-card" class="hub-container no-print">
     <div class="signature-coral-card">
-      <h2>Production-Grade Career Engineering</h2>
-      <p>Vetted and approved by senior tech recruiters and career consultants to bridge the gap between ATS parsers, recruiter evaluation, and modern AI automation. Combines clean semantic HTML with 7 battle-tested prompt suites, automated Python headless Chromium compilation, and daily intake pipelines.</p>
-      <a href="./download/career-engine-starter.zip" download="career-engine-starter.zip" class="btn-secondary-on-dark">Download Starter Kit (ZIP)</a>
+      <h2 data-i18n="coral.title">Production-Grade Career Engineering</h2>
+      <p data-i18n="coral.desc">Vetted and approved by senior tech recruiters and career consultants to bridge the gap between ATS parsers, recruiter evaluation, and modern AI automation. Combines clean semantic HTML with 7 battle-tested prompt suites, automated Python headless Chromium compilation, and daily intake pipelines.</p>
+      <a href="./download/career-engine-starter.zip" download="career-engine-starter.zip" class="btn-secondary-on-dark" data-i18n="coral.cta">Download Starter Kit (ZIP)</a>
     </div>
   </div>
 
@@ -246,10 +249,10 @@
   <section id="daily-workflow" class="hub-container section-band no-print">
     <div class="cream-callout-card">
       <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
-        <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;">Daily Job Discovery &amp; Application Routine</h2>
-        <span class="nav-tag nav-tag-sop">SOP · 20-Min Daily Habit</span>
+        <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="workflow.title">Daily Job Discovery &amp; Application Routine</h2>
+        <span class="nav-tag nav-tag-sop" data-i18n="workflow.badge">SOP · 20-Min Daily Habit</span>
       </div>
-      <p class="text-sm text-gray-700 mb-6 max-w-3xl">A simple, 20-minute daily habit designed for fresh graduates and busy professionals. Instead of spending 4 hours scrolling job boards and sending 50 generic resumes that get ignored, you find 2 high-matching vacancies every morning, verify you can actually do the job, and generate 100% tailored, ATS-ready application packages before 08:20 AM.</p>
+      <p class="text-sm text-gray-700 mb-6 max-w-3xl" data-i18n="workflow.desc">A simple, 20-minute daily habit designed for fresh graduates and busy professionals. Instead of spending 4 hours scrolling job boards and sending 50 generic resumes that get ignored, you find 2 high-matching vacancies every morning, verify you can actually do the job, and generate 100% tailored, ATS-ready application packages before 08:20 AM.</p>
 
       <!-- Interactive 20-Min Workflow Simulation Console -->
       <div class="workflow-sim-container">
@@ -258,26 +261,26 @@
             <button id="sim-play-btn" class="btn-primary btn-sim-play" onclick="toggleWorkflowSimulation()" aria-label="Play or Pause Workflow Simulation">
               <svg id="sim-play-icon" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
               <svg id="sim-pause-icon" class="h-4 w-4 hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-              <span id="sim-play-label">Play 20-Min Simulation</span>
+              <span id="sim-play-label" data-i18n="workflow.playSim">Play 20-Min Simulation</span>
             </button>
             <button class="btn-secondary btn-sim-reset" onclick="resetWorkflowSimulation()" title="Reset to Stage 1">
               <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-              <span>Reset</span>
+              <span data-i18n="workflow.reset">Reset</span>
             </button>
           </div>
 
           <!-- Routine Clock & Elapsed Indicators -->
           <div class="flex items-center gap-2 font-mono text-xs flex-wrap">
             <div class="sim-clock-badge">
-              <span class="text-gray-400 text-[10px] uppercase tracking-wider">Routine Clock</span>
+              <span class="text-gray-400 text-[10px] uppercase tracking-wider" data-i18n="workflow.clockLabel">Routine Clock</span>
               <span id="sim-clock" class="font-bold text-[#cc785c] dark:text-sky-400 text-sm">08:00 AM</span>
             </div>
             <div class="sim-timer-badge">
-              <span class="text-gray-400 text-[10px] uppercase tracking-wider">Elapsed</span>
+              <span class="text-gray-400 text-[10px] uppercase tracking-wider" data-i18n="workflow.elapsedLabel">Elapsed</span>
               <span id="sim-elapsed" class="font-semibold text-gray-700 dark:text-gray-300">00:00 / 20:00</span>
             </div>
             <div class="sim-speed-selector flex items-center gap-1 bg-white dark:bg-[#1c2635] p-1 rounded border border-gray-200 dark:border-[#2a3b52]">
-              <span class="text-[10px] text-gray-400 uppercase px-1">Speed:</span>
+              <span class="text-[10px] text-gray-400 uppercase px-1" data-i18n="workflow.speedLabel">Speed:</span>
               <button class="sim-speed-btn active" data-speed="1" onclick="setSimSpeed(1)">1x</button>
               <button class="sim-speed-btn" data-speed="2" onclick="setSimSpeed(2)">2x</button>
               <button class="sim-speed-btn" data-speed="4" onclick="setSimSpeed(4)">4x</button>
@@ -286,26 +289,26 @@
         </div>
 
         <!-- Scrubbable Stage Step Timeline -->
-        <div class="workflow-scrub-bar">
+        <div class="workflow-scrub-bar" data-i18n-attr="aria-label:workflow.scrubLabel" aria-label="20-Minute Routine Timeline">
           <div class="workflow-scrub-track">
             <div id="workflow-scrub-fill" class="workflow-scrub-fill" style="width: 25%;"></div>
           </div>
           <div class="workflow-scrub-steps">
             <button class="scrub-step-btn active" data-step="1" onclick="jumpToSimStage(1)">
               <span class="scrub-step-num">1</span>
-              <span class="scrub-step-label">Stage 1 · Spot Fresh Jobs</span>
+              <span class="scrub-step-label" data-i18n="workflow.step1Tab">Stage 1 · Spot Fresh Jobs</span>
             </button>
             <button class="scrub-step-btn" data-step="2" onclick="jumpToSimStage(2)">
               <span class="scrub-step-num">2</span>
-              <span class="scrub-step-label">Stage 2 · Check Your Fit</span>
+              <span class="scrub-step-label" data-i18n="workflow.step2Tab">Stage 2 · Check Your Fit</span>
             </button>
             <button class="scrub-step-btn" data-step="3" onclick="jumpToSimStage(3)">
               <span class="scrub-step-num">3</span>
-              <span class="scrub-step-label">Stage 3 · Auto Generation</span>
+              <span class="scrub-step-label" data-i18n="workflow.step3Tab">Stage 3 · Auto Generation</span>
             </button>
             <button class="scrub-step-btn" data-step="4" onclick="jumpToSimStage(4)">
               <span class="scrub-step-num">4</span>
-              <span class="scrub-step-label">Stage 4 · Submit &amp; Relax</span>
+              <span class="scrub-step-label" data-i18n="workflow.step4Tab">Stage 4 · Submit &amp; Relax</span>
             </button>
           </div>
         </div>
@@ -315,56 +318,56 @@
           <!-- Stage 1 -->
           <div class="workflow-stage-card sim-active" data-stage="1">
             <div class="workflow-stage-header">
-              <span class="workflow-stage-badge">Stage 1</span>
-              <span class="text-xs text-gray-400 font-mono">08:00 - 08:05</span>
+              <span class="workflow-stage-badge" data-i18n="workflow.step1Badge">Stage 1</span>
+              <span class="text-xs text-gray-400 font-mono" data-i18n="workflow.step1Time">08:00 - 08:05</span>
             </div>
-            <h3 class="workflow-stage-title">Spot Fresh Jobs &amp; Skip Old Ones</h3>
-            <p class="workflow-stage-desc">Find 10–15 newly posted openings from the last 24 hours. Automatically filter out companies you already applied to so you never send duplicates.</p>
+            <h3 class="workflow-stage-title" data-i18n="workflow.step1Title">Spot Fresh Jobs &amp; Skip Old Ones</h3>
+            <p class="workflow-stage-desc" data-i18n="workflow.step1Desc">Find 10–15 newly posted openings from the last 24 hours. Automatically filter out companies you already applied to so you never send duplicates.</p>
             <ul class="workflow-steps-list">
-              <li><strong>Step 1: Check Application History</strong> — Scan your simple tracker (<code class="font-mono text-xs">jobs/job_matches.md</code>) to instantly eliminate any company or role you already applied to.</li>
-              <li><strong>Step 2: 1-Click Search Sweeps</strong> — Open pre-filtered Google, LinkedIn, StepStone, and startup links to uncover active vacancies posted today.</li>
+              <li data-i18n="workflow.step1Item1"><strong>Step 1: Check Application History</strong> — Scan your simple tracker (<code class="font-mono text-xs">jobs/job_matches.md</code>) to instantly eliminate any company or role you already applied to.</li>
+              <li data-i18n="workflow.step1Item2"><strong>Step 2: 1-Click Search Sweeps</strong> — Open pre-filtered Google, LinkedIn, StepStone, and startup links to uncover active vacancies posted today.</li>
             </ul>
           </div>
 
           <!-- Stage 2 -->
           <div class="workflow-stage-card" data-stage="2">
             <div class="workflow-stage-header">
-              <span class="workflow-stage-badge">Stage 2</span>
-              <span class="text-xs text-gray-400 font-mono">08:05 - 08:10</span>
+              <span class="workflow-stage-badge" data-i18n="workflow.step2Badge">Stage 2</span>
+              <span class="text-xs text-gray-400 font-mono" data-i18n="workflow.step2Time">08:05 - 08:10</span>
             </div>
-            <h3 class="workflow-stage-title">Check Your Fit &amp; Pick The Top 2</h3>
-            <p class="workflow-stage-desc">Don't waste time spraying 50 random applications. Grade vacancies from 0 to 10 and only focus on roles you are actually qualified to win.</p>
+            <h3 class="workflow-stage-title" data-i18n="workflow.step2Title">Check Your Fit &amp; Pick The Top 2</h3>
+            <p class="workflow-stage-desc" data-i18n="workflow.step2Desc">Don't waste time spraying 50 random applications. Grade vacancies from 0 to 10 and only focus on roles you are actually qualified to win.</p>
             <ul class="workflow-steps-list">
-              <li><strong>Step 3: Grade Your Fit (9/10 Rule)</strong> — Score required skills (70%) vs nice-to-haves (30%). Disqualify jobs with impossible dealbreakers (e.g. 10 years experience).</li>
-              <li><strong>Step 4: Save Job Details &amp; Check Pay</strong> — Save the full job description text before it expires, and check typical salaries on Kununu or Glassdoor to verify fair compensation.</li>
+              <li data-i18n="workflow.step2Item1"><strong>Step 3: Grade Your Fit (9/10 Rule)</strong> — Score required skills (70%) vs nice-to-haves (30%). Disqualify jobs with impossible dealbreakers (e.g. 10 years experience).</li>
+              <li data-i18n="workflow.step2Item2"><strong>Step 4: Save Job Details &amp; Check Pay</strong> — Save the full job description text before it expires, and check typical salaries on Kununu or Glassdoor to verify fair compensation.</li>
             </ul>
           </div>
 
           <!-- Stage 3 -->
           <div class="workflow-stage-card" data-stage="3">
             <div class="workflow-stage-header">
-              <span class="workflow-stage-badge">Stage 3</span>
-              <span class="text-xs text-gray-400 font-mono">08:10 - 08:15</span>
+              <span class="workflow-stage-badge" data-i18n="workflow.step3Badge">Stage 3</span>
+              <span class="text-xs text-gray-400 font-mono" data-i18n="workflow.step3Time">08:10 - 08:15</span>
             </div>
-            <h3 class="workflow-stage-title">Auto-Generate Resume &amp; Cover Letter</h3>
-            <p class="workflow-stage-desc">Stop spending 3 hours manually editing Word files. Let automation create custom, ATS-friendly application packages in seconds.</p>
+            <h3 class="workflow-stage-title" data-i18n="workflow.step3Title">Auto-Generate Resume &amp; Cover Letter</h3>
+            <p class="workflow-stage-desc" data-i18n="workflow.step3Desc">Stop spending 3 hours manually editing Word files. Let automation create custom, ATS-friendly application packages in seconds.</p>
             <ul class="workflow-steps-list">
-              <li><strong>Step 5: Tailored ATS Resume</strong> — Generates a clean, ATS-compliant resume highlighting the exact projects and skills the employer asked for — zero formatting bugs.</li>
-              <li><strong>Step 6: DIN-5008 German Cover Letter</strong> — Writes a punchy, 1-page cover letter (&lt;300 words) solving 3 key employer problems with real proof, then exports to crisp PDF.</li>
+              <li data-i18n="workflow.step3Item1"><strong>Step 5: Tailored ATS Resume</strong> — Generates a clean, ATS-compliant resume highlighting the exact projects and skills the employer asked for — zero formatting bugs.</li>
+              <li data-i18n="workflow.step3Item2"><strong>Step 6: DIN-5008 German Cover Letter</strong> — Writes a punchy, 1-page cover letter (&lt;300 words) solving 3 key employer problems with real proof, then exports to crisp PDF.</li>
             </ul>
           </div>
 
           <!-- Stage 4 -->
           <div class="workflow-stage-card" data-stage="4">
             <div class="workflow-stage-header">
-              <span class="workflow-stage-badge">Stage 4</span>
-              <span class="text-xs text-gray-400 font-mono">08:15 - 08:20</span>
+              <span class="workflow-stage-badge" data-i18n="workflow.step4Badge">Stage 4</span>
+              <span class="text-xs text-gray-400 font-mono" data-i18n="workflow.step4Time">08:15 - 08:20</span>
             </div>
-            <h3 class="workflow-stage-title">Submit, Record It &amp; You're Done!</h3>
-            <p class="workflow-stage-desc">Upload your PDFs directly to the employer's official website, log the date in your tracker, and finish before morning coffee.</p>
+            <h3 class="workflow-stage-title" data-i18n="workflow.step4Title">Submit, Record It &amp; You're Done!</h3>
+            <p class="workflow-stage-desc" data-i18n="workflow.step4Desc">Upload your PDFs directly to the employer's official website, log the date in your tracker, and finish before morning coffee.</p>
             <ul class="workflow-steps-list">
-              <li><strong>Step 7: Log in Application Tracker</strong> — Add the company name, apply link, and date so you always know when to follow up and avoid messy spreadsheets.</li>
-              <li><strong>Step 8: Close Your Laptop &amp; Relax</strong> — 2 top-tier, custom applications dispatched in under 20 minutes. Zero burnout, maximum interview callbacks!</li>
+              <li data-i18n="workflow.step4Item1"><strong>Step 7: Log in Application Tracker</strong> — Add the company name, apply link, and date so you always know when to follow up and avoid messy spreadsheets.</li>
+              <li data-i18n="workflow.step4Item2"><strong>Step 8: Close Your Laptop &amp; Relax</strong> — 2 top-tier, custom applications dispatched in under 20 minutes. Zero burnout, maximum interview callbacks!</li>
             </ul>
           </div>
         </div>
@@ -381,15 +384,15 @@
   <section id="brief-showcase" class="hub-container section-band no-print">
     <div class="flex items-center justify-between flex-wrap gap-3 mb-2">
       <div>
-        <h2 class="text-3xl font-semibold mb-1" style="border-bottom:none;">Workflow Results Showcase</h2>
-        <p class="text-sm text-gray-600 max-w-2xl">Interactive Morning Action Brief generated by the daily automation engine. Demonstrates verified atomic application packages across diverse technical disciplines.</p>
+        <h2 class="text-3xl font-semibold mb-1" style="border-bottom:none;" data-i18n="briefs.title">Workflow Results Showcase</h2>
+        <p class="text-sm text-gray-600 max-w-2xl" data-i18n="briefs.desc">Interactive Morning Action Brief generated by the daily automation engine. Demonstrates verified atomic application packages across diverse technical disciplines.</p>
       </div>
       <!-- Domain Tabs -->
       <div class="brief-tabs flex items-center gap-1 bg-slate-100 dark:bg-[#131b26] p-1 rounded-md border border-slate-200 dark:border-[#223145]">
-        <button class="btn-pill-sm active" data-brief="fullstack">Fullstack (Production Run)</button>
-        <button class="btn-pill-sm" data-brief="devops">Cloud DevOps</button>
-        <button class="btn-pill-sm" data-brief="designer">Product Design</button>
-        <button class="btn-pill-sm" data-brief="engineering">Renewable Energy</button>
+        <button class="btn-pill-sm active" data-brief="fullstack" data-i18n="briefs.tabFullstack">Fullstack (Production Run)</button>
+        <button class="btn-pill-sm" data-brief="devops" data-i18n="briefs.tabDevops">Cloud DevOps</button>
+        <button class="btn-pill-sm" data-brief="designer" data-i18n="briefs.tabDesigner">Product Design</button>
+        <button class="btn-pill-sm" data-brief="engineering" data-i18n="briefs.tabEngineering">Renewable Energy</button>
       </div>
     </div>
 
@@ -402,11 +405,11 @@
         </div>
         <div class="brief-meta-tag">
           <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#16a34a;"></span>
-          Verified Exit Code 0 · 2/2 Atomic Packages Ready
+          <span data-i18n="briefs.verifiedStatus">Verified Exit Code 0 · 2/2 Atomic Packages Ready</span>
         </div>
       </div>
 
-      <div class="text-xs text-gray-700 dark:text-gray-300 mb-6 bg-slate-50 dark:bg-[#0d141e] p-3 rounded border border-slate-200 dark:border-[#223145]" id="brief-result">
+      <div class="text-xs text-gray-700 dark:text-gray-300 mb-6 bg-slate-50 dark:bg-[#0d141e] p-3 rounded border border-slate-200 dark:border-[#223145]" id="brief-result" data-i18n="briefs.result">
         Result: 2 complete, fully verified application packages generated, validated, and exported to print-ready HTML and high-fidelity PDF.
       </div>
 
@@ -417,7 +420,7 @@
           <div>
             <div class="brief-pkg-header">
               <div>
-                <span class="text-xs font-semibold text-brand tracking-wider uppercase">Application Package 1</span>
+                <span class="text-xs font-semibold text-brand tracking-wider uppercase" data-i18n="briefs.pkg1Badge">Application Package 1</span>
                 <div class="brief-pkg-title" id="pkg1-company">Beispiel Energy Systems GmbH (Priority 1 · Berlin Local)</div>
               </div>
               <span class="brief-pkg-score" id="pkg1-score">9.8 / 10</span>
@@ -425,38 +428,38 @@
 
             <div class="brief-pkg-details">
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Role:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelRole">Role:</span>
                 <span id="pkg1-role" class="font-medium text-gray-800 dark:text-gray-200">Fullstack Softwareentwickler / Software Engineer (w/m/d)</span>
               </div>
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Location &amp; Commute:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelLocation">Location &amp; Commute:</span>
                 <span id="pkg1-location">Beispielstraße 1, 10115 Berlin · Priority 1 Local Commute (~2,5 km, 5-7 min)</span>
               </div>
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Match Justification:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelJustification">Match Justification:</span>
                 <span id="pkg1-justification">Hervorragender lokaler Berliner Match für Python, TypeScript, Java (B.Sc. Informatik Äquivalenz), REST APIs, relationales Datenbankdesign (PostgreSQL/MySQL), Redis &amp; RabbitMQ Message Queues und Docker Containerisierung im Bereich SaaS für erneuerbare Energien.</span>
               </div>
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Top ATS Keywords:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelKeywords">Top ATS Keywords:</span>
                 <span id="pkg1-keywords" class="font-mono text-xs text-brand font-medium">Python, TypeScript, Java, REST APIs, PostgreSQL</span>
               </div>
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Identified Gap:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelGap">Identified Gap:</span>
                 <span id="pkg1-gap">Große verteilte Kafka-Cluster im Produktiveinsatz (durch RabbitMQ, Redis Queues und asynchrone Ereignisverarbeitung nahtlos überbrückt).</span>
               </div>
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Salary Evidence:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelSalary">Salary Evidence:</span>
                 <span id="pkg1-salary">46.500 € – 74.000 € (kununu Ø 59.900 € brutto/Jahr für Softwareentwickler). Zielvergütung: 58.000 € brutto/Jahr.</span>
               </div>
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Official Apply Target:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelApply">Official Apply Target:</span>
                 <span id="pkg1-apply">jobs@example.com · Ansprechpartnerin: Frau Erika Mustermann</span>
               </div>
             </div>
           </div>
 
           <div>
-            <span class="brief-detail-label">Generated Application Assets:</span>
+            <span class="brief-detail-label" data-i18n="briefs.labelAssets">Generated Application Assets:</span>
             <div class="brief-assets-list" id="pkg1-assets">
               <span class="brief-asset-chip">beispiel_energy_systems.html</span>
               <span class="brief-asset-chip">beispiel_energy_systems.pdf</span>
@@ -466,7 +469,7 @@
             </div>
 
             <div class="mt-3 pt-3 border-t border-stone-200 dark:border-stone-700 text-xs text-gray-500">
-              <span class="font-semibold text-gray-700 dark:text-gray-300">QA Gates:</span> <span id="pkg1-qa">222 Wörter (DIN-5008 &lt; 300) · 0 Gedankenstriche · 0 Semikolons · Burstiness-Spannweite = 28 Wörter · 0 8-Wort Überlappung · Invariante 58.000 € brutto/Jahr · 3 Monate Kündigungsfrist</span>
+              <span class="font-semibold text-gray-700 dark:text-gray-300" data-i18n="briefs.labelQa">QA Gates:</span> <span id="pkg1-qa">222 Wörter (DIN-5008 &lt; 300) · 0 Gedankenstriche · 0 Semikolons · Burstiness-Spannweite = 28 Wörter · 0 8-Wort Überlappung · Invariante 58.000 € brutto/Jahr · 3 Monate Kündigungsfrist</span>
             </div>
           </div>
         </div>
@@ -476,7 +479,7 @@
           <div>
             <div class="brief-pkg-header">
               <div>
-                <span class="text-xs font-semibold text-brand tracking-wider uppercase">Application Package 2</span>
+                <span class="text-xs font-semibold text-brand tracking-wider uppercase" data-i18n="briefs.pkg2Badge">Application Package 2</span>
                 <div class="brief-pkg-title" id="pkg2-company">LEONEX Internet GmbH (Priority 2 · 100% Remote Deutschland)</div>
               </div>
               <span class="brief-pkg-score" id="pkg2-score">9.9 / 10</span>
@@ -484,38 +487,38 @@
 
             <div class="brief-pkg-details">
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Role:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelRole">Role:</span>
                 <span id="pkg2-role" class="font-medium text-gray-800 dark:text-gray-200">Shopware Developer (all genders) · LEONEX Internet GmbH (MAI Group)</span>
               </div>
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Location &amp; Commute:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelLocation">Location &amp; Commute:</span>
                 <span id="pkg2-location">Technologiepark 6, 33100 Paderborn / 100% Remote Deutschland (Mobiles Arbeiten deutschlandweit)</span>
               </div>
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Match Justification:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelJustification">Match Justification:</span>
                 <span id="pkg2-justification">Direkter Treffer für individuelle Shopware 6 Plugin-Entwicklung (DAL, Flow Builder, CLI), PHP 8+, Symfony, Vue 3, Twig Storefronts, ERP- und PIM-Anbindungen (Pimcore) sowie asynchrone Redis Job Queues.</span>
               </div>
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Top ATS Keywords:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelKeywords">Top ATS Keywords:</span>
                 <span id="pkg2-keywords" class="font-mono text-xs text-brand font-medium">Shopware 6, PHP 8+, Symfony, MySQL, Vue.js</span>
               </div>
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Identified Gap:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelGap">Identified Gap:</span>
                 <span id="pkg2-gap">Spezifische Shopware 4 Legacy-Migrationsskripte (durch fundiertes Verständnis der Shopware 6 DAL sofort adaptierbar).</span>
               </div>
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Salary Evidence:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelSalary">Salary Evidence:</span>
                 <span id="pkg2-salary">55.000 € – 68.000 € (Markt- und Agentur-Benchmark für Shopware 6 &amp; PHP Entwickler). Zielvergütung: 58.000 € brutto/Jahr.</span>
               </div>
               <div class="brief-detail-row">
-                <span class="brief-detail-label">Official Apply Target:</span>
+                <span class="brief-detail-label" data-i18n="briefs.labelApply">Official Apply Target:</span>
                 <span id="pkg2-apply">Portal Apply &amp; jobs@leonex.de · Ansprechpartner: Recruiting Team LEONEX</span>
               </div>
             </div>
           </div>
 
           <div>
-            <span class="brief-detail-label">Generated Application Assets:</span>
+            <span class="brief-detail-label" data-i18n="briefs.labelAssets">Generated Application Assets:</span>
             <div class="brief-assets-list" id="pkg2-assets">
               <span class="brief-asset-chip">leonex.html</span>
               <span class="brief-asset-chip">leonex.pdf</span>
@@ -525,7 +528,7 @@
             </div>
 
             <div class="mt-3 pt-3 border-t border-stone-200 dark:border-stone-700 text-xs text-gray-500">
-              <span class="font-semibold text-gray-700 dark:text-gray-300">QA Gates:</span> <span id="pkg2-qa">242 Wörter (DIN-5008 &lt; 300) · 0 Gedankenstriche · 0 Semikolons · Burstiness-Spannweite = 31 Wörter · 0 8-Wort Überlappung · Invariante 58.000 € brutto/Jahr · 3 Monate Kündigungsfrist</span>
+              <span class="font-semibold text-gray-700 dark:text-gray-300" data-i18n="briefs.labelQa">QA Gates:</span> <span id="pkg2-qa">242 Wörter (DIN-5008 &lt; 300) · 0 Gedankenstriche · 0 Semikolons · Burstiness-Spannweite = 31 Wörter · 0 8-Wort Überlappung · Invariante 58.000 € brutto/Jahr · 3 Monate Kündigungsfrist</span>
             </div>
           </div>
         </div>
@@ -533,24 +536,24 @@
 
       <!-- Human in the loop Checklist & Maintenance Review -->
       <div class="brief-qa-box">
-        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">Human-in-the-Loop Pre-Submission Checklist</h4>
+        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-2" data-i18n="briefs.checklistTitle">Human-in-the-Loop Pre-Submission Checklist</h4>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
           <div class="p-3 bg-white dark:bg-[#131b26] rounded border border-slate-200 dark:border-[#223145]">
-            <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1">Availability &amp; Kündigungsfrist:</span>
+            <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1" data-i18n="briefs.labelAvailability">Availability &amp; Kündigungsfrist:</span>
             <span class="text-gray-600 dark:text-gray-400" id="brief-chk-avail">3 Monate zum Monatsende (im Einvernehmen gern auch kurzfristiger durch Aufhebungsvereinbarung). Frühester regulärer Starttermin: 01.01.2027.</span>
           </div>
           <div class="p-3 bg-white dark:bg-[#131b26] rounded border border-slate-200 dark:border-[#223145]">
-            <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1">Target Compensation:</span>
+            <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1" data-i18n="briefs.labelCompensation">Target Compensation:</span>
             <span class="text-gray-600 dark:text-gray-400" id="brief-chk-salary">58.000 € brutto / Jahr (58.000 Euro)</span>
           </div>
           <div class="p-3 bg-white dark:bg-[#131b26] rounded border border-slate-200 dark:border-[#223145]">
-            <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1">Required Document Uploads:</span>
+            <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1" data-i18n="briefs.labelUploads">Required Document Uploads:</span>
             <span class="text-gray-600 dark:text-gray-400" id="brief-chk-uploads">Anschreiben-PDF + Lebenslauf-PDF + ZAB Zeugnisbewertung (B.Sc. Informatik Gleichwertigkeit)</span>
           </div>
         </div>
 
         <div class="mt-3 p-3 bg-white dark:bg-[#131b26] rounded border border-slate-200 dark:border-[#223145] text-xs">
-          <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1">Stage 8 Master Resume Maintenance Review:</span>
+          <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1" data-i18n="briefs.maintenanceTitle">Stage 8 Master Resume Maintenance Review:</span>
           <span class="text-gray-600 dark:text-gray-400" id="brief-maintenance-text">No master-resume change recommended today. Netto-Änderung Sektionen: 0 · Netto-Änderung Bullets: 0 · Wortanzahl-Delta: 0. Master index.html bleibt unberührt und geschützt.</span>
         </div>
       </div>
@@ -559,18 +562,18 @@
 
   <!-- AI Prompt Library Section -->
   <section id="prompts" class="hub-container section-band no-print">
-    <h2 class="text-3xl font-semibold mb-2" style="border-bottom:none;">AI Prompt Library</h2>
-    <p class="text-sm text-gray-600 mb-6 max-w-2xl">Battle-tested prompts sourced directly from production career workflows. Click any card to copy the full prompt payload.</p>
+    <h2 class="text-3xl font-semibold mb-2" style="border-bottom:none;" data-i18n="prompts.title">AI Prompt Library</h2>
+    <p class="text-sm text-gray-600 mb-6 max-w-2xl" data-i18n="prompts.desc">Battle-tested prompts sourced directly from production career workflows. Click any card to copy the full prompt payload.</p>
     
     <div class="prompt-grid">
       <!-- Prompt 0: Onboarding & Profile Setup -->
       <div class="prompt-card surface-cream">
         <div>
           <div class="prompt-card-header">
-            <h3 class="prompt-card-title">Profile &amp; Resume Onboarding</h3>
-            <span class="nav-tag nav-tag-sop">Fast Track</span>
+            <h3 class="prompt-card-title" data-i18n="prompts.p0Title">Profile &amp; Resume Onboarding</h3>
+            <span class="nav-tag nav-tag-sop" data-i18n="prompts.p0Tag">Fast Track</span>
           </div>
-          <p class="prompt-card-desc">Ingests an existing resume (PDF/text/LinkedIn) or runs a guided 7-question interview to generate config/profile.json and tailored STAR bullets.</p>
+          <p class="prompt-card-desc" data-i18n="prompts.p0Desc">Ingests an existing resume (PDF/text/LinkedIn) or runs a guided 7-question interview to generate config/profile.json and tailored STAR bullets.</p>
           <div class="prompt-code-preview"># Rolle: Principal Career Architect &amp; ATS Engineer
 # Input: Lebenslauf einfügen ODER 7 geführte Fragen beantworten
 # Output: Vollständiges config/profile.json + STAR-Erfolge (DE/EN)</div>
@@ -611,16 +614,16 @@ Wenn der Nutzer keinen Lebenslauf hat oder um Unterstützung bittet, stellen Sie
    python jobs/engine.py build-roles
    python jobs/engine.py validate-resume --file index.html</pre>
         </div>
-        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)" data-i18n="prompts.copyPrompt">Copy Prompt</button>
       </div>
 
       <!-- Prompt 1: Cover Letter -->
       <div class="prompt-card surface-mint">
         <div>
           <div class="prompt-card-header">
-            <h3 class="prompt-card-title">DIN-5008 Cover Letter</h3>
+            <h3 class="prompt-card-title" data-i18n="prompts.p1Title">DIN-5008 Cover Letter</h3>
           </div>
-          <p class="prompt-card-desc">Generates a tailored German tech cover letter using the STAR method, verified project metrics, and DIN-5008 compliance.</p>
+          <p class="prompt-card-desc" data-i18n="prompts.p1Desc">Generates a tailored German tech cover letter using the STAR method, verified project metrics, and DIN-5008 compliance.</p>
           <div class="prompt-code-preview"># Rolle: Tech-Recruiter &amp; Werbetexter
 # Aufgabe: Maßgeschneidertes Anschreiben für <mark>{{COMPANY}}</mark>
 # Struktur: STAR-Hook, 3 Kernprobleme lösen, Tech-Stack quantifizieren</div>
@@ -640,16 +643,16 @@ Lesen Sie das Kandidatenprofil (@config/profile.json), den Basis-Lebenslauf (@in
 7. Handlungsorientierter Schluss: Enden Sie mit einem starken Call-to-Action und der klaren Motivation für ein persönliches Kennenlernen.
 8. Automatisierung: Speichern als JSON-Konfiguration in jobs/configs/JJJJ-MM-TT_[slug].json zur Kompilierung mit python jobs/engine.py run --config ...</pre>
         </div>
-        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)" data-i18n="prompts.copyPrompt">Copy Prompt</button>
       </div>
 
       <!-- Prompt 2: ATS Tailoring -->
       <div class="prompt-card surface-peach">
         <div>
           <div class="prompt-card-header">
-            <h3 class="prompt-card-title">ATS Resume Tailoring</h3>
+            <h3 class="prompt-card-title" data-i18n="prompts.p2Title">ATS Resume Tailoring</h3>
           </div>
-          <p class="prompt-card-desc">Injects target job keywords, sharpens experience bullet points, and maintains strict DOM structure parity.</p>
+          <p class="prompt-card-desc" data-i18n="prompts.p2Desc">Injects target job keywords, sharpens experience bullet points, and maintains strict DOM structure parity.</p>
           <div class="prompt-code-preview"># Rolle: ATS-Optimierungs-Experte
 # Aufgabe: Lebenslauf passgenau auf Stellenbeschreibung zuschneiden
 # STRIKT: Exakte DOM-Struktur von @index.html und Zweisprachigkeit beibehalten</div>
@@ -669,16 +672,16 @@ STRIKT: Der generierte Lebenslauf muss die exakte DOM-Struktur von @index.html e
 5. Lückenanalyse: Adressieren Sie Skill Gaps direkt bei der Überarbeitung durch relevante übertragbare Fähigkeiten.
 6. Erhalt von Code &amp; Funktionalität: Alle CSS-Klassen, Inline-Styles und IDs 1:1 übernehmen.</pre>
         </div>
-        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)" data-i18n="prompts.copyPrompt">Copy Prompt</button>
       </div>
 
       <!-- Prompt 3: Interview Prep -->
       <div class="prompt-card surface-yellow">
         <div>
           <div class="prompt-card-header">
-            <h3 class="prompt-card-title">STAR Technical Interview</h3>
+            <h3 class="prompt-card-title" data-i18n="prompts.p3Title">STAR Technical Interview</h3>
           </div>
-          <p class="prompt-card-desc">Produces tailored German elevator pitches, situational STAR response stories, and insightful closing questions.</p>
+          <p class="prompt-card-desc" data-i18n="prompts.p3Desc">Produces tailored German elevator pitches, situational STAR response stories, and insightful closing questions.</p>
           <div class="prompt-code-preview"># Role: Career Coach &amp; Tech Interview Prep
 # Target: Elevator Pitch, 3 STAR Stories in German, Why Company, Closing Questions</div>
           <pre class="prompt-raw" style="display:none;">Role: You are an Expert Career Coach and Technical Interview Preparer for Software Developers in Germany.
@@ -694,16 +697,16 @@ Phase 3 (Motivation &amp; Alignment): Rewrite the "Why Company [NAME]?" section 
 Phase 4 (Handling Challenges): Review weaknesses and stress-handling answers to ensure alignment.
 Phase 5 (Logistics &amp; Closing): Generate 3 highly specific, insightful questions in German for the interviewers based on the tech stack and team structure.</pre>
         </div>
-        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)" data-i18n="prompts.copyPrompt">Copy Prompt</button>
       </div>
 
       <!-- Prompt 4: Job Search Queries -->
       <div class="prompt-card surface-cream">
         <div>
           <div class="prompt-card-header">
-            <h3 class="prompt-card-title">German Tech Search Matrix</h3>
+            <h3 class="prompt-card-title" data-i18n="prompts.p4Title">German Tech Search Matrix</h3>
           </div>
-          <p class="prompt-card-desc">Generates precision Boolean search queries for StepStone, LinkedIn DE, and Indeed with regional and remote filtering.</p>
+          <p class="prompt-card-desc" data-i18n="prompts.p4Desc">Generates precision Boolean search queries for StepStone, LinkedIn DE, and Indeed with regional and remote filtering.</p>
           <div class="prompt-code-preview"># Rolle: Executive Recruiting Specialist
 # Quellen: Techstars Directory, HTGF Newsroom, LinkedIn DE, StepStone
 # Output: Strukturierte Tabellenzeilen mit Match Score und Gehaltsspannen</div>
@@ -716,16 +719,16 @@ Phase 5 (Logistics &amp; Closing): Generate 3 highly specific, insightful questi
 4. Gehaltsrecherche via kununu für die spezifische Rolle.
 5. Ausgabe als Tabellenzeilen für jobs/job_matches.md mit Job Title, Company Name, Location, Status, Match Score, Match Justification, Skill Gap, Salary Range, Apply Link.</pre>
         </div>
-        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)" data-i18n="prompts.copyPrompt">Copy Prompt</button>
       </div>
 
       <!-- Prompt 5: Google Job Search Flow (Direct ATS & Boolean Dorking) -->
       <div class="prompt-card surface-mint">
         <div>
           <div class="prompt-card-header">
-            <h3 class="prompt-card-title">Google Direct ATS Sourcing</h3>
+            <h3 class="prompt-card-title" data-i18n="prompts.p5Title">Google Direct ATS Sourcing</h3>
           </div>
-          <p class="prompt-card-desc">Finds hidden, direct company openings on Personio, Greenhouse, and Lever via Google Dorking — bypassing middlemen and agency spam.</p>
+          <p class="prompt-card-desc" data-i18n="prompts.p5Desc">Finds hidden, direct company openings on Personio, Greenhouse, and Lever via Google Dorking — bypassing middlemen and agency spam.</p>
           <div class="prompt-code-preview"># Rolle: Google Search &amp; Direct ATS Sourcing Specialist
 # Dorks: site:personio.de | site:join.com | site:greenhouse.io
 # Filter: Entry Level, Absolvent, Junior · -Zeitarbeit -Headhunter</div>
@@ -774,16 +777,16 @@ For every promising employer found, run a 60-second background check:
 Format top qualifying opportunities as continuous Markdown rows ready to be appended:
 | Job Title | Company Name | Location | Job Type | Status | Match Score (0-10) | Match Justification | Skill Gap | Salary Range | Apply Link |</pre>
         </div>
-        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)" data-i18n="prompts.copyPrompt">Copy Prompt</button>
       </div>
 
       <!-- Prompt 6: Daily Job Workflow -->
       <div class="prompt-card surface-soft">
         <div>
           <div class="prompt-card-header">
-            <h3 class="prompt-card-title">Daily Intake &amp; Tailoring</h3>
+            <h3 class="prompt-card-title" data-i18n="prompts.p6Title">Daily Intake &amp; Tailoring</h3>
           </div>
-          <p class="prompt-card-desc">End-to-end 20-minute daily intake routine: role discovery, scoring, JSON configuration, and automated headless PDF export.</p>
+          <p class="prompt-card-desc" data-i18n="prompts.p6Desc">End-to-end 20-minute daily intake routine: role discovery, scoring, JSON configuration, and automated headless PDF export.</p>
           <div class="prompt-code-preview"># Daily Routine Directive:
 # 1. Discover -> 2. Ingest &amp; Score -> 3. Tailor &amp; Generate -> 4. Validate ATS &amp; Export
 # Engine Runner: python jobs/engine.py run --config ...</div>
@@ -799,16 +802,16 @@ Execution Stages:
 3. Tailoring: Initialize skeleton config with python jobs/engine.py init-config, run cover letter and resume prompts, populate JSON config.
 4. Export: Run python jobs/engine.py run to generate DIN-5008 HTML, tailored resume HTML, and headless Chromium PDFs.</pre>
         </div>
-        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)" data-i18n="prompts.copyPrompt">Copy Prompt</button>
       </div>
 
       <!-- Prompt 7: Daily Search Links for Any Profession -->
       <div class="prompt-card surface-mint">
         <div>
           <div class="prompt-card-header">
-            <h3 class="prompt-card-title">Search Links for Any Profession</h3>
+            <h3 class="prompt-card-title" data-i18n="prompts.p7Title">Search Links for Any Profession</h3>
           </div>
-          <p class="prompt-card-desc">Generates daily-job-search-links-[profession].md with precision Boolean queries, ATS portals, and VC portfolio directories.</p>
+          <p class="prompt-card-desc" data-i18n="prompts.p7Desc">Generates daily-job-search-links-[profession].md with precision Boolean queries, ATS portals, and VC portfolio directories.</p>
           <div class="prompt-code-preview"># Rolle: Executive Sourcing &amp; Search Query Architect
 # Aufgabe: Generierung von daily-job-search-links-{{PROFESSION}}.md
 # Ziel: Boolean Suchstrings, URL-Templates und VC-Sweeps (Techstars, HTGF)</div>
@@ -849,16 +852,16 @@ Erstellen Sie eine vollständige Markdown-Datei 'workflows/search_links/daily-jo
    - 2. Quick-Scan auf Dealbreaker (Gehalt &lt; Invariante, Zwingende Reisetätigkeit &gt; 20%)
    - 3. Match-Score Check (&gt; 9.0/10)</pre>
         </div>
-        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)" data-i18n="prompts.copyPrompt">Copy Prompt</button>
       </div>
 
       <!-- Prompt 8: Canonical Role Archetype Extraction -->
       <div class="prompt-card surface-peach">
         <div>
           <div class="prompt-card-header">
-            <h3 class="prompt-card-title">Canonical Role Extraction</h3>
+            <h3 class="prompt-card-title" data-i18n="prompts.p8Title">Canonical Role Extraction</h3>
           </div>
-          <p class="prompt-card-desc">Extracts standardized canonical role profiles (jobs/roles/[role_id].json) adhering to the 4-category competencies schema.</p>
+          <p class="prompt-card-desc" data-i18n="prompts.p8Desc">Extracts standardized canonical role profiles (jobs/roles/[role_id].json) adhering to the 4-category competencies schema.</p>
           <div class="prompt-code-preview"># Rolle: Career Architecture &amp; Enterprise Taxonomy Specialist
 # Aufgabe: Generierung eines kanonischen Rollenprofils (@jobs/roles/[role_id].json)
 # Schema: 4 Kategorien (Architecture, Core Tools, Databases, DevOps)</div>
@@ -912,13 +915,17 @@ Erstellen Sie ein valides JSON-Dokument unter 'jobs/roles/{{ROLE_ID}}.json' mit 
 1. Spacing-Invariante: NIEMALS Bindestriche für technische Komposita verwenden (REST APIs, CI/CD Pipelines, MCP Tools, Cloud Architekturen).
 2. Authentizität: Nur Fähigkeiten aufnehmen, die durch reale Projekte und nachweisbare Meilensteine belegt werden können.
 3. DOM-Parität: Sicherstellen, dass die Skills nahtlos in das 4-Kategorien-Schema von resume.html und engine.py passen.</pre>
+        </div>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)" data-i18n="prompts.copyPrompt">Copy Prompt</button>
+      </div>
+
       <!-- Prompt 9: Salary Negotiation & Counter-Offer -->
       <div class="prompt-card surface-peach">
         <div>
           <div class="prompt-card-header">
-            <h3 class="prompt-card-title">Salary Negotiation &amp; Counter-Offer</h3>
+            <h3 class="prompt-card-title" data-i18n="prompts.p9Title">Salary Negotiation &amp; Counter-Offer</h3>
           </div>
-          <p class="prompt-card-desc">Benchmarks market compensation, calculates total package value, and writes confident counter-offer negotiation scripts.</p>
+          <p class="prompt-card-desc" data-i18n="prompts.p9Desc">Benchmarks market compensation, calculates total package value, and writes confident counter-offer negotiation scripts.</p>
           <div class="prompt-code-preview"># Rolle: Executive Compensation Advisor &amp; Verhandlungscoach
 # Hebel: STAR-Erfolge als geschäftliche Begründung nutzen
 # Output: E-Mail-Gegenangebot + Telefon-Leitfaden (DE &amp; EN)</div>
@@ -945,16 +952,16 @@ Ich werde Ihnen folgende Daten bereitstellen:
 4. Konzessions-Matrix (Plan B):
    - Falls das Budget für das Grundgehalt fix ist: Welche alternativen Hebel können verhandelt werden (z. B. Sign-on-Bonus, garantierte Gehaltsüberprüfung nach 6 Monaten Probezeit, 100% Remote, zusätzlicher Urlaub)?</pre>
         </div>
-        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)" data-i18n="prompts.copyPrompt">Copy Prompt</button>
       </div>
 
       <!-- Prompt 10: LinkedIn Profile Optimizer -->
       <div class="prompt-card surface-yellow">
         <div>
           <div class="prompt-card-header">
-            <h3 class="prompt-card-title">LinkedIn Profile Optimizer</h3>
+            <h3 class="prompt-card-title" data-i18n="prompts.p10Title">LinkedIn Profile Optimizer</h3>
           </div>
-          <p class="prompt-card-desc">Transforms your candidate profile into a high-converting, recruiter-optimized LinkedIn headline, About section, and experience bullets.</p>
+          <p class="prompt-card-desc" data-i18n="prompts.p10Desc">Transforms your candidate profile into a high-converting, recruiter-optimized LinkedIn headline, About section, and experience bullets.</p>
           <div class="prompt-code-preview"># Rolle: Personal Branding &amp; Executive Tech Headhunter
 # Fokus: Recruiter-Suche, STAR-Hook, Info-Storytelling
 # Richtlinie: Null Emojis, exakte Fachbegriffe mit Leerzeichen</div>
@@ -982,7 +989,7 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
    - Keine Emojis im Text (wirkt im europäischen B2B-Tech-Umfeld unseriös).
    - Strikte Schreibweise mit Leerzeichen bei Fachbegriffen (z. B. REST APIs, CI/CD Pipelines, Fullstack Entwickler).</pre>
         </div>
-        <button class="btn-copy-prompt" onclick="copyPrompt(this)">Copy Prompt</button>
+        <button class="btn-copy-prompt" onclick="copyPrompt(this)" data-i18n="prompts.copyPrompt">Copy Prompt</button>
       </div>
     </div>
   </section>
@@ -992,17 +999,17 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
     <div class="flex items-center justify-between flex-wrap gap-3 mb-2">
       <div>
         <div class="flex items-center gap-2 mb-1 flex-wrap">
-          <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;">DIN-5008 German Cover Letter Showcase</h2>
-          <span class="nav-tag nav-tag-sop">Recruiter &amp; Consultant Approved</span>
+          <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="coverLetters.title">DIN-5008 German Cover Letter Showcase</h2>
+          <span class="nav-tag nav-tag-sop" data-i18n="coverLetters.badge">Recruiter &amp; Consultant Approved</span>
         </div>
-        <p class="text-sm text-gray-600 max-w-2xl">Production-grade German cover letters audited and approved by senior recruiters and HR consultants. Formatted in accordance with DIN-5008, featuring STAR achievement hooks, technical problem solving, and automated contractual invariants injection.</p>
+        <p class="text-sm text-gray-600 max-w-2xl" data-i18n="coverLetters.desc">Production-grade German cover letters audited and approved by senior recruiters and HR consultants. Formatted in accordance with DIN-5008, featuring STAR achievement hooks, technical problem solving, and automated contractual invariants injection.</p>
       </div>
       <!-- Cover Letter Persona Switcher Tabs -->
       <div class="cover-letter-tabs flex items-center gap-1 bg-slate-100 dark:bg-[#131b26] p-1 rounded-md border border-slate-200 dark:border-[#223145]">
-        <button class="btn-pill-sm active" data-letter="fullstack">Fullstack Developer</button>
-        <button class="btn-pill-sm" data-letter="designer">Product Designer</button>
-        <button class="btn-pill-sm" data-letter="devops">DevOps Engineer</button>
-        <button class="btn-pill-sm" data-letter="engineering">Mechanical Engineer</button>
+        <button class="btn-pill-sm active" data-letter="fullstack" data-i18n="coverLetters.tabFullstack">Fullstack Developer</button>
+        <button class="btn-pill-sm" data-letter="designer" data-i18n="coverLetters.tabDesigner">Product Designer</button>
+        <button class="btn-pill-sm" data-letter="devops" data-i18n="coverLetters.tabDevops">DevOps Engineer</button>
+        <button class="btn-pill-sm" data-letter="engineering" data-i18n="coverLetters.tabEngineering">Mechanical Engineer</button>
       </div>
     </div>
 
@@ -1062,113 +1069,113 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
   <!-- Python Automation Engine & CLI Section -->
   <section id="engine" class="hub-container section-band no-print">
     <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
-      <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;">Python Automation Engine Architecture</h2>
-      <span class="nav-tag nav-tag-cli">Modular CLI Engine · Python 3.10+</span>
+      <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="engine.title">Python Automation Engine Architecture</h2>
+      <span class="nav-tag nav-tag-cli" data-i18n="engine.badge">Modular CLI Engine · Python 3.10+</span>
     </div>
-    <p class="text-sm text-gray-600 mb-6 max-w-3xl">The repository includes a decoupled Python automation engine (<code class="font-mono text-xs">jobs/engine.py</code> and <code class="font-mono text-xs">engine/*</code>). It automates candidate config hydration, canonical role compilation, ATS structural validation, DIN-5008 cover letter rendering, and headless Chromium vector PDF compilation.</p>
+    <p class="text-sm text-gray-600 mb-6 max-w-3xl" data-i18n="engine.desc">The repository includes a decoupled Python automation engine (<code class="font-mono text-xs">jobs/engine.py</code> and <code class="font-mono text-xs">engine/*</code>). It automates candidate config hydration, canonical role compilation, ATS structural validation, DIN-5008 cover letter rendering, and headless Chromium vector PDF compilation.</p>
 
     <!-- Architecture Modules Grid -->
     <div class="engine-architecture-grid">
       <div class="engine-module-card">
-        <span class="engine-module-name">engine/config.py</span>
-        <span class="engine-module-role">SSOT Loader &amp; Invariant Validator</span>
-        <span class="engine-module-desc">Parses <code class="font-mono text-xs">config/profile.json</code> (with fallback to <code class="font-mono text-xs">profile.example.json</code>). Validates schema, resolves candidate contractual invariants (salary, notice period, portfolio links), and catches prohibited domains.</span>
+        <span class="engine-module-name" data-i18n="engine.configName">engine/config.py</span>
+        <span class="engine-module-role" data-i18n="engine.configRole">SSOT Loader &amp; Invariant Validator</span>
+        <span class="engine-module-desc" data-i18n="engine.configDesc">Parses <code class="font-mono text-xs">config/profile.json</code> (with fallback to <code class="font-mono text-xs">profile.example.json</code>). Validates schema, resolves candidate contractual invariants (salary, notice period, portfolio links), and catches prohibited domains.</span>
       </div>
 
       <div class="engine-module-card">
-        <span class="engine-module-name">engine/resume.py</span>
-        <span class="engine-module-role">Tailored Resume Hydration Engine</span>
-        <span class="engine-module-desc">Hydrates <code class="font-mono text-xs">resume.html</code> with targeted keywords and canonical role profiles. Strictly enforces 100% DOM structure parity, tag sequencing, and bilingual attribute preservation.</span>
+        <span class="engine-module-name" data-i18n="engine.resumeName">engine/resume.py</span>
+        <span class="engine-module-role" data-i18n="engine.resumeRole">Tailored Resume Hydration Engine</span>
+        <span class="engine-module-desc" data-i18n="engine.resumeDesc">Hydrates <code class="font-mono text-xs">resume.html</code> with targeted keywords and canonical role profiles. Strictly enforces 100% DOM structure parity, tag sequencing, and bilingual attribute preservation.</span>
       </div>
 
       <div class="engine-module-card">
-        <span class="engine-module-name">engine/cover_letter.py</span>
-        <span class="engine-module-role">DIN-5008 Cover Letter Compiler</span>
-        <span class="engine-module-desc">Generates print-ready German DIN-5008 HTML cover letters under 300 words. Enforces anti-AI formatting, burstiness variance (&ge; 20 words), and runs 8-word sequence overlap checks against raw job postings.</span>
+        <span class="engine-module-name" data-i18n="engine.coverLetterName">engine/cover_letter.py</span>
+        <span class="engine-module-role" data-i18n="engine.coverLetterRole">DIN-5008 Cover Letter Compiler</span>
+        <span class="engine-module-desc" data-i18n="engine.coverLetterDesc">Generates print-ready German DIN-5008 HTML cover letters under 300 words. Enforces anti-AI formatting, burstiness variance (&ge; 20 words), and runs 8-word sequence overlap checks against raw job postings.</span>
       </div>
 
       <div class="engine-module-card">
-        <span class="engine-module-name">engine/roles.py</span>
-        <span class="engine-module-role">Canonical Role Archetypes Catalog</span>
-        <span class="engine-module-desc">Builds and manages pre-validated career archetypes (<code class="font-mono text-xs">jobs/roles/*.json</code>). Compiles all role resumes simultaneously to <code class="font-mono text-xs">jobs/roles/html/</code> and vector PDFs.</span>
+        <span class="engine-module-name" data-i18n="engine.rolesName">engine/roles.py</span>
+        <span class="engine-module-role" data-i18n="engine.rolesRole">Canonical Role Archetypes Catalog</span>
+        <span class="engine-module-desc" data-i18n="engine.rolesDesc">Builds and manages pre-validated career archetypes (<code class="font-mono text-xs">jobs/roles/*.json</code>). Compiles all role resumes simultaneously to <code class="font-mono text-xs">jobs/roles/html/</code> and vector PDFs.</span>
       </div>
 
       <div class="engine-module-card">
-        <span class="engine-module-name">engine/search_links.py</span>
-        <span class="engine-module-role">Boolean Search Query Synthesizer</span>
-        <span class="engine-module-desc">Generates daily job search link dashboards (<code class="font-mono text-xs">daily-job-search-links.md</code> and <code class="font-mono text-xs">workflows/search_links/</code>) with pre-filtered Boolean queries across LinkedIn DE, StepStone, Indeed, Techstars, and HTGF.</span>
+        <span class="engine-module-name" data-i18n="engine.searchLinksName">engine/search_links.py</span>
+        <span class="engine-module-role" data-i18n="engine.searchLinksRole">Boolean Search Query Synthesizer</span>
+        <span class="engine-module-desc" data-i18n="engine.searchLinksDesc">Generates daily job search link dashboards (<code class="font-mono text-xs">daily-job-search-links.md</code> and <code class="font-mono text-xs">workflows/search_links/</code>) with pre-filtered Boolean queries across LinkedIn DE, StepStone, Indeed, Techstars, and HTGF.</span>
       </div>
 
       <div class="engine-module-card">
-        <span class="engine-module-name">engine/pdf.py</span>
-        <span class="engine-module-role">Headless Chromium PDF Compiler</span>
-        <span class="engine-module-desc">Drives headless Chrome/Chromium via Playwright or subprocess to compile selectable vector A4 PDFs for both resumes and 1-page DIN-5008 cover letters with exact print layout.</span>
+        <span class="engine-module-name" data-i18n="engine.pdfName">engine/pdf.py</span>
+        <span class="engine-module-role" data-i18n="engine.pdfRole">Headless Chromium PDF Compiler</span>
+        <span class="engine-module-desc" data-i18n="engine.pdfDesc">Drives headless Chrome/Chromium via Playwright or subprocess to compile selectable vector A4 PDFs for both resumes and 1-page DIN-5008 cover letters with exact print layout.</span>
       </div>
     </div>
 
     <!-- CLI Commands Grid -->
-    <h3 class="text-xl font-semibold mb-2" style="border-bottom:none;">Unified CLI Command Reference</h3>
-    <p class="text-sm text-gray-600 mb-4">Execute daily automation tasks from the repository root. Click any command to copy.</p>
+    <h3 class="text-xl font-semibold mb-2" style="border-bottom:none;" data-i18n="engine.commandsTitle">Unified CLI Command Reference</h3>
+    <p class="text-sm text-gray-600 mb-4" data-i18n="engine.commandsDesc">Execute daily automation tasks from the repository root. Click any command to copy.</p>
 
     <div class="engine-command-grid">
       <!-- Command 1: Run Full Package -->
       <div class="engine-command-card">
         <div>
-          <div class="engine-command-title">Run Full Application Package</div>
-          <div class="engine-command-desc">Compiles tailored HTML resume, DIN-5008 cover letter, validates ATS DOM parity, and exports high-fidelity PDFs.</div>
+          <div class="engine-command-title" data-i18n="engine.cmd1Title">Run Full Application Package</div>
+          <div class="engine-command-desc" data-i18n="engine.cmd1Desc">Compiles tailored HTML resume, DIN-5008 cover letter, validates ATS DOM parity, and exports high-fidelity PDFs.</div>
           <div class="engine-command-code">python jobs/engine.py run --config jobs/configs/YYYY-MM-DD_[company_slug].json</div>
         </div>
-        <button class="btn-copy-prompt" onclick="copyEngineCommand(this)">Copy Command</button>
+        <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="engine.copyCommand">Copy Command</button>
       </div>
 
       <!-- Command 2: Build Roles -->
       <div class="engine-command-card">
         <div>
-          <div class="engine-command-title">Build All Canonical Roles</div>
-          <div class="engine-command-desc">Compiles and validates all 5 pre-configured canonical role archetypes into standalone HTML and vector PDF formats.</div>
+          <div class="engine-command-title" data-i18n="engine.cmd2Title">Build All Canonical Roles</div>
+          <div class="engine-command-desc" data-i18n="engine.cmd2Desc">Compiles and validates all 5 pre-configured canonical role archetypes into standalone HTML and vector PDF formats.</div>
           <div class="engine-command-code">python jobs/engine.py build-roles</div>
         </div>
-        <button class="btn-copy-prompt" onclick="copyEngineCommand(this)">Copy Command</button>
+        <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="engine.copyCommand">Copy Command</button>
       </div>
 
       <!-- Command 3: Build Search Links -->
       <div class="engine-command-card">
         <div>
-          <div class="engine-command-title">Render Daily Search Links</div>
-          <div class="engine-command-desc">Synthesizes active Boolean search links and platform URL templates from candidate profile search preferences.</div>
+          <div class="engine-command-title" data-i18n="engine.cmd3Title">Render Daily Search Links</div>
+          <div class="engine-command-desc" data-i18n="engine.cmd3Desc">Synthesizes active Boolean search links and platform URL templates from candidate profile search preferences.</div>
           <div class="engine-command-code">python jobs/engine.py build-links</div>
         </div>
-        <button class="btn-copy-prompt" onclick="copyEngineCommand(this)">Copy Command</button>
+        <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="engine.copyCommand">Copy Command</button>
       </div>
 
       <!-- Command 4: Init Config -->
       <div class="engine-command-card">
         <div>
-          <div class="engine-command-title">Initialize Application Skeleton</div>
-          <div class="engine-command-desc">Creates a lean JSON configuration scaffold mapped to a target canonical role profile for today's application.</div>
+          <div class="engine-command-title" data-i18n="engine.cmd4Title">Initialize Application Skeleton</div>
+          <div class="engine-command-desc" data-i18n="engine.cmd4Desc">Creates a lean JSON configuration scaffold mapped to a target canonical role profile for today's application.</div>
           <div class="engine-command-code">python jobs/engine.py init-config --slug [company_slug] --date YYYY-MM-DD --role fullstack_laravel</div>
         </div>
-        <button class="btn-copy-prompt" onclick="copyEngineCommand(this)">Copy Command</button>
+        <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="engine.copyCommand">Copy Command</button>
       </div>
 
       <!-- Command 5: Validate Resume -->
       <div class="engine-command-card">
         <div>
-          <div class="engine-command-title">Validate ATS DOM Structure</div>
-          <div class="engine-command-desc">Validates structural DOM parity, tag counts, character encoding, and ensures zero prohibited domains or hyphens.</div>
+          <div class="engine-command-title" data-i18n="engine.cmd5Title">Validate ATS DOM Structure</div>
+          <div class="engine-command-desc" data-i18n="engine.cmd5Desc">Validates structural DOM parity, tag counts, character encoding, and ensures zero prohibited domains or hyphens.</div>
           <div class="engine-command-code">python jobs/engine.py validate-resume --file resume.html</div>
         </div>
-        <button class="btn-copy-prompt" onclick="copyEngineCommand(this)">Copy Command</button>
+        <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="engine.copyCommand">Copy Command</button>
       </div>
 
       <!-- Command 6: Export PDFs -->
       <div class="engine-command-card">
         <div>
-          <div class="engine-command-title">Compile High-Fidelity PDFs</div>
-          <div class="engine-command-desc">Invokes headless Chromium to export selectable vector A4 PDFs with DIN-5008 margins and print isolation.</div>
+          <div class="engine-command-title" data-i18n="engine.cmd6Title">Compile High-Fidelity PDFs</div>
+          <div class="engine-command-desc" data-i18n="engine.cmd6Desc">Invokes headless Chromium to export selectable vector A4 PDFs with DIN-5008 margins and print isolation.</div>
           <div class="engine-command-code">python jobs/engine.py export-pdfs --slug [company_slug]</div>
         </div>
-        <button class="btn-copy-prompt" onclick="copyEngineCommand(this)">Copy Command</button>
+        <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="engine.copyCommand">Copy Command</button>
       </div>
     </div>
   </section>
@@ -1177,10 +1184,10 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
   <section id="workflows" class="hub-container section-band no-print">
     <div class="mb-6">
       <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
-        <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;">24 Specialized Career Agent Skills</h2>
-        <span class="nav-tag nav-tag-skills">Portable Agent Skills · skills/*</span>
+        <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="skills.title">24 Specialized Career Agent Skills</h2>
+        <span class="nav-tag nav-tag-skills" data-i18n="skills.badge">Portable Agent Skills · skills/*</span>
       </div>
-      <p class="text-sm text-gray-600 max-w-3xl">Modular, interoperable career skills adhering to the portable agent standard. Compatible with Claude Code, Antigravity, and OpenAI Codex across resume tailoring, market research, cover letters, and interview coaching.</p>
+      <p class="text-sm text-gray-600 max-w-3xl" data-i18n="skills.desc">Modular, interoperable career skills adhering to the portable agent standard. Compatible with Claude Code, Antigravity, and OpenAI Codex across resume tailoring, market research, cover letters, and interview coaching.</p>
     </div>
 
     <div>
@@ -1188,194 +1195,194 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
       <div class="skills-grid">
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">resume-ats-optimizer</div>
-            <div class="skill-item-desc">Optimizes resume bullet points and section layouts for high ATS keyword density and parsing accuracy.</div>
+            <div class="skill-item-name" data-i18n="skills.resumeAtsOptimizerName">resume-ats-optimizer</div>
+            <div class="skill-item-desc" data-i18n="skills.resumeAtsOptimizerDesc">Optimizes resume bullet points and section layouts for high ATS keyword density and parsing accuracy.</div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
+          <span class="skill-item-category" data-i18n="skills.categories.resumeOptimization">Resume Optimization</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">resume-tailor</div>
-            <div class="skill-item-desc">Tailors resume content, summary, and experience to match specific job descriptions.</div>
+            <div class="skill-item-name" data-i18n="skills.resumeTailorName">resume-tailor</div>
+            <div class="skill-item-desc" data-i18n="skills.resumeTailorDesc">Tailors resume content, summary, and experience to match specific job descriptions.</div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
+          <span class="skill-item-category" data-i18n="skills.categories.resumeOptimization">Resume Optimization</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">resume-bullet-writer</div>
-            <div class="skill-item-desc">Rewrites job experience items into punchy, action-oriented, and metric-backed STAR bullet points.</div>
+            <div class="skill-item-name" data-i18n="skills.resumeBulletWriterName">resume-bullet-writer</div>
+            <div class="skill-item-desc" data-i18n="skills.resumeBulletWriterDesc">Rewrites job experience items into punchy, action-oriented, and metric-backed STAR bullet points.</div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
+          <span class="skill-item-category" data-i18n="skills.categories.resumeOptimization">Resume Optimization</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">resume-quantifier</div>
-            <div class="skill-item-desc">Identifies qualitative bullet points and helps calculate measurable percentages, KPIs, and outcomes.</div>
+            <div class="skill-item-name" data-i18n="skills.resumeQuantifierName">resume-quantifier</div>
+            <div class="skill-item-desc" data-i18n="skills.resumeQuantifierDesc">Identifies qualitative bullet points and helps calculate measurable percentages, KPIs, and outcomes.</div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
+          <span class="skill-item-category" data-i18n="skills.categories.resumeOptimization">Resume Optimization</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">resume-formatter</div>
-            <div class="skill-item-desc">Enforces consistent typography, dates, spacing, and standard German or English date formatting.</div>
+            <div class="skill-item-name" data-i18n="skills.resumeFormatterName">resume-formatter</div>
+            <div class="skill-item-desc" data-i18n="skills.resumeFormatterDesc">Enforces consistent typography, dates, spacing, and standard German or English date formatting.</div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
+          <span class="skill-item-category" data-i18n="skills.categories.resumeOptimization">Resume Optimization</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">resume-section-builder</div>
-            <div class="skill-item-desc">Scaffolds new resume sections (e.g. side projects, patents, publications, certifications) with DOM parity.</div>
+            <div class="skill-item-name" data-i18n="skills.resumeSectionBuilderName">resume-section-builder</div>
+            <div class="skill-item-desc" data-i18n="skills.resumeSectionBuilderDesc">Scaffolds new resume sections (e.g. side projects, patents, publications, certifications) with DOM parity.</div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
+          <span class="skill-item-category" data-i18n="skills.categories.resumeOptimization">Resume Optimization</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">resume-version-manager</div>
-            <div class="skill-item-desc">Tracks, diffs, and manages tailored resume iterations across multiple job applications.</div>
+            <div class="skill-item-name" data-i18n="skills.resumeVersionManagerName">resume-version-manager</div>
+            <div class="skill-item-desc" data-i18n="skills.resumeVersionManagerDesc">Tracks, diffs, and manages tailored resume iterations across multiple job applications.</div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
+          <span class="skill-item-category" data-i18n="skills.categories.resumeOptimization">Resume Optimization</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">tech-resume-optimizer</div>
-            <div class="skill-item-desc">Specialized optimization for software engineers, emphasizing cloud architectures, REST APIs, and pipelines.</div>
+            <div class="skill-item-name" data-i18n="skills.techResumeOptimizerName">tech-resume-optimizer</div>
+            <div class="skill-item-desc" data-i18n="skills.techResumeOptimizerDesc">Specialized optimization for software engineers, emphasizing cloud architectures, REST APIs, and pipelines.</div>
           </div>
-          <span class="skill-item-category">Resume Optimization</span>
+          <span class="skill-item-category" data-i18n="skills.categories.resumeOptimization">Resume Optimization</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">cover-letter-generator</div>
-            <div class="skill-item-desc">Drafts DIN-5008 German and English cover letters with compelling hooks and candidate invariants.</div>
+            <div class="skill-item-name" data-i18n="skills.coverLetterGeneratorName">cover-letter-generator</div>
+            <div class="skill-item-desc" data-i18n="skills.coverLetterGeneratorDesc">Drafts DIN-5008 German and English cover letters with compelling hooks and candidate invariants.</div>
           </div>
-          <span class="skill-item-category">Letters &amp; Applications</span>
+          <span class="skill-item-category" data-i18n="skills.categories.lettersApplications">Letters &amp; Applications</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">application-form-filler</div>
-            <div class="skill-item-desc">Parses complex portal application forms (Workday, Greenhouse) and prepares copy-ready answers.</div>
+            <div class="skill-item-name" data-i18n="skills.applicationFormFillerName">application-form-filler</div>
+            <div class="skill-item-desc" data-i18n="skills.applicationFormFillerDesc">Parses complex portal application forms (Workday, Greenhouse) and prepares copy-ready answers.</div>
           </div>
-          <span class="skill-item-category">Letters &amp; Applications</span>
+          <span class="skill-item-category" data-i18n="skills.categories.lettersApplications">Letters &amp; Applications</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">portfolio-case-study-writer</div>
-            <div class="skill-item-desc">Structures software and design projects into deep technical case studies with problem, architecture, and impact.</div>
+            <div class="skill-item-name" data-i18n="skills.portfolioCaseStudyWriterName">portfolio-case-study-writer</div>
+            <div class="skill-item-desc" data-i18n="skills.portfolioCaseStudyWriterDesc">Structures software and design projects into deep technical case studies with problem, architecture, and impact.</div>
           </div>
-          <span class="skill-item-category">Letters &amp; Applications</span>
+          <span class="skill-item-category" data-i18n="skills.categories.lettersApplications">Letters &amp; Applications</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">job-application-generator</div>
-            <div class="skill-item-desc">Coordinates end-to-end generation of complete application bundles (Resume, Letter, Config, Match Note).</div>
+            <div class="skill-item-name" data-i18n="skills.jobApplicationGeneratorName">job-application-generator</div>
+            <div class="skill-item-desc" data-i18n="skills.jobApplicationGeneratorDesc">Coordinates end-to-end generation of complete application bundles (Resume, Letter, Config, Match Note).</div>
           </div>
-          <span class="skill-item-category">Letters &amp; Applications</span>
+          <span class="skill-item-category" data-i18n="skills.categories.lettersApplications">Letters &amp; Applications</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">executive-resume-writer</div>
-            <div class="skill-item-desc">Tailors resumes for leadership, VP, and Director roles focusing on P&amp;L ownership and team scale.</div>
+            <div class="skill-item-name" data-i18n="skills.executiveResumeWriterName">executive-resume-writer</div>
+            <div class="skill-item-desc" data-i18n="skills.executiveResumeWriterDesc">Tailors resumes for leadership, VP, and Director roles focusing on P&amp;L ownership and team scale.</div>
           </div>
-          <span class="skill-item-category">Career Transitions</span>
+          <span class="skill-item-category" data-i18n="skills.categories.careerTransitions">Career Transitions</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">career-changer-translator</div>
-            <div class="skill-item-desc">Translates non-traditional career paths and domain expertise into relevant engineering competencies.</div>
+            <div class="skill-item-name" data-i18n="skills.careerChangerTranslatorName">career-changer-translator</div>
+            <div class="skill-item-desc" data-i18n="skills.careerChangerTranslatorDesc">Translates non-traditional career paths and domain expertise into relevant engineering competencies.</div>
           </div>
-          <span class="skill-item-category">Career Transitions</span>
+          <span class="skill-item-category" data-i18n="skills.categories.careerTransitions">Career Transitions</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">academic-cv-builder</div>
-            <div class="skill-item-desc">Formats academic curricula vitae including research grants, teaching experience, and peer-reviewed papers.</div>
+            <div class="skill-item-name" data-i18n="skills.academicCvBuilderName">academic-cv-builder</div>
+            <div class="skill-item-desc" data-i18n="skills.academicCvBuilderDesc">Formats academic curricula vitae including research grants, teaching experience, and peer-reviewed papers.</div>
           </div>
-          <span class="skill-item-category">Career Transitions</span>
+          <span class="skill-item-category" data-i18n="skills.categories.careerTransitions">Career Transitions</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">creative-portfolio-resume</div>
-            <div class="skill-item-desc">Optimizes portfolio resumes for product designers, creative directors, and frontend visual developers.</div>
+            <div class="skill-item-name" data-i18n="skills.creativePortfolioResumeName">creative-portfolio-resume</div>
+            <div class="skill-item-desc" data-i18n="skills.creativePortfolioResumeDesc">Optimizes portfolio resumes for product designers, creative directors, and frontend visual developers.</div>
           </div>
-          <span class="skill-item-category">Career Transitions</span>
+          <span class="skill-item-category" data-i18n="skills.categories.careerTransitions">Career Transitions</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">interview-coach</div>
-            <div class="skill-item-desc">Simulates behavioral and technical interview questions, grading responses against job requirements.</div>
+            <div class="skill-item-name" data-i18n="skills.interviewCoachName">interview-coach</div>
+            <div class="skill-item-desc" data-i18n="skills.interviewCoachDesc">Simulates behavioral and technical interview questions, grading responses against job requirements.</div>
           </div>
-          <span class="skill-item-category">Interviews &amp; Offers</span>
+          <span class="skill-item-category" data-i18n="skills.categories.interviewsOffers">Interviews &amp; Offers</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">interview-prep-generator</div>
-            <div class="skill-item-desc">Generates 5-phase interview cheat sheets with German elevator pitches, STAR stories, and closing questions.</div>
+            <div class="skill-item-name" data-i18n="skills.interviewPrepGeneratorName">interview-prep-generator</div>
+            <div class="skill-item-desc" data-i18n="skills.interviewPrepGeneratorDesc">Generates 5-phase interview cheat sheets with German elevator pitches, STAR stories, and closing questions.</div>
           </div>
-          <span class="skill-item-category">Interviews &amp; Offers</span>
+          <span class="skill-item-category" data-i18n="skills.categories.interviewsOffers">Interviews &amp; Offers</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">salary-negotiation-prep</div>
-            <div class="skill-item-desc">Prepares data-driven salary negotiation talk tracks and counter-offers based on German tech benchmarks.</div>
+            <div class="skill-item-name" data-i18n="skills.salaryNegotiationPrepName">salary-negotiation-prep</div>
+            <div class="skill-item-desc" data-i18n="skills.salaryNegotiationPrepDesc">Prepares data-driven salary negotiation talk tracks and counter-offers based on German tech benchmarks.</div>
           </div>
-          <span class="skill-item-category">Interviews &amp; Offers</span>
+          <span class="skill-item-category" data-i18n="skills.categories.interviewsOffers">Interviews &amp; Offers</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">offer-comparison-analyzer</div>
-            <div class="skill-item-desc">Compares competing job offers across base salary, bonus, equity, remote flexibility, and benefits.</div>
+            <div class="skill-item-name" data-i18n="skills.offerComparisonAnalyzerName">offer-comparison-analyzer</div>
+            <div class="skill-item-desc" data-i18n="skills.offerComparisonAnalyzerDesc">Compares competing job offers across base salary, bonus, equity, remote flexibility, and benefits.</div>
           </div>
-          <span class="skill-item-category">Interviews &amp; Offers</span>
+          <span class="skill-item-category" data-i18n="skills.categories.interviewsOffers">Interviews &amp; Offers</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">daily-job-workflow</div>
-            <div class="skill-item-desc">Drives the daily discovery, qualification, and submission routine from daily-job-search-workflow.md.</div>
+            <div class="skill-item-name" data-i18n="skills.dailyJobWorkflowName">daily-job-workflow</div>
+            <div class="skill-item-desc" data-i18n="skills.dailyJobWorkflowDesc">Drives the daily discovery, qualification, and submission routine from daily-job-search-workflow.md.</div>
           </div>
-          <span class="skill-item-category">Job Market Intelligence</span>
+          <span class="skill-item-category" data-i18n="skills.categories.jobMarketIntelligence">Job Market Intelligence</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">job-description-analyzer</div>
-            <div class="skill-item-desc">Extracts hard skills, soft skills, seniority levels, and hidden requirements from raw job postings.</div>
+            <div class="skill-item-name" data-i18n="skills.jobDescriptionAnalyzerName">job-description-analyzer</div>
+            <div class="skill-item-desc" data-i18n="skills.jobDescriptionAnalyzerDesc">Extracts hard skills, soft skills, seniority levels, and hidden requirements from raw job postings.</div>
           </div>
-          <span class="skill-item-category">Job Market Intelligence</span>
+          <span class="skill-item-category" data-i18n="skills.categories.jobMarketIntelligence">Job Market Intelligence</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">linkedin-profile-optimizer</div>
-            <div class="skill-item-desc">Aligns LinkedIn headlines, About sections, and featured media with the master resume invariants.</div>
+            <div class="skill-item-name" data-i18n="skills.linkedinProfileOptimizerName">linkedin-profile-optimizer</div>
+            <div class="skill-item-desc" data-i18n="skills.linkedinProfileOptimizerDesc">Aligns LinkedIn headlines, About sections, and featured media with the master resume invariants.</div>
           </div>
-          <span class="skill-item-category">Job Market Intelligence</span>
+          <span class="skill-item-category" data-i18n="skills.categories.jobMarketIntelligence">Job Market Intelligence</span>
         </div>
 
         <div class="skill-item">
           <div>
-            <div class="skill-item-name">reference-list-builder</div>
-            <div class="skill-item-desc">Generates formatted, professional professional reference dossiers tailored to target positions.</div>
+            <div class="skill-item-name" data-i18n="skills.referenceListBuilderName">reference-list-builder</div>
+            <div class="skill-item-desc" data-i18n="skills.referenceListBuilderDesc">Generates formatted, professional professional reference dossiers tailored to target positions.</div>
           </div>
-          <span class="skill-item-category">Job Market Intelligence</span>
+          <span class="skill-item-category" data-i18n="skills.categories.jobMarketIntelligence">Job Market Intelligence</span>
         </div>
       </div>
     </div>
@@ -1385,26 +1392,26 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
   <section id="resume" class="hub-container section-band">
     <div class="persona-switcher-bar no-print">
       <div class="flex items-center gap-2 flex-wrap">
-        <span class="text-xs font-semibold uppercase text-gray-500">Archetype:</span>
+        <span class="text-xs font-semibold uppercase text-gray-500" data-i18n="resume.archetypeLabel">Archetype:</span>
         <div class="persona-pills">
-          <button class="btn-pill-sm" data-persona="fullstack">Fullstack Engineer</button>
-          <button class="btn-pill-sm" data-persona="devops">DevOps &amp; Cloud</button>
-          <button class="btn-pill-sm" data-persona="designer">Product Designer</button>
-          <button class="btn-pill-sm" data-persona="finance">Finance &amp; Controlling</button>
-          <button class="btn-pill-sm active" data-persona="engineering">Mechanical Systems</button>
+          <button class="btn-pill-sm" data-persona="fullstack" data-i18n="resume.fullstack">Fullstack Engineer</button>
+          <button class="btn-pill-sm" data-persona="devops" data-i18n="resume.devops">DevOps &amp; Cloud</button>
+          <button class="btn-pill-sm" data-persona="designer" data-i18n="resume.designer">Product Designer</button>
+          <button class="btn-pill-sm" data-persona="finance" data-i18n="resume.finance">Finance &amp; Controlling</button>
+          <button class="btn-pill-sm active" data-persona="engineering" data-i18n="resume.engineering">Mechanical Systems</button>
         </div>
       </div>
       <div class="flex items-center gap-2 flex-wrap">
         <a id="resume-standalone-link" href="./resume.html" target="_blank" rel="noopener noreferrer" class="btn-pill-sm" style="display:inline-flex; align-items:center; gap:4px; text-decoration:none;">
-          <i data-lucide="external-link" class="w-3.5 h-3.5"></i> Standalone Resume
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i> <span data-i18n="resume.standaloneLink">Standalone Resume</span>
         </a>
-        <button class="btn-pill-sm" onclick="toggleAtsMode()">Toggle ATS Mode</button>
-        <button class="btn-pill-sm" onclick="printResumeFrame()">Print / PDF</button>
+        <button class="btn-pill-sm" onclick="toggleAtsMode()" data-i18n="resume.toggleAts">Toggle ATS Mode</button>
+        <button class="btn-pill-sm" onclick="printResumeFrame()" data-i18n="resume.printPdf">Print / PDF</button>
       </div>
     </div>
 
     <div id="resume-paper">
-      <iframe id="resumeFrame" src="./resume.html" title="Master Web Resume Template" style="width: 100%; height: 1050px; border: none; display: block;"></iframe>
+      <iframe id="resumeFrame" src="./resume.html" title="Master Web Resume Template" data-i18n-attr="title:resume.title" style="width: 100%; height: 1050px; border: none; display: block;"></iframe>
     </div>
   </section>
 
@@ -1412,36 +1419,36 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
   <section id="faq" class="hub-container section-band no-print">
     <div class="faq-card-container">
       <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
-        <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;">Frequently Asked Questions</h2>
-        <span class="nav-tag nav-tag-sop">ATS &amp; Career Guide</span>
+        <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="faq.title">Frequently Asked Questions</h2>
+        <span class="nav-tag nav-tag-sop" data-i18n="faq.badge">ATS &amp; Career Guide</span>
       </div>
-      <p class="text-sm text-gray-700 dark:text-gray-300 mb-8 max-w-3xl">Everything you need to know about ATS parser compatibility, German DIN-5008 standards, headless PDF export, and the 20-minute daily application routine.</p>
+      <p class="text-sm text-gray-700 dark:text-gray-300 mb-8 max-w-3xl" data-i18n="faq.desc">Everything you need to know about ATS parser compatibility, German DIN-5008 standards, headless PDF export, and the 20-minute daily application routine.</p>
 
       <div class="faq-grid">
-        <div class="faq-item">
-          <h3 class="faq-question">What makes this web resume ATS-friendly?</h3>
-          <p class="faq-answer">Unlike graphic editor exports that flatten text or scramble multi-column layouts, Career Engine uses single-column semantic HTML5 and compiles via headless Chromium into clean, selectable standard A4 text. Parsers like Personio, Workday, and Greenhouse extract 100% of contact info, experience, and skill tags without errors.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">How does DIN-5008 compliance help with German tech job applications?</h3>
-          <p class="faq-answer">DIN-5008 is the formal standard for German business correspondence. The engine formats cover letter headers, margins, sender/recipient blocks, date stamps, and subject lines to exact DIN-5008 specifications, instantly signaling professionalism and cultural calibration to German recruiters and HR departments.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">How does the Single Source of Truth (profile.json) work?</h3>
-          <p class="faq-answer">All candidate invariants—contact information, target compensation, notice period, and core tech stack—are defined once in <code>config/profile.json</code>. Updating this single file automatically refreshes your web resume, role archetype PDFs, DIN-5008 cover letters, and daily job link queries.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">How does the 20-minute daily job search routine work?</h3>
-          <p class="faq-answer">Instead of spending 4 hours manually browsing job boards, you execute a focused 4-step routine: (1) Run Google Direct ATS queries to uncover fresh unlisted jobs, (2) Evaluate your skills match using structured prompts, (3) Auto-compile a tailored resume and DIN-5008 cover letter via <code>jobs/engine.py</code>, and (4) Submit and log the match before 08:20 AM.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Can I customize this template for different tech roles?</h3>
-          <p class="faq-answer">Yes. The repository includes 5 pre-validated canonical role archetypes: Fullstack Software Engineer, Cloud DevOps &amp; Platform Engineer, UI/UX &amp; Product Designer, Banking &amp; Controlling, and Mechanical &amp; Energy Systems Engineering. You can switch between them with one click or create your own custom roles.</p>
-        </div>
-        <div class="faq-item">
-          <h3 class="faq-question">Is this tool free and open source?</h3>
-          <p class="faq-answer">Yes. Career Engine is 100% open source under the MIT License. There are no subscriptions, no paywalled export limits, and no tracking scripts. You own your code and your candidate data completely.</p>
-        </div>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q1">What makes this web resume ATS-friendly?</summary>
+          <p class="faq-answer" data-i18n="faq.a1">Unlike graphic editor exports that flatten text or scramble multi-column layouts, Career Engine uses single-column semantic HTML5 and compiles via headless Chromium into clean, selectable standard A4 text. Parsers like Personio, Workday, and Greenhouse extract 100% of contact info, experience, and skill tags without errors.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q2">How does DIN-5008 compliance help with German tech job applications?</summary>
+          <p class="faq-answer" data-i18n="faq.a2">DIN-5008 is the formal standard for German business correspondence. The engine formats cover letter headers, margins, sender/recipient blocks, date stamps, and subject lines to exact DIN-5008 specifications, instantly signaling professionalism and cultural calibration to German recruiters and HR departments.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q3">How does the Single Source of Truth (profile.json) work?</summary>
+          <p class="faq-answer" data-i18n="faq.a3">All candidate invariants—contact information, target compensation, notice period, and core tech stack—are defined once in <code>config/profile.json</code>. Updating this single file automatically refreshes your web resume, role archetype PDFs, DIN-5008 cover letters, and daily job link queries.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q4">How does the 20-minute daily job search routine work?</summary>
+          <p class="faq-answer" data-i18n="faq.a4">Instead of spending 4 hours manually browsing job boards, you execute a focused 4-step routine: (1) Run Google Direct ATS queries to uncover fresh unlisted jobs, (2) Evaluate your skills match using structured prompts, (3) Auto-compile a tailored resume and DIN-5008 cover letter via <code>jobs/engine.py</code>, and (4) Submit and log the match before 08:20 AM.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q5">Can I customize this template for different tech roles?</summary>
+          <p class="faq-answer" data-i18n="faq.a5">Yes. The repository includes 5 pre-validated canonical role archetypes: Fullstack Software Engineer, Cloud DevOps &amp; Platform Engineer, UI/UX &amp; Product Designer, Banking &amp; Controlling, and Mechanical &amp; Energy Systems Engineering. You can switch between them with one click or create your own custom roles.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question" data-i18n="faq.q6">Is this tool free and open source?</summary>
+          <p class="faq-answer" data-i18n="faq.a6">Yes. Career Engine is 100% open source under the MIT License. There are no subscriptions, no paywalled export limits, and no tracking scripts. You own your code and your candidate data completely.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -1449,15 +1456,15 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
   <!-- Download Starter Kit CTA Band -->
   <section id="download" class="hub-container section-band no-print">
     <div class="cta-band-light">
-      <h2>Get Started with Career Engine</h2>
-      <p class="text-sm text-gray-600 max-w-xl mx-auto mb-6">Download the complete standalone open-source kit including the master resume template, profile configurations, all 5 AI prompts, 24 agent skills, and the Python automation engine.</p>
-      <a href="./download/career-engine-starter.zip" download class="btn-primary" style="margin-bottom: 24px;">Download Starter Kit (ZIP)</a>
+      <h2 data-i18n="download.title">Get Started with Career Engine</h2>
+      <p class="text-sm text-gray-600 max-w-xl mx-auto mb-6" data-i18n="download.desc">Download the complete standalone open-source kit including the master resume template, profile configurations, all 5 AI prompts, 24 agent skills, and the Python automation engine.</p>
+      <a href="./download/career-engine-starter.zip" download class="btn-primary" style="margin-bottom: 24px;" data-i18n="download.cta">Download Starter Kit (ZIP)</a>
       <div class="text-xs text-gray-500 flex justify-center items-center gap-4 mt-6 flex-wrap">
-        <span>1. Clone / Unzip</span>
+        <span data-i18n="download.bullet1">1. Clone / Unzip</span>
         <span>·</span>
-        <span>2. Edit config/profile.json</span>
+        <span data-i18n="download.bullet2">2. Edit config/profile.json</span>
         <span>·</span>
-        <span>3. Run python jobs/engine.py</span>
+        <span data-i18n="download.bullet3">3. Run python jobs/engine.py</span>
       </div>
     </div>
   </section>
@@ -1466,25 +1473,25 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
   <section id="share" class="hub-container section-band no-print">
     <div class="share-card">
       <div class="share-card-header">
-        <h3 class="text-2xl font-semibold m-0 text-white">Know an Engineer Looking for Their Next Role?</h3>
-        <p class="text-sm text-stone-300 max-w-xl mx-auto mt-2 mb-6">Share this free open-source ATS engine with friends, colleagues, or your tech community to help them bypass applicant tracking filters and save hours every morning.</p>
+        <h3 class="text-2xl font-semibold m-0 text-white" data-i18n="share.title">Know an Engineer Looking for Their Next Role?</h3>
+        <p class="text-sm text-stone-300 max-w-xl mx-auto mt-2 mb-6" data-i18n="share.desc">Share this free open-source ATS engine with friends, colleagues, or your tech community to help them bypass applicant tracking filters and save hours every morning.</p>
       </div>
       <div class="share-btn-cluster">
         <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20free%20open-source%20ATS%20Web%20Resume%20%26%20Career%20Engine%20for%20developers%3A%20https%3A%2F%2Fcareer.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-share btn-share-whatsapp" aria-label="Share on WhatsApp">
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.529 1.791.782 2.791.782h.001c3.182 0 5.768-2.587 5.769-5.766 0-1.54-.6-2.987-1.689-4.078-1.09-1.091-2.536-1.69-4.081-1.69zm3.388 8.167c-.146.415-.852.799-1.201.85-.316.046-.717.069-2.146-.522-1.828-.756-3.003-2.617-3.094-2.738-.091-.121-.741-.986-.741-1.881 0-.895.469-1.336.636-1.517.167-.182.365-.227.487-.227.121 0 .243.002.349.007.112.005.263-.042.411.314.152.365.517 1.261.562 1.353.045.091.076.197.015.318-.061.121-.091.197-.182.303-.091.106-.192.237-.274.318-.091.091-.186.19-.08.372.106.182.471.777 1.011 1.258.696.62 1.282.812 1.464.903.182.091.288.076.395-.045.106-.121.456-.531.577-.713.121-.182.243-.152.41-.091.167.061 1.063.501 1.245.592.182.091.303.136.349.212.046.076.046.439-.1.854z"/></svg>
-          <span>WhatsApp</span>
+          <span data-i18n="share.btnWhatsapp">WhatsApp</span>
         </a>
         <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcareer.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-share btn-share-linkedin" aria-label="Share on LinkedIn">
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.69 1.69 0 0 0 1.7-1.69c0-.93-.76-1.69-1.7-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.69 1.69 1.69m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
-          <span>LinkedIn</span>
+          <span data-i18n="share.btnLinkedin">LinkedIn</span>
         </a>
         <a href="https://twitter.com/intent/tweet?text=Open-source%20ATS%20Web%20Resume%20%26%20Career%20Engine%20for%20tech%20professionals%20by%20%40MasriSystems%3A&url=https%3A%2F%2Fcareer.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-share btn-share-x" aria-label="Share on X">
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          <span>X / Twitter</span>
+          <span data-i18n="share.btnTwitter">X / Twitter</span>
         </a>
         <button class="btn-share btn-share-copy" onclick="copyShareUrl(this)" aria-label="Copy Link to Clipboard">
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span>Copy Link</span>
+          <span data-i18n="share.btnCopyLink">Copy Link</span>
         </button>
       </div>
     </div>
@@ -1494,21 +1501,21 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
   <footer class="hub-footer no-print">
     <div class="hub-container hub-footer-inner">
       <div>
-        <strong>Masri Systems</strong> · Career Engine (MIT License)
+        <strong data-i18n="footer.brand">Masri Systems</strong> · <span data-i18n="footer.brandDesc">Career Engine (MIT License)</span>
       </div>
       <ul class="footer-links">
         <li><a href="https://github.com/masrisystems/career-engine" target="_blank" rel="noopener noreferrer" class="footer-gh-link" aria-label="GitHub Repository">
           <svg class="h-4 w-4 inline-block -mt-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
           </svg>
-          <span>GitHub</span>
+          <span data-i18n="footer.github">GitHub</span>
         </a></li>
-        <li><a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer">Portfolio</a></li>
-        <li><a href="https://masrisystems.com" target="_blank" rel="noopener noreferrer">Master Resume</a></li>
-        <li><a href="#prompts">Prompts</a></li>
-        <li><a href="#workflows">Skills</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#download">Download</a></li>
+        <li><a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" data-i18n="footer.portfolio">Portfolio</a></li>
+        <li><a href="https://masrisystems.com" target="_blank" rel="noopener noreferrer" data-i18n="footer.masterResume">Master Resume</a></li>
+        <li><a href="#prompts" data-i18n="footer.prompts">Prompts</a></li>
+        <li><a href="#workflows" data-i18n="footer.skills">Skills</a></li>
+        <li><a href="#faq" data-i18n="footer.faq">FAQ</a></li>
+        <li><a href="#download" data-i18n="footer.download">Download</a></li>
       </ul>
     </div>
   </footer>
@@ -1583,33 +1590,47 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
   }
 </script>
 
-<!-- Toggle Language -->
+<!-- Internationalization (i18n) Engine Initialization & Legacy Compatibility -->
 <script>
-  function switchLanguage() {
-    // The bilingual resume lives in the #resumeFrame iframe, so switch it there
-    const frameWin = document.getElementById("resumeFrame")?.contentWindow;
-    const currentLang = frameWin?.document.documentElement.lang || localStorage.getItem("lang") || "en";
-
-    const newLang = currentLang === "en" ? "de" : "en";
-    localStorage.setItem("lang", newLang);
-
-    applyLanguage(newLang);
-    if (typeof frameWin?.switchLanguage === "function") frameWin.switchLanguage(newLang);
-    document.getElementById("resume")?.scrollIntoView({ behavior: "smooth" });
+  function switchLanguage(targetLang) {
+    if (typeof CareerI18n !== "undefined" && typeof CareerI18n.setLanguage === "function") {
+      var current = typeof CareerI18n.getLanguage === "function" ? CareerI18n.getLanguage() : (localStorage.getItem("lang") || "en");
+      var nextLang = targetLang || (current === "en" ? "de" : "en");
+      CareerI18n.setLanguage(nextLang);
+    } else {
+      var currentLang = localStorage.getItem("lang") || "en";
+      var newLang = targetLang || (currentLang === "en" ? "de" : "en");
+      localStorage.setItem("lang", newLang);
+      applyLanguage(newLang);
+    }
+    var frameWin = document.getElementById("resumeFrame")?.contentWindow;
+    if (typeof frameWin?.switchLanguage === "function") {
+      frameWin.switchLanguage(targetLang || localStorage.getItem("career_engine_lang") || localStorage.getItem("lang") || "en");
+    }
   }
 
   function applyLanguage(lang) {
-    const elements = document.querySelectorAll("[data-lang-en]");
-    elements.forEach((el) => {
-      const text = el.getAttribute(`data-lang-${lang}`);
+    var elements = document.querySelectorAll("[data-lang-en]");
+    elements.forEach(function (el) {
+      var text = el.getAttribute("data-lang-" + lang);
       if (text) el.innerHTML = text;
     });
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const savedLang = localStorage.getItem("lang") || "en";
-    applyLanguage(savedLang);
-  });
+  function initCareerI18n() {
+    if (typeof CareerI18n !== "undefined" && typeof CareerI18n.init === "function") {
+      CareerI18n.init();
+    } else {
+      var savedLang = localStorage.getItem("career_engine_lang") || localStorage.getItem("lang") || "en";
+      applyLanguage(savedLang);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initCareerI18n);
+  } else {
+    initCareerI18n();
+  }
 </script>
 
 <!-- Download Function -->
