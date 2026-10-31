@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>i18n Engine Unit Tests</title>
+</head>
+<body>
+  <div id="test-container">
+    <h1 id="test-h1" data-i18n="test.title">Original Title</h1>
+    <p id="test-p" data-i18n="test.body">Original Body</p>
+    <input id="test-input" type="text" data-i18n-attr="placeholder:test.placeholder,aria-label:test.ariaLabel" placeholder="Old" aria-label="Old" />
+    <span id="test-missing" data-i18n="missing.key">Original Content</span>
+  </div>
+
+  <select id="lang-select-1" class="lang-select"></select>
+  <select id="lang-select-2" class="lang-select"></select>
+
+  <script>
+    window.CAREER_I18N = {
+      en: {
+        meta: { code: "en", label: "English" },
+        test: {
+          title: "English Title",
+          body: "English <strong>Body</strong>",
+          placeholder: "Type here...",
+          ariaLabel: "English Input"
+        }
+      },
+      de: {
+        meta: { code: "de", label: "Deutsch" },
+        test: {
+          title: "Deutscher Titel",
+          body: "Deutscher <strong>Körper</strong>",
+          placeholder: "Hier eingeben...",
+          ariaLabel: "Deutsche Eingabe"
+        }
+      }
+    };
+  </script>
+  <script src="../i18n/i18n.js"></script>
+  <script>
+    const results = [];
+    function assert(desc, condition) {
+      results.push({ desc, pass: !!condition });
+      console.log((condition ? "PASS: " : "FAIL: ") + desc);
+    }
+
+    try {
+      localStorage.removeItem("career_engine_lang");
+      localStorage.removeItem("lang");
+    } catch (e) {}
+
+    CareerI18n.init();
+
+    // 1. Check default language
+    assert("Default language should be en", CareerI18n.getLanguage() === "en");
+    assert("H1 text should be translated to English", document.getElementById("test-h1").textContent === "English Title");
+    assert("Input placeholder translated", document.getElementById("test-input").getAttribute("placeholder") === "Type here...");
+
+    // 2. Switch language to de
+    CareerI18n.setLanguage("de");
+    assert("Language changed to de", CareerI18n.getLanguage() === "de");
+    assert("H1 text should be translated to German", document.getElementById("test-h1").textContent === "Deutscher Titel");
+    assert("P html should contain strong", document.getElementById("test-p").innerHTML === "Deutscher <strong>Körper</strong>");
+    assert("Input placeholder updated to German", document.getElementById("test-input").getAttribute("placeholder") === "Hier eingeben...");
+    assert("Missing key keeps fallback/original", document.getElementById("test-missing").textContent === "Original Content");
+
+    // 3. Dropdown population
+    const select1 = document.getElementById("lang-select-1");
+    assert("Dropdown 1 has 2 options", select1.options.length === 2);
+    assert("Dropdown 1 value is de", select1.value === "de");
+
+    // 4. Helper t()
+    assert("t() resolves dot notation", CareerI18n.t("test.title") === "Deutscher Titel");
+    assert("t() falls back if missing", CareerI18n.t("non.existent", "Fallback") === "Fallback");
+
+    // 5. Event dispatching verification
+    let eventReceived = false;
+    window.addEventListener("career:lang-changed", function(e) {
+      if (e.detail && e.detail.lang === "en") eventReceived = true;
+    });
+    CareerI18n.setLanguage("en");
+    assert("Event dispatched on language change", eventReceived);
+    CareerI18n.setLanguage("de");
+    assert("Language restored to de", CareerI18n.getLanguage() === "de");
+
+    const allPassed = results.every(r => r.pass);
+    const summary = document.createElement("div");
+    summary.id = "test-result";
+    summary.textContent = allPassed ? "ALL TESTS PASSED" : "SOME TESTS FAILED";
+    document.body.appendChild(summary);
+  </script>
+</body>
+</html>
