@@ -155,6 +155,7 @@
         <span class="nav-tag" data-i18n="nav.openSource">Open Source</span>
       </a>
       <ul class="nav-links desktop-nav-links">
+        <li><a href="#setup" class="nav-link" data-i18n="nav.getStarted">Get Started</a></li>
         <li><a href="#daily-workflow" class="nav-link" data-i18n="nav.dailyRoutine">Daily Routine</a></li>
         <li><a href="#brief-showcase" class="nav-link" data-i18n="nav.results">Results</a></li>
         <li><a href="#prompts" class="nav-link" data-i18n="nav.aiPrompts">AI Prompts</a></li>
@@ -191,6 +192,7 @@
     <div id="nav-drawer" class="nav-drawer no-print" aria-hidden="true">
       <div class="nav-drawer-inner">
         <ul class="nav-links mobile-nav-links">
+          <li><a href="#setup" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.getStarted">Get Started</a></li>
           <li><a href="#daily-workflow" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.dailyRoutine">Daily Routine</a></li>
           <li><a href="#brief-showcase" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.results">Results</a></li>
           <li><a href="#prompts" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.aiPrompts">AI Prompts</a></li>
@@ -224,7 +226,8 @@
         <span class="trust-badge-text" data-i18n="hero.trustBadgeText">Audited, tested, and approved by senior tech recruiters and career consultants across Germany &amp; the EU for 100% ATS parser compatibility and DIN-5008 compliance.</span>
       </div>
       <div class="hero-cta-cluster">
-        <a href="#prompts" class="btn-primary" data-i18n="hero.ctaPrompts">Explore AI Prompts</a>
+        <a href="#setup" class="btn-primary" data-i18n="hero.ctaSetup">Get Started in 4 Steps</a>
+        <a href="#prompts" class="btn-secondary" data-i18n="hero.ctaPrompts">Explore AI Prompts</a>
         <a href="#resume" class="btn-secondary" data-i18n="hero.ctaResume">Preview Web Resume</a>
         <a href="https://github.com/masrisystems/career-engine" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-hero-gh" aria-label="GitHub Repository">
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -244,6 +247,125 @@
       <a href="./download/career-engine-starter.zip" download="career-engine-starter.zip" class="btn-secondary-on-dark" data-i18n="coral.cta">Download Starter Kit (ZIP)</a>
     </div>
   </div>
+
+  <!-- Step-by-Step Setup Guide -->
+  <section id="setup" class="hub-container section-band no-print">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+      <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="setup.title">Get Started in 4 Steps</h2>
+      <span class="nav-tag nav-tag-sop" data-i18n="setup.badge">About 30 Minutes · Once</span>
+    </div>
+    <p class="text-sm text-gray-600 mb-2 max-w-3xl" data-i18n="setup.desc1">From download to an automatic morning run. You need Python 3.10+ (no extra packages), Chrome or Edge for PDF export, and an AI coding agent for steps 3 and 4. The examples use <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>; Codex CLI and Gemini CLI read the same <code class="font-mono text-xs">AGENTS.md</code> and work the same way.</p>
+    <p class="text-sm text-gray-600 mb-6 max-w-3xl" data-i18n="setup.desc2">On macOS and Linux, type <code class="font-mono text-xs">python3</code> wherever the commands say <code class="font-mono text-xs">python</code>.</p>
+
+    <ol class="setup-steps">
+      <!-- Step 1 -->
+      <li class="setup-step">
+        <span class="setup-step-num">1</span>
+        <div class="setup-step-body">
+          <h3 class="setup-step-title" data-i18n="setup.step1Title">Install</h3>
+          <p class="setup-step-desc" data-i18n="setup.step1Desc">Clone the repository (or <a href="./download/career-engine-starter.zip" download>download the ZIP</a> and unzip it), then build the example resumes to check that Python and the PDF export work. You should get PDFs in <code class="font-mono text-xs">jobs/roles/pdf/</code>.</p>
+          <div class="engine-command-grid">
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step1CardClone">Clone and test the engine</div>
+                <div class="engine-command-code">git clone https://github.com/masrisystems/career-engine.git
+cd career-engine
+python jobs/engine.py build-roles</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommands">Copy Commands</button>
+            </div>
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step1CardDocker">Optional: only preview the web pages</div>
+                <div class="engine-command-desc" data-i18n="setup.step1CardDockerDesc">Serves this page and the web resume at http://localhost with Docker. Port 80 taken? Prefix with PORT=8080.</div>
+                <div class="engine-command-code">docker compose up --build</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommand">Copy Command</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Step 2 -->
+      <li class="setup-step">
+        <span class="setup-step-num">2</span>
+        <div class="setup-step-body">
+          <h3 class="setup-step-title" data-i18n="setup.step2Title">Create your profile with AI</h3>
+          <p class="setup-step-desc" data-i18n="setup.step2Desc">Everything the engine writes (resume, cover letters, search links) comes from one file: <code class="font-mono text-xs">config/profile.json</code>. Let an AI fill it for you:</p>
+          <ul class="setup-substeps">
+            <li data-i18n="setup.step2Item1">Copy the <a href="#prompts">Profile &amp; Resume Onboarding prompt</a> into ChatGPT, Claude or Gemini.</li>
+            <li data-i18n="setup.step2Item2">Paste your old CV or LinkedIn text after it, or type <em>Interview me</em> to answer 7 short questions instead.</li>
+            <li data-i18n="setup.step2Item3">Save the JSON it returns as <code class="font-mono text-xs">config/profile.json</code>, replacing the example.</li>
+            <li data-i18n="setup.step2Item4">Rebuild with your data and open the results: your resume PDFs in <code class="font-mono text-xs">jobs/roles/pdf/</code> and your job board links in <code class="font-mono text-xs">daily-job-search-links.md</code>.</li>
+          </ul>
+          <div class="engine-command-grid">
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step2Card">Build from your profile</div>
+                <div class="engine-command-code">python jobs/engine.py build-links
+python jobs/engine.py build-roles</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommands">Copy Commands</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Step 3 -->
+      <li class="setup-step">
+        <span class="setup-step-num">3</span>
+        <div class="setup-step-body">
+          <h3 class="setup-step-title" data-i18n="setup.step3Title">Do your first daily run with your AI agent</h3>
+          <p class="setup-step-desc" data-i18n="setup.step3Desc">Open a terminal in the <code class="font-mono text-xs">career-engine</code> folder, start your agent (<code class="font-mono text-xs">claude</code>, <code class="font-mono text-xs">codex</code> or <code class="font-mono text-xs">gemini</code>) and paste the instruction below. The agent searches for jobs, scores them, writes a tailored resume and DIN-5008 cover letter for the best matches with <code class="font-mono text-xs">jobs/engine.py</code>, logs them in <code class="font-mono text-xs">jobs/job_matches.md</code> and ends with a Morning Action Brief like the <a href="#brief-showcase">example below</a>. Watch this first run and approve its steps, so you know what the scheduled run will do.</p>
+          <div class="engine-command-grid">
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step3Card">Paste into your agent</div>
+                <div class="engine-command-code">Read AGENTS.md, skills/daily-job-workflow/SKILL.md and daily-job-search-workflow.md, then run today's daily job workflow exactly as described there. Find up to 2 open roles that score 9.0/10 or higher, build each application package with python jobs/engine.py, update jobs/job_matches.md and finish with the Morning Action Brief. Prepare only: never submit an application or contact an employer.</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyInstruction">Copy Instruction</button>
+            </div>
+          </div>
+          <p class="setup-step-desc mt-3" data-i18n="setup.step3After">Read the packages in <code class="font-mono text-xs">jobs/resumes/</code> and <code class="font-mono text-xs">jobs/cover_letters/</code>, fix anything that is wrong, and send the application yourself. The agent never applies on your behalf.</p>
+        </div>
+      </li>
+
+      <!-- Step 4 -->
+      <li class="setup-step">
+        <span class="setup-step-num">4</span>
+        <div class="setup-step-body">
+          <h3 class="setup-step-title" data-i18n="setup.step4Title">Schedule it every weekday morning</h3>
+          <p class="setup-step-desc" data-i18n="setup.step4Desc"><code class="font-mono text-xs">scripts/daily-run.ps1</code> (Windows) and <code class="font-mono text-xs">scripts/daily-run.sh</code> (macOS, Linux) run the same instruction through Claude Code without a chat window. The agent may only read and edit files in the project, search the web and run <code class="font-mono text-xs">jobs/engine.py</code>. Each run writes a log to <code class="font-mono text-xs">jobs/logs/</code>. Schedule the script for 07:30, then spend your 20 minutes reviewing the packages instead of searching. Replace the example path with your own folder. Your computer needs to be on at that time.</p>
+          <div class="engine-command-grid">
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step4Win">Windows (Task Scheduler)</div>
+                <div class="engine-command-desc" data-i18n="setup.step4WinDesc">Run once in a terminal. Remove it again with: schtasks /Delete /TN CareerEngineDaily</div>
+                <div class="engine-command-code">schtasks /Create /TN CareerEngineDaily /SC WEEKLY /D MON,TUE,WED,THU,FRI /ST 07:30 /TR "powershell -NoProfile -ExecutionPolicy Bypass -File C:\career-engine\scripts\daily-run.ps1"</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommand">Copy Command</button>
+            </div>
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step4Cron">macOS / Linux (cron)</div>
+                <div class="engine-command-desc" data-i18n="setup.step4CronDesc">Run crontab -e and add this line. Remove the line to stop.</div>
+                <div class="engine-command-code">30 7 * * 1-5 $HOME/career-engine/scripts/daily-run.sh</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyLine">Copy Line</button>
+            </div>
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step4Cloud">Cloud (Claude Code routine)</div>
+                <div class="engine-command-desc" data-i18n="setup.step4CloudDesc">Runs even when your computer is off. Push your copy to a private GitHub repository (it contains your profile), then type this in Claude Code and give it the step 3 instruction and a weekday 07:30 schedule.</div>
+                <div class="engine-command-code">/schedule</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommand">Copy Command</button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
 
   <!-- Daily Job Workflow Section -->
   <section id="daily-workflow" class="hub-container section-band no-print">

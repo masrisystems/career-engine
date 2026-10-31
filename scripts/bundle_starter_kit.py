@@ -23,6 +23,9 @@ def build_starter_kit():
         "daily-job-search-workflow.md",
         "daily-job-search-links.md",
         "run_engine.py",
+        "jobs/engine.py",
+        "scripts/daily-run.ps1",
+        "scripts/daily-run.sh",
     ]
 
     include_dirs = [
@@ -32,6 +35,7 @@ def build_starter_kit():
         "engine",
         "jobs/prompts",
         "jobs/roles",
+        "i18n",
         "skills",
     ]
 
