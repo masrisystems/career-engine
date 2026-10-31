@@ -50,8 +50,8 @@
     hero: {
       headline: "Die Open Source ATS Web Lebenslauf & Karriere Automatisierungs Engine",
       subhead: "Ein einheitliches Karriere Toolkit für Tech Profis. Enthält ein interaktives DIN-5008 Lebenslauf Template, produktionserprobte LLM Prompts für Anschreiben und Anpassung, 24 spezialisierte Karriere Agenten Skills und Headless PDF Automatisierung.",
-      trustBadgePill: "Von Recruitern & Beratern geprüft",
-      trustBadgeText: "Geprüft, getestet und bestätigt von Senior Tech Recruitern und Karriereberatern in Deutschland & der EU für 100% ATS Parser Kompatibilität und DIN-5008 Konformität.",
+      trustBadgePill: "100% Lokal & Privat",
+      trustBadgeText: "Läuft vollständig lokal auf Ihrem Rechner. Keine Cloud-Konten erforderlich, 100% ATS-Parser-Kompatibilität (Personio, Workday, Greenhouse) und strenge DIN-5008-Standards.",
       ctaSetup: "In 4 Schritten starten",
       ctaPrompts: "KI Prompts entdecken",
       ctaResume: "Web Lebenslauf ansehen",
@@ -60,7 +60,7 @@
 
     coral: {
       title: "Karriere Engineering in Produktionsqualität",
-      desc: "Geprüft und bestätigt von Senior Tech Recruitern und Karriereberatern, um die Lücke zwischen ATS Parsern, Recruiter Bewertungen und moderner KI Automatisierung zu schließen. Kombiniert sauberes semantisches HTML mit 7 praxiserprobten Prompt Suites, automatisierter Python Headless Chromium Kompilierung und täglichen Bewerbungspipelines.",
+      desc: "Entwickelt, um die Lücke zwischen ATS-Parsern, Hiring Managern und moderner KI-Automatisierung zu schließen. Kombiniert Single-Source-Profilarchitektur (config/profile.json) mit 7 praxiserprobten Prompt Suites, automatisierter Python Headless Chromium Kompilierung und täglichen Bewerbungspipelines — 100% lokal und Open Source.",
       cta: "Starter Kit herunterladen (ZIP)"
     },
 
@@ -266,8 +266,8 @@
 
     coverLetters: {
       title: "DIN-5008 Anschreiben Showcase",
-      badge: "Von Recruitern & Beratern geprüft",
-      desc: "Deutsche Anschreiben in Produktionsqualität, geprüft und bestätigt von Senior Recruitern und HR Beratern. Formatiert nach DIN-5008, mit STAR Erfolgshooks, technischer Problemlösung und automatisierter Injektion vertraglicher Invarianten.",
+      badge: "DIN-5008 Standardkonform",
+      desc: "Produktionsreife deutsche Anschreiben nach DIN-5008 Geschäftsstandard mit STAR-Erfolgshooks, technischer Problemlösungskompetenz und automatisierter Invarianten Injektion.",
       selectorLabel: "Archetyp:",
       tabFullstack: "Fullstack Entwickler",
       tabDesigner: "Product Designer",

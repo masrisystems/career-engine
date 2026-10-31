@@ -2978,7 +2978,93 @@ html.dark .faq-item:hover,
   transform: translateY(-25%) rotate(-135deg);
 }
 
-/* Collapsible section groups (Skills, extra Prompts, Engine modules) reuse the FAQ details styling */
+.faq-question:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: -2px;
+  border-radius: var(--radius-md);
+}
+
+html.dark .faq-question,
+.dark .faq-question {
+  color: #f8fafc;
+}
+
+.faq-answer {
+  font-size: 14px;
+  color: var(--color-body);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 24px 20px;
+}
+
+html.dark .faq-answer,
+.dark .faq-answer {
+  color: #cbd5e1;
+}
+
+/* Collapsible section groups (Skills, extra Prompts, Engine modules) */
+.fold-group {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fold-group:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+html.dark .fold-group,
+.dark .fold-group {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.fold-summary {
+  position: relative;
+  padding: 18px 56px 18px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-ink);
+  cursor: pointer;
+  list-style: none;
+}
+
+.fold-summary::-webkit-details-marker {
+  display: none;
+}
+
+.fold-summary::after {
+  content: "";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-75%) rotate(45deg);
+  transition: transform 0.2s ease;
+  opacity: 0.6;
+}
+
+.fold-group[open] > .fold-summary::after {
+  transform: translateY(-25%) rotate(-135deg);
+}
+
+.fold-summary:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: -2px;
+  border-radius: var(--radius-md);
+}
+
+html.dark .fold-summary,
+.dark .fold-summary {
+  color: #f8fafc;
+}
+
 .fold-stack {
   display: flex;
   flex-direction: column;
@@ -3025,30 +3111,6 @@ html.dark .fold-count,
   .fold-group > .fold-body {
     padding: 0 12px 12px;
   }
-}
-
-.faq-question:focus-visible {
-  outline: 2px solid var(--color-ink);
-  outline-offset: -2px;
-  border-radius: var(--radius-md);
-}
-
-html.dark .faq-question,
-.dark .faq-question {
-  color: #f8fafc;
-}
-
-.faq-answer {
-  font-size: 14px;
-  color: var(--color-body);
-  line-height: 1.6;
-  margin: 0;
-  padding: 0 24px 20px;
-}
-
-html.dark .faq-answer,
-.dark .faq-answer {
-  color: #cbd5e1;
 }
 
 /* Viral Referral & Share Strip */

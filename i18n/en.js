@@ -50,8 +50,8 @@
     hero: {
       headline: "The Open-Source ATS Web Resume & Career Automation Engine",
       subhead: "A unified career toolkit for tech professionals. Features an interactive DIN-5008 resume template, production-grade LLM prompts for cover letters and tailoring, 24 specialized career agent skills, and headless PDF automation.",
-      trustBadgePill: "Recruiter & Consultant Approved",
-      trustBadgeText: "Audited, tested, and approved by senior tech recruiters and career consultants across Germany & the EU for 100% ATS parser compatibility and DIN-5008 compliance.",
+      trustBadgePill: "100% Local & Private",
+      trustBadgeText: "Runs entirely on your local machine. Zero cloud accounts required, 100% ATS parser compatibility (Personio, Workday, Greenhouse), and strict DIN-5008 German business standards.",
       ctaSetup: "Get Started in 4 Steps",
       ctaPrompts: "Explore AI Prompts",
       ctaResume: "Preview Web Resume",
@@ -60,7 +60,7 @@
 
     coral: {
       title: "Production-Grade Career Engineering",
-      desc: "Vetted and approved by senior tech recruiters and career consultants to bridge the gap between ATS parsers, recruiter evaluation, and modern AI automation. Combines clean semantic HTML with 7 battle-tested prompt suites, automated Python headless Chromium compilation, and daily intake pipelines.",
+      desc: "Engineered to bridge the gap between ATS parsers, hiring manager evaluation, and modern AI automation. Combines single-source profile architecture (config/profile.json) with 7 battle-tested prompt suites, automated Python headless Chromium compilation, and daily intake pipelines — 100% local and open source.",
       cta: "Download Starter Kit (ZIP)"
     },
 
@@ -266,8 +266,8 @@
 
     coverLetters: {
       title: "DIN-5008 German Cover Letter Showcase",
-      badge: "Recruiter & Consultant Approved",
-      desc: "Production-grade German cover letters audited and approved by senior recruiters and HR consultants. Formatted in accordance with DIN-5008, featuring STAR achievement hooks, technical problem solving, and automated contractual invariants injection.",
+      badge: "DIN-5008 Standard Compliant",
+      desc: "Production-grade German cover letters formatted in accordance with DIN-5008 business standards, featuring STAR achievement hooks, technical problem solving, and automated contractual invariants injection.",
       selectorLabel: "Archetype:",
       tabFullstack: "Fullstack Developer",
       tabDesigner: "Product Designer",

@@ -145,37 +145,46 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="./style.css">
 
-  <!-- Top Navigation (Pinned Editorial Header) -->
+   <!-- Top Sticky Navigation Band -->
   <nav id="top-nav" class="no-print" aria-label="Main Navigation">
     <div class="hub-container top-nav-inner">
       <a href="#hero" class="nav-brand" aria-label="Career Engine Homepage">
         <img src="./assets/masrisystems-logo-light.webp" alt="Masri Systems" class="nav-logo nav-logo-light" />
         <img src="./assets/masrisystems-logo-dark.webp" alt="Masri Systems" class="nav-logo nav-logo-dark" />
         <span class="nav-brand-title" data-i18n="nav.brandTitle">Career Engine</span>
-        <span class="nav-tag" data-i18n="nav.openSource">Open Source</span>
       </a>
       <ul class="nav-links desktop-nav-links">
-        <li><a href="#setup" class="nav-link" data-i18n="nav.getStarted">Get Started</a></li>
-        <li><a href="#daily-workflow" class="nav-link" data-i18n="nav.dailyRoutine">Daily Routine</a></li>
-        <li><a href="#brief-showcase" class="nav-link" data-i18n="nav.results">Results</a></li>
-        <li><a href="#prompts" class="nav-link" data-i18n="nav.aiPrompts">AI Prompts</a></li>
-        <li><a href="#cover-letters" class="nav-link" data-i18n="nav.coverLetters">Cover Letters</a></li>
-        <li><a href="#engine" class="nav-link" data-i18n="nav.cliEngine">CLI Engine</a></li>
-        <li><a href="#workflows" class="nav-link" data-i18n="nav.skills">Skills</a></li>
-        <li><a href="#resume" class="nav-link" data-i18n="nav.webResume">Web Resume</a></li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-menu-guide">Guide <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+          <ul id="nav-menu-guide" class="nav-dropdown-menu">
+            <li><a href="#resume" class="nav-dropdown-link" data-i18n="nav.webResume">Web Resume</a></li>
+            <li><a href="#brief-showcase" class="nav-dropdown-link" data-i18n="nav.results">Results</a></li>
+            <li><a href="#daily-workflow" class="nav-dropdown-link" data-i18n="nav.dailyRoutine">Daily Routine</a></li>
+            <li><a href="#setup" class="nav-dropdown-link" data-i18n="nav.getStarted">Get Started</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button type="button" class="nav-link nav-dropdown-toggle" aria-expanded="false" aria-controls="nav-menu-toolkit">Toolkit <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+          <ul id="nav-menu-toolkit" class="nav-dropdown-menu">
+            <li><a href="#cover-letters" class="nav-dropdown-link" data-i18n="nav.coverLetters">Cover Letters</a></li>
+            <li><a href="#prompts" class="nav-dropdown-link" data-i18n="nav.aiPrompts">AI Prompts</a></li>
+            <li><a href="#engine" class="nav-dropdown-link" data-i18n="nav.cliEngine">CLI Engine</a></li>
+            <li><a href="#workflows" class="nav-dropdown-link" data-i18n="nav.skills">Skills</a></li>
+          </ul>
+        </li>
         <li><a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
       </ul>
       <div class="nav-controls">
-        <button id="theme-toggle-nav-btn" class="btn-pill-sm" onclick="toggleTheme()" aria-label="Toggle Theme" data-i18n-attr="aria-label:nav.toggleTheme">
-          <span class="theme-label-light hidden dark:inline" data-i18n="nav.light">Light</span>
-          <span class="theme-label-dark inline dark:hidden" data-i18n="nav.dark">Dark</span>
+        <button id="theme-toggle-nav-btn" class="btn-pill-sm" onclick="toggleTheme()" aria-label="Toggle Theme">
+          <span class="theme-label-light hidden dark:inline">Light</span>
+          <span class="theme-label-dark inline dark:hidden">Dark</span>
         </button>
         <div class="nav-desktop-actions">
           <select id="lang-select-nav" class="lang-select" aria-label="Select Language" data-i18n-attr="aria-label:ui.selectLanguage"></select>
           <a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-pill-sm" data-i18n="nav.portfolio">Portfolio</a>
-          <a href="./download/career-engine-starter.zip" download="career-engine-starter.zip" class="btn-primary btn-nav-cta" data-i18n="nav.downloadKit">Download Kit</a>
+          <a href="#setup" class="btn-primary btn-nav-cta" data-i18n="nav.getStarted">Get Started</a>
         </div>
-        <button id="nav-toggle-btn" class="nav-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-drawer" onclick="toggleMobileNav()" data-i18n-attr="aria-label:nav.menuLabel">
+        <button id="nav-toggle-btn" class="nav-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-drawer" onclick="toggleMobileNav()">
           <svg id="nav-icon-menu" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -192,14 +201,28 @@
     <div id="nav-drawer" class="nav-drawer no-print" aria-hidden="true">
       <div class="nav-drawer-inner">
         <ul class="nav-links mobile-nav-links">
-          <li><a href="#setup" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.getStarted">Get Started</a></li>
-          <li><a href="#daily-workflow" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.dailyRoutine">Daily Routine</a></li>
-          <li><a href="#brief-showcase" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.results">Results</a></li>
-          <li><a href="#prompts" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.aiPrompts">AI Prompts</a></li>
-          <li><a href="#cover-letters" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.coverLetters">Cover Letters</a></li>
-          <li><a href="#engine" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.cliEngine">CLI Engine</a></li>
-          <li><a href="#workflows" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.skills">Skills</a></li>
-          <li><a href="#resume" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.webResume">Web Resume</a></li>
+          <li>
+            <details class="drawer-group">
+              <summary class="drawer-link drawer-group-toggle">Guide <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+              <ul class="drawer-group-links">
+                <li><a href="#resume" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.webResume">Web Resume</a></li>
+                <li><a href="#brief-showcase" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.results">Results</a></li>
+                <li><a href="#daily-workflow" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.dailyRoutine">Daily Routine</a></li>
+                <li><a href="#setup" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.getStarted">Get Started</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="drawer-group">
+              <summary class="drawer-link drawer-group-toggle">Toolkit <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg></summary>
+              <ul class="drawer-group-links">
+                <li><a href="#cover-letters" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.coverLetters">Cover Letters</a></li>
+                <li><a href="#prompts" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.aiPrompts">AI Prompts</a></li>
+                <li><a href="#engine" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.cliEngine">CLI Engine</a></li>
+                <li><a href="#workflows" class="drawer-link drawer-sublink" onclick="closeMobileNav()" data-i18n="nav.skills">Skills</a></li>
+              </ul>
+            </details>
+          </li>
           <li><a href="#faq" class="drawer-link" onclick="closeMobileNav()" data-i18n="nav.faq">FAQ</a></li>
         </ul>
         <div class="nav-drawer-actions">
@@ -207,13 +230,13 @@
             <select id="lang-select-drawer" class="lang-select drawer-lang-select" aria-label="Select Language" data-i18n-attr="aria-label:ui.selectLanguage"></select>
             <a href="https://links.masrisystems.com" target="_blank" rel="noopener noreferrer" class="btn-pill-sm drawer-pill-btn" data-i18n="nav.portfolio">Portfolio</a>
           </div>
-          <a href="./download/career-engine-starter.zip" download="career-engine-starter.zip" class="btn-primary drawer-cta-btn" data-i18n="nav.downloadKit">Download Kit</a>
+          <a href="./download/career-engine-starter.zip" download="career-engine-starter.zip" class="btn-primary drawer-cta-btn" onclick="closeMobileNav()" data-i18n="nav.downloadKit">Download Kit</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Band (White Canvas) -->
+<!-- Hero Band (White Canvas) -->
   <section id="hero" class="no-print">
     <div class="hub-container">
       <h1 class="hero-headline" data-i18n="hero.headline">The Open-Source ATS Web Resume &amp; Career Automation Engine</h1>
@@ -221,14 +244,14 @@
       <div class="hero-trust-badge">
         <span class="trust-badge-pill">
           <svg class="h-3.5 w-3.5 inline-block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
-          <span data-i18n="hero.trustBadgePill">Recruiter &amp; Consultant Approved</span>
+          <span data-i18n="hero.trustBadgePill">100% Local &amp; Private</span>
         </span>
-        <span class="trust-badge-text" data-i18n="hero.trustBadgeText">Audited, tested, and approved by senior tech recruiters and career consultants across Germany &amp; the EU for 100% ATS parser compatibility and DIN-5008 compliance.</span>
+        <span class="trust-badge-text" data-i18n="hero.trustBadgeText">Runs entirely on your local machine. Zero cloud accounts required, 100% ATS parser compatibility (Personio, Workday, Greenhouse), and strict DIN-5008 German business standards.</span>
       </div>
       <div class="hero-cta-cluster">
         <a href="#setup" class="btn-primary" data-i18n="hero.ctaSetup">Get Started in 4 Steps</a>
-        <a href="#prompts" class="btn-secondary" data-i18n="hero.ctaPrompts">Explore AI Prompts</a>
         <a href="#resume" class="btn-secondary" data-i18n="hero.ctaResume">Preview Web Resume</a>
+        <a href="#prompts" class="btn-secondary" data-i18n="hero.ctaPrompts">Explore AI Prompts</a>
         <a href="https://github.com/masrisystems/career-engine" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-hero-gh" aria-label="GitHub Repository">
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
@@ -239,282 +262,93 @@
     </div>
   </section>
 
-  <!-- Signature Coral Voltage Card -->
+  
+
+<!-- Signature Coral Voltage Card -->
   <div id="coral-card" class="hub-container no-print">
     <div class="signature-coral-card">
       <h2 data-i18n="coral.title">Production-Grade Career Engineering</h2>
-      <p data-i18n="coral.desc">Vetted and approved by senior tech recruiters and career consultants to bridge the gap between ATS parsers, recruiter evaluation, and modern AI automation. Combines clean semantic HTML with 7 battle-tested prompt suites, automated Python headless Chromium compilation, and daily intake pipelines.</p>
+      <p data-i18n="coral.desc">Engineered to bridge the gap between ATS parsers, hiring manager evaluation, and modern AI automation. Combines single-source profile architecture (<code>config/profile.json</code>) with 7 battle-tested prompt suites, automated Python headless Chromium compilation, and daily intake pipelines &mdash; 100% local and open source.</p>
+      <div class="flex items-center justify-center gap-4 mt-4 flex-wrap text-xs text-white/90 font-medium mb-4">
+        <span>MIT License</span>
+        <span>&middot;</span>
+        <span>Zero Cloud Accounts</span>
+        <span>&middot;</span>
+        <span>100% Local Execution</span>
+        <span>&middot;</span>
+        <span>DIN-5008 Compliant</span>
+      </div>
       <a href="./download/career-engine-starter.zip" download="career-engine-starter.zip" class="btn-secondary-on-dark" data-i18n="coral.cta">Download Starter Kit (ZIP)</a>
     </div>
   </div>
 
-  <!-- Step-by-Step Setup Guide -->
-  <section id="setup" class="hub-container section-band no-print">
-    <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
-      <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="setup.title">Get Started in 4 Steps</h2>
-      <span class="nav-tag nav-tag-sop" data-i18n="setup.badge">About 30 Minutes · Once</span>
+  
+
+<!-- Live Resume Showcase Section -->
+  <section id="resume" class="hub-container section-band">
+    <div class="mb-4">
+      <h2 class="text-3xl font-semibold mb-1" style="border-bottom:none;" data-i18n="resume.title">Bilingual Web Resume</h2>
+      <p class="text-sm text-gray-600 max-w-2xl" data-i18n="resume.desc">Interactive single-column semantic web resume with instant DE/EN language toggle, 5 canonical role archetypes, and headless Chromium A4 PDF export.</p>
     </div>
-    <p class="text-sm text-gray-600 mb-2 max-w-3xl" data-i18n="setup.desc1">From download to an automatic morning run. You need Python 3.10+ (no extra packages), Chrome or Edge for PDF export, and an AI coding agent for steps 3 and 4. The examples use <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>; Codex CLI and Gemini CLI read the same <code class="font-mono text-xs">AGENTS.md</code> and work the same way.</p>
-    <p class="text-sm text-gray-600 mb-6 max-w-3xl" data-i18n="setup.desc2">On macOS and Linux, type <code class="font-mono text-xs">python3</code> wherever the commands say <code class="font-mono text-xs">python</code>.</p>
-
-    <ol class="setup-steps">
-      <!-- Step 1 -->
-      <li class="setup-step">
-        <span class="setup-step-num">1</span>
-        <div class="setup-step-body">
-          <h3 class="setup-step-title" data-i18n="setup.step1Title">Install</h3>
-          <p class="setup-step-desc" data-i18n="setup.step1Desc">Clone the repository (or <a href="./download/career-engine-starter.zip" download>download the ZIP</a> and unzip it), then build the example resumes to check that Python and the PDF export work. You should get PDFs in <code class="font-mono text-xs">jobs/roles/pdf/</code>.</p>
-          <div class="engine-command-grid">
-            <div class="engine-command-card">
-              <div>
-                <div class="engine-command-title" data-i18n="setup.step1CardClone">Clone and test the engine</div>
-                <div class="engine-command-code">git clone https://github.com/masrisystems/career-engine.git
-cd career-engine
-python jobs/engine.py build-roles</div>
-              </div>
-              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommands">Copy Commands</button>
-            </div>
-            <div class="engine-command-card">
-              <div>
-                <div class="engine-command-title" data-i18n="setup.step1CardDocker">Optional: only preview the web pages</div>
-                <div class="engine-command-desc" data-i18n="setup.step1CardDockerDesc">Serves this page and the web resume at http://localhost with Docker. Port 80 taken? Prefix with PORT=8080.</div>
-                <div class="engine-command-code">docker compose up --build</div>
-              </div>
-              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommand">Copy Command</button>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <!-- Step 2 -->
-      <li class="setup-step">
-        <span class="setup-step-num">2</span>
-        <div class="setup-step-body">
-          <h3 class="setup-step-title" data-i18n="setup.step2Title">Create your profile with AI</h3>
-          <p class="setup-step-desc" data-i18n="setup.step2Desc">Everything the engine writes (resume, cover letters, search links) comes from one file: <code class="font-mono text-xs">config/profile.json</code>. Let an AI fill it for you:</p>
-          <ul class="setup-substeps">
-            <li data-i18n="setup.step2Item1">Copy the <a href="#prompts">Profile &amp; Resume Onboarding prompt</a> into ChatGPT, Claude or Gemini.</li>
-            <li data-i18n="setup.step2Item2">Paste your old CV or LinkedIn text after it, or type <em>Interview me</em> to answer 7 short questions instead.</li>
-            <li data-i18n="setup.step2Item3">Save the JSON it returns as <code class="font-mono text-xs">config/profile.json</code>, replacing the example.</li>
-            <li data-i18n="setup.step2Item4">Rebuild with your data and open the results: your resume PDFs in <code class="font-mono text-xs">jobs/roles/pdf/</code> and your job board links in <code class="font-mono text-xs">daily-job-search-links.md</code>.</li>
-          </ul>
-          <div class="engine-command-grid">
-            <div class="engine-command-card">
-              <div>
-                <div class="engine-command-title" data-i18n="setup.step2Card">Build from your profile</div>
-                <div class="engine-command-code">python jobs/engine.py build-links
-python jobs/engine.py build-roles</div>
-              </div>
-              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommands">Copy Commands</button>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <!-- Step 3 -->
-      <li class="setup-step">
-        <span class="setup-step-num">3</span>
-        <div class="setup-step-body">
-          <h3 class="setup-step-title" data-i18n="setup.step3Title">Do your first daily run with your AI agent</h3>
-          <p class="setup-step-desc" data-i18n="setup.step3Desc">Open a terminal in the <code class="font-mono text-xs">career-engine</code> folder, start your agent (<code class="font-mono text-xs">claude</code>, <code class="font-mono text-xs">codex</code> or <code class="font-mono text-xs">gemini</code>) and paste the instruction below. The agent searches for jobs, scores them, writes a tailored resume and DIN-5008 cover letter for the best matches with <code class="font-mono text-xs">jobs/engine.py</code>, logs them in <code class="font-mono text-xs">jobs/job_matches.md</code> and ends with a Morning Action Brief like the <a href="#brief-showcase">example below</a>. Watch this first run and approve its steps, so you know what the scheduled run will do.</p>
-          <div class="engine-command-grid">
-            <div class="engine-command-card">
-              <div>
-                <div class="engine-command-title" data-i18n="setup.step3Card">Paste into your agent</div>
-                <div class="engine-command-code">Read AGENTS.md, skills/daily-job-workflow/SKILL.md and daily-job-search-workflow.md, then run today's daily job workflow exactly as described there. Find up to 2 open roles that score 9.0/10 or higher, build each application package with python jobs/engine.py, update jobs/job_matches.md and finish with the Morning Action Brief. Prepare only: never submit an application or contact an employer.</div>
-              </div>
-              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyInstruction">Copy Instruction</button>
-            </div>
-          </div>
-          <p class="setup-step-desc mt-3" data-i18n="setup.step3After">Read the packages in <code class="font-mono text-xs">jobs/resumes/</code> and <code class="font-mono text-xs">jobs/cover_letters/</code>, fix anything that is wrong, and send the application yourself. The agent never applies on your behalf.</p>
-        </div>
-      </li>
-
-      <!-- Step 4 -->
-      <li class="setup-step">
-        <span class="setup-step-num">4</span>
-        <div class="setup-step-body">
-          <h3 class="setup-step-title" data-i18n="setup.step4Title">Schedule it every weekday morning</h3>
-          <p class="setup-step-desc" data-i18n="setup.step4Desc"><code class="font-mono text-xs">scripts/daily-run.ps1</code> (Windows) and <code class="font-mono text-xs">scripts/daily-run.sh</code> (macOS, Linux) run the same instruction through Claude Code without a chat window. The agent may only read and edit files in the project, search the web and run <code class="font-mono text-xs">jobs/engine.py</code>. Each run writes a log to <code class="font-mono text-xs">jobs/logs/</code>. Schedule the script for 07:30, then spend your 20 minutes reviewing the packages instead of searching. Replace the example path with your own folder. Your computer needs to be on at that time.</p>
-          <div class="engine-command-grid">
-            <div class="engine-command-card">
-              <div>
-                <div class="engine-command-title" data-i18n="setup.step4Win">Windows (Task Scheduler)</div>
-                <div class="engine-command-desc" data-i18n="setup.step4WinDesc">Run once in a terminal. Remove it again with: schtasks /Delete /TN CareerEngineDaily</div>
-                <div class="engine-command-code">schtasks /Create /TN CareerEngineDaily /SC WEEKLY /D MON,TUE,WED,THU,FRI /ST 07:30 /TR "powershell -NoProfile -ExecutionPolicy Bypass -File C:\career-engine\scripts\daily-run.ps1"</div>
-              </div>
-              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommand">Copy Command</button>
-            </div>
-            <div class="engine-command-card">
-              <div>
-                <div class="engine-command-title" data-i18n="setup.step4Cron">macOS / Linux (cron)</div>
-                <div class="engine-command-desc" data-i18n="setup.step4CronDesc">Run crontab -e and add this line. Remove the line to stop.</div>
-                <div class="engine-command-code">30 7 * * 1-5 $HOME/career-engine/scripts/daily-run.sh</div>
-              </div>
-              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyLine">Copy Line</button>
-            </div>
-            <div class="engine-command-card">
-              <div>
-                <div class="engine-command-title" data-i18n="setup.step4Cloud">Cloud (Claude Code routine)</div>
-                <div class="engine-command-desc" data-i18n="setup.step4CloudDesc">Runs even when your computer is off. Push your copy to a private GitHub repository (it contains your profile), then type this in Claude Code and give it the step 3 instruction and a weekday 07:30 schedule.</div>
-                <div class="engine-command-code">/schedule</div>
-              </div>
-              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommand">Copy Command</button>
-            </div>
-          </div>
-        </div>
-      </li>
-    </ol>
-  </section>
-
-  <!-- Daily Job Workflow Section -->
-  <section id="daily-workflow" class="hub-container section-band no-print">
-    <div class="cream-callout-card">
-      <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
-        <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="workflow.title">Daily Job Discovery &amp; Application Routine</h2>
-        <span class="nav-tag nav-tag-sop" data-i18n="workflow.badge">SOP · 20-Min Daily Habit</span>
-      </div>
-      <p class="text-sm text-gray-700 mb-6 max-w-3xl" data-i18n="workflow.desc">A simple, 20-minute daily habit designed for fresh graduates and busy professionals. Instead of spending 4 hours scrolling job boards and sending 50 generic resumes that get ignored, you find 2 high-matching vacancies every morning, verify you can actually do the job, and generate 100% tailored, ATS-ready application packages before 08:20 AM.</p>
-
-      <!-- Interactive 20-Min Workflow Simulation Console -->
-      <div class="workflow-sim-container">
-        <div class="workflow-sim-controls">
-          <div class="flex items-center gap-2">
-            <button id="sim-play-btn" class="btn-primary btn-sim-play" onclick="toggleWorkflowSimulation()" aria-label="Play or Pause Workflow Simulation">
-              <svg id="sim-play-icon" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              <svg id="sim-pause-icon" class="h-4 w-4 hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-              <span id="sim-play-label" data-i18n="workflow.playSim">Play 20-Min Simulation</span>
-            </button>
-            <button class="btn-secondary btn-sim-reset" onclick="resetWorkflowSimulation()" title="Reset to Stage 1">
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-              <span data-i18n="workflow.reset">Reset</span>
-            </button>
-          </div>
-
-          <!-- Routine Clock & Elapsed Indicators -->
-          <div class="flex items-center gap-2 font-mono text-xs flex-wrap">
-            <div class="sim-clock-badge">
-              <span class="text-gray-400 text-[10px] uppercase tracking-wider" data-i18n="workflow.clockLabel">Routine Clock</span>
-              <span id="sim-clock" class="font-bold text-[#cc785c] dark:text-sky-400 text-sm">08:00 AM</span>
-            </div>
-            <div class="sim-timer-badge">
-              <span class="text-gray-400 text-[10px] uppercase tracking-wider" data-i18n="workflow.elapsedLabel">Elapsed</span>
-              <span id="sim-elapsed" class="font-semibold text-gray-700 dark:text-gray-300">00:00 / 20:00</span>
-            </div>
-            <div class="sim-speed-selector flex items-center gap-1 bg-white dark:bg-[#1c2635] p-1 rounded border border-gray-200 dark:border-[#2a3b52]">
-              <span class="text-[10px] text-gray-400 uppercase px-1" data-i18n="workflow.speedLabel">Speed:</span>
-              <button class="sim-speed-btn active" data-speed="1" onclick="setSimSpeed(1)">1x</button>
-              <button class="sim-speed-btn" data-speed="2" onclick="setSimSpeed(2)">2x</button>
-              <button class="sim-speed-btn" data-speed="4" onclick="setSimSpeed(4)">4x</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Scrubbable Stage Step Timeline -->
-        <div class="workflow-scrub-bar" data-i18n-attr="aria-label:workflow.scrubLabel" aria-label="20-Minute Routine Timeline">
-          <div class="workflow-scrub-track">
-            <div id="workflow-scrub-fill" class="workflow-scrub-fill" style="width: 25%;"></div>
-          </div>
-          <div class="workflow-scrub-steps">
-            <button class="scrub-step-btn active" data-step="1" onclick="jumpToSimStage(1)">
-              <span class="scrub-step-num">1</span>
-              <span class="scrub-step-label" data-i18n="workflow.step1Tab">Stage 1 · Spot Fresh Jobs</span>
-            </button>
-            <button class="scrub-step-btn" data-step="2" onclick="jumpToSimStage(2)">
-              <span class="scrub-step-num">2</span>
-              <span class="scrub-step-label" data-i18n="workflow.step2Tab">Stage 2 · Check Your Fit</span>
-            </button>
-            <button class="scrub-step-btn" data-step="3" onclick="jumpToSimStage(3)">
-              <span class="scrub-step-num">3</span>
-              <span class="scrub-step-label" data-i18n="workflow.step3Tab">Stage 3 · Auto Generation</span>
-            </button>
-            <button class="scrub-step-btn" data-step="4" onclick="jumpToSimStage(4)">
-              <span class="scrub-step-num">4</span>
-              <span class="scrub-step-label" data-i18n="workflow.step4Tab">Stage 4 · Submit &amp; Relax</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- The 4 Stage Cards Grid -->
-        <div class="workflow-pipeline-grid">
-          <!-- Stage 1 -->
-          <div class="workflow-stage-card sim-active" data-stage="1">
-            <div class="workflow-stage-header">
-              <span class="workflow-stage-badge" data-i18n="workflow.step1Badge">Stage 1</span>
-              <span class="text-xs text-gray-400 font-mono" data-i18n="workflow.step1Time">08:00 - 08:05</span>
-            </div>
-            <h3 class="workflow-stage-title" data-i18n="workflow.step1Title">Spot Fresh Jobs &amp; Skip Old Ones</h3>
-            <p class="workflow-stage-desc" data-i18n="workflow.step1Desc">Find 10–15 newly posted openings from the last 24 hours. Automatically filter out companies you already applied to so you never send duplicates.</p>
-            <ul class="workflow-steps-list">
-              <li data-i18n="workflow.step1Item1"><strong>Step 1: Check Application History</strong> — Scan your simple tracker (<code class="font-mono text-xs">jobs/job_matches.md</code>) to instantly eliminate any company or role you already applied to.</li>
-              <li data-i18n="workflow.step1Item2"><strong>Step 2: 1-Click Search Sweeps</strong> — Open pre-filtered Google, LinkedIn, StepStone, and startup links to uncover active vacancies posted today.</li>
-            </ul>
-          </div>
-
-          <!-- Stage 2 -->
-          <div class="workflow-stage-card" data-stage="2">
-            <div class="workflow-stage-header">
-              <span class="workflow-stage-badge" data-i18n="workflow.step2Badge">Stage 2</span>
-              <span class="text-xs text-gray-400 font-mono" data-i18n="workflow.step2Time">08:05 - 08:10</span>
-            </div>
-            <h3 class="workflow-stage-title" data-i18n="workflow.step2Title">Check Your Fit &amp; Pick The Top 2</h3>
-            <p class="workflow-stage-desc" data-i18n="workflow.step2Desc">Don't waste time spraying 50 random applications. Grade vacancies from 0 to 10 and only focus on roles you are actually qualified to win.</p>
-            <ul class="workflow-steps-list">
-              <li data-i18n="workflow.step2Item1"><strong>Step 3: Grade Your Fit (9/10 Rule)</strong> — Score required skills (70%) vs nice-to-haves (30%). Disqualify jobs with impossible dealbreakers (e.g. 10 years experience).</li>
-              <li data-i18n="workflow.step2Item2"><strong>Step 4: Save Job Details &amp; Check Pay</strong> — Save the full job description text before it expires, and check typical salaries on Kununu or Glassdoor to verify fair compensation.</li>
-            </ul>
-          </div>
-
-          <!-- Stage 3 -->
-          <div class="workflow-stage-card" data-stage="3">
-            <div class="workflow-stage-header">
-              <span class="workflow-stage-badge" data-i18n="workflow.step3Badge">Stage 3</span>
-              <span class="text-xs text-gray-400 font-mono" data-i18n="workflow.step3Time">08:10 - 08:15</span>
-            </div>
-            <h3 class="workflow-stage-title" data-i18n="workflow.step3Title">Auto-Generate Resume &amp; Cover Letter</h3>
-            <p class="workflow-stage-desc" data-i18n="workflow.step3Desc">Stop spending 3 hours manually editing Word files. Let automation create custom, ATS-friendly application packages in seconds.</p>
-            <ul class="workflow-steps-list">
-              <li data-i18n="workflow.step3Item1"><strong>Step 5: Tailored ATS Resume</strong> — Generates a clean, ATS-compliant resume highlighting the exact projects and skills the employer asked for — zero formatting bugs.</li>
-              <li data-i18n="workflow.step3Item2"><strong>Step 6: DIN-5008 German Cover Letter</strong> — Writes a punchy, 1-page cover letter (&lt;300 words) solving 3 key employer problems with real proof, then exports to crisp PDF.</li>
-            </ul>
-          </div>
-
-          <!-- Stage 4 -->
-          <div class="workflow-stage-card" data-stage="4">
-            <div class="workflow-stage-header">
-              <span class="workflow-stage-badge" data-i18n="workflow.step4Badge">Stage 4</span>
-              <span class="text-xs text-gray-400 font-mono" data-i18n="workflow.step4Time">08:15 - 08:20</span>
-            </div>
-            <h3 class="workflow-stage-title" data-i18n="workflow.step4Title">Submit, Record It &amp; You're Done!</h3>
-            <p class="workflow-stage-desc" data-i18n="workflow.step4Desc">Upload your PDFs directly to the employer's official website, log the date in your tracker, and finish before morning coffee.</p>
-            <ul class="workflow-steps-list">
-              <li data-i18n="workflow.step4Item1"><strong>Step 7: Log in Application Tracker</strong> — Add the company name, apply link, and date so you always know when to follow up and avoid messy spreadsheets.</li>
-              <li data-i18n="workflow.step4Item2"><strong>Step 8: Close Your Laptop &amp; Relax</strong> — 2 top-tier, custom applications dispatched in under 20 minutes. Zero burnout, maximum interview callbacks!</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Live Stage Telemetry & Output Console -->
-        <div id="sim-stage-monitor" class="workflow-sim-monitor">
-          <!-- Dynamic Telemetry rendered by JS based on active stage -->
+    <div class="persona-switcher-bar no-print">
+      <div class="flex items-center gap-2 flex-wrap">
+        <label class="role-select-field">
+          <span class="role-select-label" data-i18n="resume.archetypeLabel">Archetype</span>
+          <select id="persona-select" class="role-select" aria-label="Resume archetype">
+            <option value="fullstack">Fullstack Engineer</option>
+            <option value="devops">DevOps &amp; Cloud</option>
+            <option value="designer">Product Designer</option>
+            <option value="finance">Finance &amp; Controlling</option>
+            <option value="engineering" selected>Mechanical Systems</option>
+          </select>
+        </label>
+        <div class="persona-pills">
+          <button class="btn-pill-sm" data-persona="fullstack" data-i18n="resume.fullstack">Fullstack Engineer</button>
+          <button class="btn-pill-sm" data-persona="devops" data-i18n="resume.devops">DevOps &amp; Cloud</button>
+          <button class="btn-pill-sm" data-persona="designer" data-i18n="resume.designer">Product Designer</button>
+          <button class="btn-pill-sm" data-persona="finance" data-i18n="resume.finance">Finance &amp; Controlling</button>
+          <button class="btn-pill-sm active" data-persona="engineering" data-i18n="resume.engineering">Mechanical Systems</button>
         </div>
       </div>
+      <div class="flex items-center gap-2 flex-wrap">
+        <a id="resume-standalone-link" href="./resume.html" target="_blank" rel="noopener noreferrer" class="btn-pill-sm" style="display:inline-flex; align-items:center; gap:4px; text-decoration:none;">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i> <span data-i18n="resume.standaloneLink">Standalone Resume</span>
+        </a>
+        <button class="btn-pill-sm" onclick="toggleAtsMode()" data-i18n="resume.toggleAts">Toggle ATS Mode</button>
+        <button class="btn-pill-sm" onclick="printResumeFrame()" data-i18n="resume.printPdf">Print / PDF</button>
+      </div>
+    </div>
+
+    <div id="resume-paper">
+      <iframe id="resumeFrame" src="./resume.html" title="Master Web Resume Template" data-i18n-attr="title:resume.title" style="width: 100%; height: 1050px; border: none; display: block;"></iframe>
     </div>
   </section>
 
-  <!-- Morning Action Brief & Workflow Results Showcase Section -->
+  
+
+<!-- Morning Action Brief & Workflow Results Showcase Section -->
   <section id="brief-showcase" class="hub-container section-band no-print">
     <div class="flex items-center justify-between flex-wrap gap-3 mb-2">
       <div>
         <h2 class="text-3xl font-semibold mb-1" style="border-bottom:none;" data-i18n="briefs.title">Workflow Results Showcase</h2>
         <p class="text-sm text-gray-600 max-w-2xl" data-i18n="briefs.desc">Interactive Morning Action Brief generated by the daily automation engine. Demonstrates verified atomic application packages across diverse technical disciplines.</p>
       </div>
-      <!-- Domain Tabs -->
-      <div class="brief-tabs flex items-center gap-1 bg-slate-100 dark:bg-[#131b26] p-1 rounded-md border border-slate-200 dark:border-[#223145]">
+      <div class="flex items-center gap-2 flex-wrap">
+        <label class="role-select-field">
+          <span class="role-select-label" data-i18n="briefs.roleLabel">Role</span>
+          <select id="brief-select" class="role-select" aria-label="Results role">
+            <option value="fullstack" selected>Fullstack (Production Run)</option>
+            <option value="devops">Cloud DevOps</option>
+            <option value="designer">Product Design</option>
+            <option value="engineering">Renewable Energy</option>
+          </select>
+        </label>
+        <div class="brief-tabs flex items-center gap-1 bg-slate-100 dark:bg-[#131b26] p-1 rounded-md border border-slate-200 dark:border-[#223145]">
         <button class="btn-pill-sm active" data-brief="fullstack" data-i18n="briefs.tabFullstack">Fullstack (Production Run)</button>
         <button class="btn-pill-sm" data-brief="devops" data-i18n="briefs.tabDevops">Cloud DevOps</button>
         <button class="btn-pill-sm" data-brief="designer" data-i18n="briefs.tabDesigner">Product Design</button>
         <button class="btn-pill-sm" data-brief="engineering" data-i18n="briefs.tabEngineering">Renewable Energy</button>
+      </div>
       </div>
     </div>
 
@@ -658,7 +492,7 @@ python jobs/engine.py build-roles</div>
 
       <!-- Human in the loop Checklist & Maintenance Review -->
       <div class="brief-qa-box">
-        <h4 class="text-sm font-semibold text-gray-900 dark:text-white mb-2" data-i18n="briefs.checklistTitle">Human-in-the-Loop Pre-Submission Checklist</h4>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2" data-i18n="briefs.checklistTitle">Human-in-the-Loop Pre-Submission Checklist</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
           <div class="p-3 bg-white dark:bg-[#131b26] rounded border border-slate-200 dark:border-[#223145]">
             <span class="font-semibold text-gray-800 dark:text-gray-200 block mb-1" data-i18n="briefs.labelAvailability">Availability &amp; Kündigungsfrist:</span>
@@ -682,7 +516,351 @@ python jobs/engine.py build-roles</div>
     </div>
   </section>
 
-  <!-- AI Prompt Library Section -->
+  
+
+<!-- DIN-5008 Cover Letter Showcase Section -->
+  <section id="cover-letters" class="hub-container section-band no-print">
+    <div class="flex items-center justify-between flex-wrap gap-3 mb-2">
+      <div>
+        <div class="flex items-center gap-2 mb-1 flex-wrap">
+          <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="coverLetters.title">DIN-5008 German Cover Letter Showcase</h2>
+          <span class="nav-tag nav-tag-sop" data-i18n="coverLetters.badge">DIN-5008 Standard Compliant</span>
+        </div>
+        <p class="text-sm text-gray-600 max-w-2xl" data-i18n="coverLetters.desc">Production-grade German cover letters formatted in accordance with DIN-5008 business standards, featuring STAR achievement hooks, technical problem solving, and automated contractual invariants injection.</p>
+      </div>
+      <div class="flex items-center gap-2 flex-wrap">
+        <label class="role-select-field">
+          <span class="role-select-label" data-i18n="coverLetters.roleLabel">Role</span>
+          <select id="cover-letter-select" class="role-select" aria-label="Cover letter role">
+            <option value="fullstack" selected>Fullstack Developer</option>
+            <option value="designer">Product Designer</option>
+            <option value="devops">DevOps Engineer</option>
+            <option value="engineering">Mechanical Engineer</option>
+          </select>
+        </label>
+        <div class="cover-letter-tabs flex items-center gap-1 bg-slate-100 dark:bg-[#131b26] p-1 rounded-md border border-slate-200 dark:border-[#223145]">
+        <button class="btn-pill-sm active" data-letter="fullstack" data-i18n="coverLetters.tabFullstack">Fullstack Developer</button>
+        <button class="btn-pill-sm" data-letter="designer" data-i18n="coverLetters.tabDesigner">Product Designer</button>
+        <button class="btn-pill-sm" data-letter="devops" data-i18n="coverLetters.tabDevops">DevOps Engineer</button>
+        <button class="btn-pill-sm" data-letter="engineering" data-i18n="coverLetters.tabEngineering">Mechanical Engineer</button>
+      </div>
+      </div>
+    </div>
+
+    <!-- DIN-5008 Letter Paper -->
+    <div class="cover-letter-paper">
+      <!-- Sender Block -->
+      <div class="din-sender-block" id="din-sender">
+        Alex Morgan · Musterstraße 12 · 10115 Berlin · +49 151 23456789 · alex.morgan@example.com
+      </div>
+
+      <!-- Recipient Block -->
+      <div class="din-recipient-block" id="din-recipient" style="white-space: pre-line;">
+        Beispiel Energy Systems GmbH
+        Frau Erika Mustermann
+        Beispielstraße 1
+        10115 Berlin
+      </div>
+
+      <!-- Date Line -->
+      <div class="din-date-line" id="din-date">
+        Berlin, 26. September 2026
+      </div>
+
+      <!-- Subject Line -->
+      <div class="din-subject-line" id="din-subject">
+        Bewerbung als Fullstack Softwareentwickler (w/m/d) · Referenz #EMS-2026-98
+      </div>
+
+      <!-- Salutation -->
+      <div class="font-semibold text-gray-900 dark:text-white mb-4" id="din-salutation">
+        Sehr geehrte Frau Mustermann,
+      </div>
+
+      <!-- Paragraph 1 (STAR Hook) -->
+      <p class="din-body-p" id="din-p1">
+        die präzise Integration von Einspeiseprognosen und virtuellen Kraftwerken verlangt hochgradig verlässliche Daten-Pipelines und agile Microservices. Als Fullstack Entwickler mit solider Praxis in Python, TypeScript, REST APIs und relationalem Datenbankdesign verbinde ich robuste Backend-Architekturen mit performanten Webanwendungen. Genau diese Erfahrung möchte ich gewinnbringend in Ihr Team einbringen.
+      </p>
+
+      <!-- Paragraph 2 (Key Problems Solved) -->
+      <p class="din-body-p" id="din-p2">
+        In meinen vergangenen Projekten lag der Fokus auf datenintensiven Workflows und skalierbaren SaaS-Systemen. Bei der Verarbeitung kontinuierlicher Telemetriedaten konnte ich mit Redis und asynchronen RabbitMQ Message Queues Latenzen signifikant reduzieren und tausende parallele Events stabil persistieren. Im Backend setze ich auf testgetriebene Entwicklung (PyTest, Vitest), saubere Domänenmodelle und automatisierte CI/CD Pipelines mit Docker Containerisierung. Stabilität und Wartbarkeit stehen für mich im laufenden Betrieb an erster Stelle. Pragmatische Lösungen liegen mir.
+      </p>
+
+      <!-- Paragraph 3 (Contractual Invariants & CTA) -->
+      <p class="din-body-p" id="din-p3">
+        Meine Gehaltserwartung liegt bei 58.000 Euro brutto im Jahr. Meine Kündigungsfrist beträgt drei Monate zum Monatsende, wobei wir einen früheren Beginn bei Bedarf gerne individuell vereinbaren können. Weiterführende technische Referenzen und Live-Projekte finden Sie unter https://alexmorgan.example.com. Über die Gelegenheit, mich Ihnen persönlich vorzustellen, freue ich mich sehr.
+      </p>
+
+      <!-- Closing & Signature -->
+      <div class="din-signature-block" id="din-closing" style="white-space: pre-line;">
+        Mit freundlichen Grüßen,
+        Alex Morgan
+      </div>
+    </div>
+  </section>
+
+  
+
+<!-- Daily Job Workflow Section -->
+  <section id="daily-workflow" class="hub-container section-band no-print">
+    <div class="cream-callout-card">
+      <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+        <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="workflow.title">Daily Job Discovery &amp; Application Routine</h2>
+        <span class="nav-tag nav-tag-sop" data-i18n="workflow.badge">SOP · 20-Min Daily Habit</span>
+      </div>
+      <p class="text-sm text-gray-700 mb-6 max-w-3xl" data-i18n="workflow.desc">A simple, 20-minute daily habit designed for fresh graduates and busy professionals. Instead of spending 4 hours scrolling job boards and sending 50 generic resumes that get ignored, you find 2 high-matching vacancies every morning, verify you can actually do the job, and generate 100% tailored, ATS-ready application packages before 08:20 AM.</p>
+
+      <!-- Interactive 20-Min Workflow Simulation Console -->
+      <div class="workflow-sim-container">
+        <div class="workflow-sim-controls">
+          <div class="flex items-center gap-2">
+            <button id="sim-play-btn" class="btn-primary btn-sim-play" onclick="toggleWorkflowSimulation()" aria-label="Play or Pause Workflow Simulation">
+              <svg id="sim-play-icon" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <svg id="sim-pause-icon" class="h-4 w-4 hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              <span id="sim-play-label" data-i18n="workflow.playSim">Play 20-Min Simulation</span>
+            </button>
+            <button class="btn-secondary btn-sim-reset" onclick="resetWorkflowSimulation()" title="Reset to Stage 1">
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              <span data-i18n="workflow.reset">Reset</span>
+            </button>
+          </div>
+
+          <!-- Routine Clock & Elapsed Indicators -->
+          <div class="flex items-center gap-2 font-mono text-xs flex-wrap">
+            <div class="sim-clock-badge">
+              <span class="text-gray-400 text-[10px] uppercase tracking-wider" data-i18n="workflow.clockLabel">Routine Clock</span>
+              <span id="sim-clock" class="font-bold text-[#cc785c] dark:text-sky-400 text-sm">08:00 AM</span>
+            </div>
+            <div class="sim-timer-badge">
+              <span class="text-gray-400 text-[10px] uppercase tracking-wider" data-i18n="workflow.elapsedLabel">Elapsed</span>
+              <span id="sim-elapsed" class="font-semibold text-gray-700 dark:text-gray-300">00:00 / 20:00</span>
+            </div>
+            <div class="sim-speed-selector flex items-center gap-1 bg-white dark:bg-[#1c2635] p-1 rounded border border-gray-200 dark:border-[#2a3b52]">
+              <span class="text-[10px] text-gray-400 uppercase px-1" data-i18n="workflow.speedLabel">Speed:</span>
+              <button class="sim-speed-btn active" data-speed="1" onclick="setSimSpeed(1)">1x</button>
+              <button class="sim-speed-btn" data-speed="2" onclick="setSimSpeed(2)">2x</button>
+              <button class="sim-speed-btn" data-speed="4" onclick="setSimSpeed(4)">4x</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scrubbable Stage Step Timeline -->
+        <div class="workflow-scrub-bar" data-i18n-attr="aria-label:workflow.scrubLabel" aria-label="20-Minute Routine Timeline">
+          <div class="workflow-scrub-track">
+            <div id="workflow-scrub-fill" class="workflow-scrub-fill" style="width: 25%;"></div>
+          </div>
+          <div class="workflow-scrub-steps">
+            <button class="scrub-step-btn active" data-step="1" onclick="jumpToSimStage(1)">
+              <span class="scrub-step-num">1</span>
+              <span class="scrub-step-label" data-i18n="workflow.step1Tab">Stage 1 · Spot Fresh Jobs</span>
+            </button>
+            <button class="scrub-step-btn" data-step="2" onclick="jumpToSimStage(2)">
+              <span class="scrub-step-num">2</span>
+              <span class="scrub-step-label" data-i18n="workflow.step2Tab">Stage 2 · Check Your Fit</span>
+            </button>
+            <button class="scrub-step-btn" data-step="3" onclick="jumpToSimStage(3)">
+              <span class="scrub-step-num">3</span>
+              <span class="scrub-step-label" data-i18n="workflow.step3Tab">Stage 3 · Auto Generation</span>
+            </button>
+            <button class="scrub-step-btn" data-step="4" onclick="jumpToSimStage(4)">
+              <span class="scrub-step-num">4</span>
+              <span class="scrub-step-label" data-i18n="workflow.step4Tab">Stage 4 · Submit &amp; Relax</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- The 4 Stage Cards Grid -->
+        <div class="workflow-pipeline-grid">
+          <!-- Stage 1 -->
+          <div class="workflow-stage-card sim-active" data-stage="1">
+            <div class="workflow-stage-header">
+              <span class="workflow-stage-badge" data-i18n="workflow.step1Badge">Stage 1</span>
+              <span class="text-xs text-gray-400 font-mono" data-i18n="workflow.step1Time">08:00 - 08:05</span>
+            </div>
+            <h3 class="workflow-stage-title" data-i18n="workflow.step1Title">Spot Fresh Jobs &amp; Skip Old Ones</h3>
+            <p class="workflow-stage-desc" data-i18n="workflow.step1Desc">Find 10–15 newly posted openings from the last 24 hours. Automatically filter out companies you already applied to so you never send duplicates.</p>
+            <ul class="workflow-steps-list">
+              <li data-i18n="workflow.step1Item1"><strong>Step 1: Check Application History</strong> — Scan your simple tracker (<code class="font-mono text-xs">jobs/job_matches.md</code>) to instantly eliminate any company or role you already applied to.</li>
+              <li data-i18n="workflow.step1Item2"><strong>Step 2: 1-Click Search Sweeps</strong> — Open pre-filtered Google, LinkedIn, StepStone, and startup links to uncover active vacancies posted today.</li>
+            </ul>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="workflow-stage-card" data-stage="2">
+            <div class="workflow-stage-header">
+              <span class="workflow-stage-badge" data-i18n="workflow.step2Badge">Stage 2</span>
+              <span class="text-xs text-gray-400 font-mono" data-i18n="workflow.step2Time">08:05 - 08:10</span>
+            </div>
+            <h3 class="workflow-stage-title" data-i18n="workflow.step2Title">Check Your Fit &amp; Pick The Top 2</h3>
+            <p class="workflow-stage-desc" data-i18n="workflow.step2Desc">Don't waste time spraying 50 random applications. Grade vacancies from 0 to 10 and only focus on roles you are actually qualified to win.</p>
+            <ul class="workflow-steps-list">
+              <li data-i18n="workflow.step2Item1"><strong>Step 3: Grade Your Fit (9/10 Rule)</strong> — Score required skills (70%) vs nice-to-haves (30%). Disqualify jobs with impossible dealbreakers (e.g. 10 years experience).</li>
+              <li data-i18n="workflow.step2Item2"><strong>Step 4: Save Job Details &amp; Check Pay</strong> — Save the full job description text before it expires, and check typical salaries on Kununu or Glassdoor to verify fair compensation.</li>
+            </ul>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="workflow-stage-card" data-stage="3">
+            <div class="workflow-stage-header">
+              <span class="workflow-stage-badge" data-i18n="workflow.step3Badge">Stage 3</span>
+              <span class="text-xs text-gray-400 font-mono" data-i18n="workflow.step3Time">08:10 - 08:15</span>
+            </div>
+            <h3 class="workflow-stage-title" data-i18n="workflow.step3Title">Auto-Generate Resume &amp; Cover Letter</h3>
+            <p class="workflow-stage-desc" data-i18n="workflow.step3Desc">Stop spending 3 hours manually editing Word files. Let automation create custom, ATS-friendly application packages in seconds.</p>
+            <ul class="workflow-steps-list">
+              <li data-i18n="workflow.step3Item1"><strong>Step 5: Tailored ATS Resume</strong> — Generates a clean, ATS-compliant resume highlighting the exact projects and skills the employer asked for — zero formatting bugs.</li>
+              <li data-i18n="workflow.step3Item2"><strong>Step 6: DIN-5008 German Cover Letter</strong> — Writes a punchy, 1-page cover letter (&lt;300 words) solving 3 key employer problems with real proof, then exports to crisp PDF.</li>
+            </ul>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="workflow-stage-card" data-stage="4">
+            <div class="workflow-stage-header">
+              <span class="workflow-stage-badge" data-i18n="workflow.step4Badge">Stage 4</span>
+              <span class="text-xs text-gray-400 font-mono" data-i18n="workflow.step4Time">08:15 - 08:20</span>
+            </div>
+            <h3 class="workflow-stage-title" data-i18n="workflow.step4Title">Submit, Record It &amp; You're Done!</h3>
+            <p class="workflow-stage-desc" data-i18n="workflow.step4Desc">Upload your PDFs directly to the employer's official website, log the date in your tracker, and finish before morning coffee.</p>
+            <ul class="workflow-steps-list">
+              <li data-i18n="workflow.step4Item1"><strong>Step 7: Log in Application Tracker</strong> — Add the company name, apply link, and date so you always know when to follow up and avoid messy spreadsheets.</li>
+              <li data-i18n="workflow.step4Item2"><strong>Step 8: Close Your Laptop &amp; Relax</strong> — 2 top-tier, custom applications dispatched in under 20 minutes. Zero burnout, maximum interview callbacks!</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Live Stage Telemetry & Output Console -->
+        <div id="sim-stage-monitor" class="workflow-sim-monitor">
+          <!-- Dynamic Telemetry rendered by JS based on active stage -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+<!-- Step-by-Step Setup Guide -->
+  <section id="setup" class="hub-container section-band no-print">
+    <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
+      <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="setup.title">Get Started in 4 Steps</h2>
+      <span class="nav-tag nav-tag-sop" data-i18n="setup.badge">About 30 Minutes · Once</span>
+    </div>
+    <p class="text-sm text-gray-600 mb-2 max-w-3xl" data-i18n="setup.desc1">From download to an automatic morning run. You need Python 3.10+ (no extra packages), Chrome or Edge for PDF export, and an AI coding agent for steps 3 and 4. The examples use <a href="https://claude.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>; Codex CLI and Gemini CLI read the same <code class="font-mono text-xs">AGENTS.md</code> and work the same way.</p>
+    <p class="text-sm text-gray-600 mb-6 max-w-3xl" data-i18n="setup.desc2">On macOS and Linux, type <code class="font-mono text-xs">python3</code> wherever the commands say <code class="font-mono text-xs">python</code>.</p>
+
+    <ol class="setup-steps">
+      <!-- Step 1 -->
+      <li class="setup-step">
+        <span class="setup-step-num">1</span>
+        <div class="setup-step-body">
+          <h3 class="setup-step-title" data-i18n="setup.step1Title">Install</h3>
+          <p class="setup-step-desc" data-i18n="setup.step1Desc">Clone the repository (or <a href="./download/career-engine-starter.zip" download>download the ZIP</a> and unzip it), then build the example resumes to check that Python and the PDF export work. You should get PDFs in <code class="font-mono text-xs">jobs/roles/pdf/</code>.</p>
+          <div class="engine-command-grid">
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step1CardClone">Clone and test the engine</div>
+                <div class="engine-command-code">git clone https://github.com/masrisystems/career-engine.git
+cd career-engine
+python jobs/engine.py build-roles</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommands">Copy Commands</button>
+            </div>
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step1CardDocker">Optional: only preview the web pages</div>
+                <div class="engine-command-desc" data-i18n="setup.step1CardDockerDesc">Serves this page and the web resume at http://localhost with Docker. Port 80 taken? Prefix with PORT=8080.</div>
+                <div class="engine-command-code">docker compose up --build</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommand">Copy Command</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Step 2 -->
+      <li class="setup-step">
+        <span class="setup-step-num">2</span>
+        <div class="setup-step-body">
+          <h3 class="setup-step-title" data-i18n="setup.step2Title">Create your profile with AI</h3>
+          <p class="setup-step-desc" data-i18n="setup.step2Desc">Everything the engine writes (resume, cover letters, search links) comes from one file: <code class="font-mono text-xs">config/profile.json</code>. Let an AI fill it for you:</p>
+          <ul class="setup-substeps">
+            <li data-i18n="setup.step2Item1">Copy the <a href="#prompts">Profile &amp; Resume Onboarding prompt</a> into ChatGPT, Claude or Gemini.</li>
+            <li data-i18n="setup.step2Item2">Paste your old CV or LinkedIn text after it, or type <em>Interview me</em> to answer 7 short questions instead.</li>
+            <li data-i18n="setup.step2Item3">Save the JSON it returns as <code class="font-mono text-xs">config/profile.json</code>, replacing the example.</li>
+            <li data-i18n="setup.step2Item4">Rebuild with your data and open the results: your resume PDFs in <code class="font-mono text-xs">jobs/roles/pdf/</code> and your job board links in <code class="font-mono text-xs">daily-job-search-links.md</code>.</li>
+          </ul>
+          <div class="engine-command-grid">
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step2Card">Build from your profile</div>
+                <div class="engine-command-code">python jobs/engine.py build-links
+python jobs/engine.py build-roles</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommands">Copy Commands</button>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Step 3 -->
+      <li class="setup-step">
+        <span class="setup-step-num">3</span>
+        <div class="setup-step-body">
+          <h3 class="setup-step-title" data-i18n="setup.step3Title">Do your first daily run with your AI agent</h3>
+          <p class="setup-step-desc" data-i18n="setup.step3Desc">Open a terminal in the <code class="font-mono text-xs">career-engine</code> folder, start your agent (<code class="font-mono text-xs">claude</code>, <code class="font-mono text-xs">codex</code> or <code class="font-mono text-xs">gemini</code>) and paste the instruction below. The agent searches for jobs, scores them, writes a tailored resume and DIN-5008 cover letter for the best matches with <code class="font-mono text-xs">jobs/engine.py</code>, logs them in <code class="font-mono text-xs">jobs/job_matches.md</code> and ends with a Morning Action Brief like the <a href="#brief-showcase">example below</a>. Watch this first run and approve its steps, so you know what the scheduled run will do.</p>
+          <div class="engine-command-grid">
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step3Card">Paste into your agent</div>
+                <div class="engine-command-code">Read AGENTS.md, skills/daily-job-workflow/SKILL.md and daily-job-search-workflow.md, then run today's daily job workflow exactly as described there. Find up to 2 open roles that score 9.0/10 or higher, build each application package with python jobs/engine.py, update jobs/job_matches.md and finish with the Morning Action Brief. Prepare only: never submit an application or contact an employer.</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyInstruction">Copy Instruction</button>
+            </div>
+          </div>
+          <p class="setup-step-desc mt-3" data-i18n="setup.step3After">Read the packages in <code class="font-mono text-xs">jobs/resumes/</code> and <code class="font-mono text-xs">jobs/cover_letters/</code>, fix anything that is wrong, and send the application yourself. The agent never applies on your behalf.</p>
+        </div>
+      </li>
+
+      <!-- Step 4 -->
+      <li class="setup-step">
+        <span class="setup-step-num">4</span>
+        <div class="setup-step-body">
+          <h3 class="setup-step-title" data-i18n="setup.step4Title">Schedule it every weekday morning</h3>
+          <p class="setup-step-desc" data-i18n="setup.step4Desc"><code class="font-mono text-xs">scripts/daily-run.ps1</code> (Windows) and <code class="font-mono text-xs">scripts/daily-run.sh</code> (macOS, Linux) run the same instruction through Claude Code without a chat window. The agent may only read and edit files in the project, search the web and run <code class="font-mono text-xs">jobs/engine.py</code>. Each run writes a log to <code class="font-mono text-xs">jobs/logs/</code>. Schedule the script for 07:30, then spend your 20 minutes reviewing the packages instead of searching. Replace the example path with your own folder. Your computer needs to be on at that time.</p>
+          <div class="engine-command-grid">
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step4Win">Windows (Task Scheduler)</div>
+                <div class="engine-command-desc" data-i18n="setup.step4WinDesc">Run once in a terminal. Remove it again with: schtasks /Delete /TN CareerEngineDaily</div>
+                <div class="engine-command-code">schtasks /Create /TN CareerEngineDaily /SC WEEKLY /D MON,TUE,WED,THU,FRI /ST 07:30 /TR "powershell -NoProfile -ExecutionPolicy Bypass -File C:\career-engine\scripts\daily-run.ps1"</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommand">Copy Command</button>
+            </div>
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step4Cron">macOS / Linux (cron)</div>
+                <div class="engine-command-desc" data-i18n="setup.step4CronDesc">Run crontab -e and add this line. Remove the line to stop.</div>
+                <div class="engine-command-code">30 7 * * 1-5 $HOME/career-engine/scripts/daily-run.sh</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyLine">Copy Line</button>
+            </div>
+            <div class="engine-command-card">
+              <div>
+                <div class="engine-command-title" data-i18n="setup.step4Cloud">Cloud (Claude Code routine)</div>
+                <div class="engine-command-desc" data-i18n="setup.step4CloudDesc">Runs even when your computer is off. Push your copy to a private GitHub repository (it contains your profile), then type this in Claude Code and give it the step 3 instruction and a weekday 07:30 schedule.</div>
+                <div class="engine-command-code">/schedule</div>
+              </div>
+              <button class="btn-copy-prompt" onclick="copyEngineCommand(this)" data-i18n="setup.copyCommand">Copy Command</button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  
+
+<!-- AI Prompt Library Section -->
   <section id="prompts" class="hub-container section-band no-print">
     <h2 class="text-3xl font-semibold mb-2" style="border-bottom:none;" data-i18n="prompts.title">AI Prompt Library</h2>
     <p class="text-sm text-gray-600 mb-6 max-w-2xl" data-i18n="prompts.desc">Battle-tested prompts sourced directly from production career workflows. Click any card to copy the full prompt payload.</p>
@@ -1116,79 +1294,9 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
     </div>
   </section>
 
-  <!-- DIN-5008 Cover Letter Showcase Section -->
-  <section id="cover-letters" class="hub-container section-band no-print">
-    <div class="flex items-center justify-between flex-wrap gap-3 mb-2">
-      <div>
-        <div class="flex items-center gap-2 mb-1 flex-wrap">
-          <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="coverLetters.title">DIN-5008 German Cover Letter Showcase</h2>
-          <span class="nav-tag nav-tag-sop" data-i18n="coverLetters.badge">Recruiter &amp; Consultant Approved</span>
-        </div>
-        <p class="text-sm text-gray-600 max-w-2xl" data-i18n="coverLetters.desc">Production-grade German cover letters audited and approved by senior recruiters and HR consultants. Formatted in accordance with DIN-5008, featuring STAR achievement hooks, technical problem solving, and automated contractual invariants injection.</p>
-      </div>
-      <!-- Cover Letter Persona Switcher Tabs -->
-      <div class="cover-letter-tabs flex items-center gap-1 bg-slate-100 dark:bg-[#131b26] p-1 rounded-md border border-slate-200 dark:border-[#223145]">
-        <button class="btn-pill-sm active" data-letter="fullstack" data-i18n="coverLetters.tabFullstack">Fullstack Developer</button>
-        <button class="btn-pill-sm" data-letter="designer" data-i18n="coverLetters.tabDesigner">Product Designer</button>
-        <button class="btn-pill-sm" data-letter="devops" data-i18n="coverLetters.tabDevops">DevOps Engineer</button>
-        <button class="btn-pill-sm" data-letter="engineering" data-i18n="coverLetters.tabEngineering">Mechanical Engineer</button>
-      </div>
-    </div>
+  
 
-    <!-- DIN-5008 Letter Paper -->
-    <div class="cover-letter-paper">
-      <!-- Sender Block -->
-      <div class="din-sender-block" id="din-sender">
-        Alex Morgan · Musterstraße 12 · 10115 Berlin · +49 151 23456789 · alex.morgan@example.com
-      </div>
-
-      <!-- Recipient Block -->
-      <div class="din-recipient-block" id="din-recipient" style="white-space: pre-line;">
-        Beispiel Energy Systems GmbH
-        Frau Erika Mustermann
-        Beispielstraße 1
-        10115 Berlin
-      </div>
-
-      <!-- Date Line -->
-      <div class="din-date-line" id="din-date">
-        Berlin, 26. September 2026
-      </div>
-
-      <!-- Subject Line -->
-      <div class="din-subject-line" id="din-subject">
-        Bewerbung als Fullstack Softwareentwickler (w/m/d) · Referenz #EMS-2026-98
-      </div>
-
-      <!-- Salutation -->
-      <div class="font-semibold text-gray-900 dark:text-white mb-4" id="din-salutation">
-        Sehr geehrte Frau Mustermann,
-      </div>
-
-      <!-- Paragraph 1 (STAR Hook) -->
-      <p class="din-body-p" id="din-p1">
-        die präzise Integration von Einspeiseprognosen und virtuellen Kraftwerken verlangt hochgradig verlässliche Daten-Pipelines und agile Microservices. Als Fullstack Entwickler mit solider Praxis in Python, TypeScript, REST APIs und relationalem Datenbankdesign verbinde ich robuste Backend-Architekturen mit performanten Webanwendungen. Genau diese Erfahrung möchte ich gewinnbringend in Ihr Team einbringen.
-      </p>
-
-      <!-- Paragraph 2 (Key Problems Solved) -->
-      <p class="din-body-p" id="din-p2">
-        In meinen vergangenen Projekten lag der Fokus auf datenintensiven Workflows und skalierbaren SaaS-Systemen. Bei der Verarbeitung kontinuierlicher Telemetriedaten konnte ich mit Redis und asynchronen RabbitMQ Message Queues Latenzen signifikant reduzieren und tausende parallele Events stabil persistieren. Im Backend setze ich auf testgetriebene Entwicklung (PyTest, Vitest), saubere Domänenmodelle und automatisierte CI/CD Pipelines mit Docker Containerisierung. Stabilität und Wartbarkeit stehen für mich im laufenden Betrieb an erster Stelle. Pragmatische Lösungen liegen mir.
-      </p>
-
-      <!-- Paragraph 3 (Contractual Invariants & CTA) -->
-      <p class="din-body-p" id="din-p3">
-        Meine Gehaltserwartung liegt bei 58.000 Euro brutto im Jahr. Meine Kündigungsfrist beträgt drei Monate zum Monatsende, wobei wir einen früheren Beginn bei Bedarf gerne individuell vereinbaren können. Weiterführende technische Referenzen und Live-Projekte finden Sie unter https://alexmorgan.example.com. Über die Gelegenheit, mich Ihnen persönlich vorzustellen, freue ich mich sehr.
-      </p>
-
-      <!-- Closing & Signature -->
-      <div class="din-signature-block" id="din-closing" style="white-space: pre-line;">
-        Mit freundlichen Grüßen,
-        Alex Morgan
-      </div>
-    </div>
-  </section>
-
-  <!-- Python Automation Engine & CLI Section -->
+<!-- Python Automation Engine & CLI Section -->
   <section id="engine" class="hub-container section-band no-print">
     <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
       <h2 class="text-3xl font-semibold m-0" style="border-bottom:none;" data-i18n="engine.title">Python Automation Engine Architecture</h2>
@@ -1302,7 +1410,9 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
     </div>
   </section>
 
-  <!-- Workflows & 24 Career Skills Section -->
+  
+
+<!-- Workflows & 24 Career Skills Section -->
   <section id="workflows" class="hub-container section-band no-print">
     <div class="mb-6">
       <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
@@ -1510,34 +1620,9 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
     </div>
   </section>
 
-  <!-- Live Resume Showcase Section -->
-  <section id="resume" class="hub-container section-band">
-    <div class="persona-switcher-bar no-print">
-      <div class="flex items-center gap-2 flex-wrap">
-        <span class="text-xs font-semibold uppercase text-gray-500" data-i18n="resume.archetypeLabel">Archetype:</span>
-        <div class="persona-pills">
-          <button class="btn-pill-sm" data-persona="fullstack" data-i18n="resume.fullstack">Fullstack Engineer</button>
-          <button class="btn-pill-sm" data-persona="devops" data-i18n="resume.devops">DevOps &amp; Cloud</button>
-          <button class="btn-pill-sm" data-persona="designer" data-i18n="resume.designer">Product Designer</button>
-          <button class="btn-pill-sm" data-persona="finance" data-i18n="resume.finance">Finance &amp; Controlling</button>
-          <button class="btn-pill-sm active" data-persona="engineering" data-i18n="resume.engineering">Mechanical Systems</button>
-        </div>
-      </div>
-      <div class="flex items-center gap-2 flex-wrap">
-        <a id="resume-standalone-link" href="./resume.html" target="_blank" rel="noopener noreferrer" class="btn-pill-sm" style="display:inline-flex; align-items:center; gap:4px; text-decoration:none;">
-          <i data-lucide="external-link" class="w-3.5 h-3.5"></i> <span data-i18n="resume.standaloneLink">Standalone Resume</span>
-        </a>
-        <button class="btn-pill-sm" onclick="toggleAtsMode()" data-i18n="resume.toggleAts">Toggle ATS Mode</button>
-        <button class="btn-pill-sm" onclick="printResumeFrame()" data-i18n="resume.printPdf">Print / PDF</button>
-      </div>
-    </div>
+  
 
-    <div id="resume-paper">
-      <iframe id="resumeFrame" src="./resume.html" title="Master Web Resume Template" data-i18n-attr="title:resume.title" style="width: 100%; height: 1050px; border: none; display: block;"></iframe>
-    </div>
-  </section>
-
-  <!-- FAQ Section (Airtable Editorial Dialect) -->
+<!-- FAQ Section (Airtable Editorial Dialect) -->
   <section id="faq" class="hub-container section-band no-print">
     <div class="faq-card-container">
       <div class="flex items-center justify-between flex-wrap gap-2 mb-2">
@@ -1575,7 +1660,9 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
     </div>
   </section>
 
-  <!-- Download Starter Kit CTA Band -->
+  
+
+<!-- Download Starter Kit CTA Band -->
   <section id="download" class="hub-container section-band no-print">
     <div class="cta-band-light">
       <h2 data-i18n="download.title">Get Started with Career Engine</h2>
@@ -1591,11 +1678,13 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
     </div>
   </section>
 
-  <!-- Viral Referral & Share Strip -->
+  
+
+<!-- Viral Referral & Share Strip -->
   <section id="share" class="hub-container section-band no-print">
     <div class="share-card">
       <div class="share-card-header">
-        <h3 class="text-2xl font-semibold m-0 text-white" data-i18n="share.title">Know an Engineer Looking for Their Next Role?</h3>
+        <h2 class="text-2xl font-semibold m-0 text-white" data-i18n="share.title">Know an Engineer Looking for Their Next Role?</h2>
         <p class="text-sm text-stone-300 max-w-xl mx-auto mt-2 mb-6" data-i18n="share.desc">Share this free open-source ATS engine with friends, colleagues, or your tech community to help them bypass applicant tracking filters and save hours every morning.</p>
       </div>
       <div class="share-btn-cluster">
@@ -1619,7 +1708,9 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
     </div>
   </section>
 
-  <!-- Editorial Footer -->
+  
+
+<!-- Editorial Footer -->
   <footer class="hub-footer no-print">
     <div class="hub-container hub-footer-inner">
       <div>
@@ -1638,6 +1729,8 @@ Erstellen Sie ein komplettes, hochgradig konvertierendes LinkedIn-Profil-Update 
         <li><a href="#workflows" data-i18n="footer.skills">Skills</a></li>
         <li><a href="#faq" data-i18n="footer.faq">FAQ</a></li>
         <li><a href="#download" data-i18n="footer.download">Download</a></li>
+        <li><a href="https://masrisystems.com/imprint" target="_blank" rel="noopener noreferrer">Impressum</a></li>
+        <li><a href="https://masrisystems.com/privacy-policy" target="_blank" rel="noopener noreferrer">Datenschutz</a></li>
       </ul>
     </div>
   </footer>

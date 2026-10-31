@@ -4,3 +4,4 @@ scratch/
 docs/
 jobs/logs/
 .worktrees/
+.claude/
