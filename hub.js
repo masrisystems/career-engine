@@ -1107,6 +1107,34 @@ function initNavDropdowns() {
   });
 }
 
+// Hero product preview tabs (arrow keys move between tabs)
+function initHeroTabs() {
+  const tabs = Array.from(document.querySelectorAll('.hero-tab'));
+  if (!tabs.length) return;
+
+  const selectTab = (tab, focus) => {
+    tabs.forEach(t => {
+      const active = t === tab;
+      t.classList.toggle('is-active', active);
+      t.setAttribute('aria-selected', active ? 'true' : 'false');
+      t.tabIndex = active ? 0 : -1;
+      const panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (panel) panel.hidden = !active;
+    });
+    if (focus) tab.focus();
+  };
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => selectTab(tab));
+    tab.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      const step = e.key === 'ArrowRight' ? 1 : tabs.length - 1;
+      selectTab(tabs[(i + step) % tabs.length], true);
+    });
+  });
+}
+
 // Listen for language change events to re-render dynamic content
 if (typeof window !== 'undefined') {
   window.addEventListener('career:lang-changed', function () {
@@ -1128,6 +1156,7 @@ if (typeof window !== 'undefined') {
 document.addEventListener('DOMContentLoaded', () => {
   registerHubI18nAliases();
   initNavDropdowns();
+  initHeroTabs();
 
   if (window.lucide) {
     lucide.createIcons();
