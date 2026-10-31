@@ -261,15 +261,6 @@ function switchPersona(personaKey, options) {
     standaloneLink.setAttribute('aria-label', roleTitle);
   }
 
-  // Keep persona pills in sync
-  document.querySelectorAll('.persona-pills [data-persona]').forEach(btn => {
-    if (btn.getAttribute('data-persona') === key) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
-  });
-
   // Keep the dropdown in sync
   const personaSelect = document.getElementById('persona-select');
   if (personaSelect) personaSelect.value = key;
@@ -568,15 +559,6 @@ function switchBrief(briefKey, options) {
   if (chkUp) chkUp.textContent = data.checklist.uploads;
   if (maintEl) maintEl.textContent = data.maintenance;
 
-  // Keep tabs in sync
-  document.querySelectorAll('[data-brief]').forEach(tab => {
-    if (tab.getAttribute('data-brief') === key) {
-      tab.classList.add('active');
-    } else {
-      tab.classList.remove('active');
-    }
-  });
-
   // Keep the dropdown in sync
   const briefSelect = document.getElementById('brief-select');
   if (briefSelect) briefSelect.value = key;
@@ -679,16 +661,6 @@ function switchCoverLetterPersona(personaKey, options) {
   if (p2El) p2El.textContent = data.p2;
   if (p3El) p3El.textContent = data.p3;
   if (closeEl) closeEl.textContent = data.closing;
-
-  // Keep tabs in sync
-  document.querySelectorAll('[data-letter], [data-cover-letter]').forEach(tab => {
-    const tabKey = tab.getAttribute('data-letter') || tab.getAttribute('data-cover-letter');
-    if (tabKey === key) {
-      tab.classList.add('active');
-    } else {
-      tab.classList.remove('active');
-    }
-  });
 
   // Keep the dropdown in sync
   const letterSelect = document.getElementById('cover-letter-select');
@@ -1220,34 +1192,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Bind persona switcher dropdown & pills for resume
+  // Bind persona switcher dropdown for resume
   document.getElementById('persona-select')?.addEventListener('change', (e) => {
     switchPersona(e.target.value);
   });
-  document.querySelectorAll('.persona-pills [data-persona]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      switchPersona(btn.getAttribute('data-persona'));
-    });
-  });
 
-  // Bind brief switcher dropdown & tabs
+  // Bind brief switcher dropdown
   document.getElementById('brief-select')?.addEventListener('change', (e) => {
     switchBrief(e.target.value);
   });
-  document.querySelectorAll('[data-brief]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      switchBrief(btn.getAttribute('data-brief'));
-    });
-  });
 
-  // Bind cover letter switcher dropdown & tabs
+  // Bind cover letter switcher dropdown
   document.getElementById('cover-letter-select')?.addEventListener('change', (e) => {
     switchCoverLetterPersona(e.target.value);
-  });
-  document.querySelectorAll('[data-letter], [data-cover-letter]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const key = btn.getAttribute('data-letter') || btn.getAttribute('data-cover-letter');
-      if (key) switchCoverLetterPersona(key);
-    });
   });
 });

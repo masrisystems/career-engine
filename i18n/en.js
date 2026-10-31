@@ -180,6 +180,7 @@
       title: "AI Prompt Library",
       badge: "Production Prompt Suites",
       desc: "Battle-tested prompts sourced directly from production career workflows. Click any card to copy the full prompt payload.",
+      showMore: "More prompts",
       copyPrompt: "Copy Prompt",
       fastTrack: "Fast Track",
       p0Title: "Profile & Resume Onboarding",
@@ -281,6 +282,7 @@
     engine: {
       title: "Python Automation Engine Architecture",
       badge: "Modular CLI Engine · Python 3.10+",
+      modulesToggle: "Architecture modules",
       desc: "The repository includes a decoupled Python automation engine (<code>jobs/engine.py</code> and <code>engine/*</code>). It automates candidate config hydration, canonical role compilation, ATS structural validation, DIN-5008 cover letter rendering, and headless Chromium vector PDF compilation.",
       configName: "engine/config.py",
       configRole: "SSOT Loader & Invariant Validator",

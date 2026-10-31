@@ -180,6 +180,7 @@
       title: "KI Prompt Bibliothek",
       badge: "Produktions Prompt Suites",
       desc: "Praxiserprobte Prompts direkt aus produktiven Karriere Workflows. Klicken Sie auf eine Karte, um den vollständigen Prompt zu kopieren.",
+      showMore: "Weitere Prompts",
       copyPrompt: "Prompt kopieren",
       fastTrack: "Fast Track",
       p0Title: "Profil & Lebenslauf Onboarding",
@@ -281,6 +282,7 @@
     engine: {
       title: "Architektur der Python Automatisierungs Engine",
       badge: "Modulare CLI Engine · Python 3.10+",
+      modulesToggle: "Architektur Module",
       desc: "Das Repository enthält eine entkoppelte Python Automatisierungs Engine (<code>jobs/engine.py</code> und <code>engine/*</code>). Sie automatisiert die Profilkonfiguration, kanonische Rollenkompilierung, ATS Strukturvalidierung, DIN-5008 Anschreibengenerierung und Headless Chromium Vektor PDF Kompilierung.",
       configName: "engine/config.py",
       configRole: "SSOT Loader & Invarianten Validator",
