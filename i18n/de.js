@@ -512,13 +512,16 @@
       ]
     },
 
-    share: {
-      title: "Kennen Sie Kollegen auf Jobsuche?",
-      desc: "Teilen Sie diese kostenlose Open Source ATS Engine mit Freunden, Kollegen oder Ihrer Tech Community, um Bewerbungsfilter zu meistern und jeden Morgen wertvolle Zeit zu sparen.",
-      btnWhatsapp: "WhatsApp",
+    connect: {
+      title: "Vernetzen & Zusammenarbeiten",
+      desc: "Sie suchen professionelle Unterstützung oder eine Zusammenarbeit rund um Career Engine? Buchen Sie ein Gespräch oder melden Sie sich über einen der folgenden Kanäle.",
+      btnCall: "Kennenlerngespräch buchen",
+      btnServices: "Leistungen",
+      btnEmail: "E-Mail",
       btnLinkedin: "LinkedIn",
-      btnTwitter: "X / Twitter",
-      btnCopyLink: "Link kopieren"
+      btnGithub: "GitHub",
+      btnPortfolio: "Live Portfolio",
+      btnLinksHub: "Links Hub"
     },
 
     footer: {

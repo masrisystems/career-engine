@@ -512,13 +512,16 @@
       ]
     },
 
-    share: {
-      title: "Know an Engineer Looking for Their Next Role?",
-      desc: "Share this free open-source ATS engine with friends, colleagues, or your tech community to help them bypass applicant tracking filters and save hours every morning.",
-      btnWhatsapp: "WhatsApp",
+    connect: {
+      title: "Connect & Collaborate",
+      desc: "Looking for professional services or a collaboration on Career Engine? Book a call or reach out through any channel below.",
+      btnCall: "Schedule a Discovery Call",
+      btnServices: "Professional Services",
+      btnEmail: "Email",
       btnLinkedin: "LinkedIn",
-      btnTwitter: "X / Twitter",
-      btnCopyLink: "Copy Link"
+      btnGithub: "GitHub",
+      btnPortfolio: "Live Portfolio",
+      btnLinksHub: "Links Hub"
     },
 
     footer: {

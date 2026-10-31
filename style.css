@@ -3113,8 +3113,8 @@ html.dark .fold-count,
   }
 }
 
-/* Viral Referral & Share Strip */
-.share-card {
+/* Connect & Collaborate Strip */
+.connect-card {
   background: linear-gradient(135deg, #181d26 0%, #0d1218 100%);
   border-radius: var(--radius-lg);
   padding: 48px 24px;
@@ -3122,7 +3122,7 @@ html.dark .fold-count,
   border: 1px solid #2a3b52;
 }
 
-.share-btn-cluster {
+.connect-btn-cluster {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3130,7 +3130,7 @@ html.dark .fold-count,
   flex-wrap: wrap;
 }
 
-.btn-share {
+.btn-connect {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -3138,48 +3138,41 @@ html.dark .fold-count,
   font-weight: 500;
   padding: 10px 20px;
   border-radius: var(--radius-pill);
+  background: #334155;
+  color: #f8fafc !important;
+  border: 1px solid transparent;
   text-decoration: none !important;
-  cursor: pointer;
-  transition: transform 0.15s ease, opacity 0.15s ease, background-color 0.15s ease;
+  transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
 
-.btn-share:hover {
+.btn-connect:hover {
   transform: translateY(-1px);
+  background: #475569;
 }
 
-.btn-share-whatsapp {
-  background: #25d366;
-  color: #ffffff !important;
+.btn-connect-primary {
+  background: #f8fafc;
+  color: #0f172a !important;
+  font-weight: 600;
 }
-.btn-share-whatsapp:hover {
-  background: #22bf5b;
+.btn-connect-primary:hover {
+  background: #e2e8f0;
 }
 
-.btn-share-linkedin {
+.btn-connect-linkedin {
   background: #0a66c2;
-  color: #ffffff !important;
 }
-.btn-share-linkedin:hover {
+.btn-connect-linkedin:hover {
   background: #095196;
 }
 
-.btn-share-x {
+.btn-connect-dark {
   background: #000000;
-  color: #ffffff !important;
-  border: 1px solid #334155;
+  border-color: #334155;
 }
-.btn-share-x:hover {
+.btn-connect-dark:hover {
   background: #111827;
   border-color: #475569;
-}
-
-.btn-share-copy {
-  background: #334155;
-  color: #f8fafc;
-  border: none;
-}
-.btn-share-copy:hover {
-  background: #475569;
 }
 
 /* Print Isolation Override */
@@ -3194,7 +3187,7 @@ html.dark .fold-count,
   #engine,
   #workflows,
   #faq,
-  #share,
+  #connect,
   #download,
   #hub-toast,
   .persona-switcher-bar,
