@@ -4,7 +4,7 @@
 
 **[Live demo](https://career.masrisystems.com/resume.html)** (example persona) · [Project page](https://career.masrisystems.com) · [Onboarding guide](ONBOARDING.md)
 
-[![License: MS-NC-1.0](https://img.shields.io/badge/License-Non--Commercial_(MS--NC--1.0)-red.svg?style=for-the-badge)](LICENSE.txt)
+[![License: MS-NC-1.1](https://img.shields.io/badge/License-Non--Commercial_(MS--NC--1.1)-red.svg?style=for-the-badge)](LICENSE.txt)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg?style=for-the-badge&logo=python)](https://python.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
 
@@ -116,7 +116,7 @@ career-engine/
 
 ## License
 
-This project is source-available for personal and academic non-commercial use under the [Masri Systems Non-Commercial Source-Available License (MS-NC-1.0)](LICENSE.txt). Business and commercial environments are prohibited without a separate commercial license (`hallo@masrisystems.com`).
+This project is source-available for personal and academic non-commercial use under the [Masri Systems Non-Commercial Source-Available License (MS-NC-1.1)](LICENSE.txt). Business and commercial environments are prohibited without a separate commercial license (`hallo@masrisystems.com`).
 
 ## Professional setup
 
