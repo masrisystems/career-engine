@@ -1,5 +1,5 @@
 Masri Systems Non-Commercial Source-Available License (MS-NC-1.1)
-Copyright (c) 2026 Mohamad Masri / Masri Systems (https://masrisystems.com)
+Copyright (c) 2026 Masri Systems (https://masrisystems.com)
 All rights reserved.
 
 This software and its accompanying content — including all source code,
@@ -59,7 +59,7 @@ license agreement from Masri Systems. Contact: hallo@masrisystems.com
 6. Attribution and Preservation
 Every permitted copy, fork, or derivative work under Section 1 or Section 3
 must preserve the copyright notice above, this LICENSE and NOTICE text, and
-visibly attribute the Work to: Mohamad Masri / Masri Systems
+visibly attribute the Work to: Masri Systems
 (https://github.com/masrisystems).
 
 7. Automatic Termination
