@@ -1,10 +1,10 @@
 # Career Engine
 
-**Open-source resume and cover letter generator for the German job market: bilingual web CV (DE/EN), DIN 5008 cover letters and ATS-friendly PDFs, all from one JSON profile.**
+**Source-available (non-commercial) resume and cover letter generator for the German job market: bilingual web CV (DE/EN), DIN 5008 cover letters and ATS-friendly PDFs, all from one JSON profile.**
 
 **[Live demo](https://career.masrisystems.com/resume.html)** (example persona) · [Project page](https://career.masrisystems.com) · [Onboarding guide](ONBOARDING.md)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE.txt)
+[![License: MS-NC-1.0](https://img.shields.io/badge/License-Non--Commercial_(MS--NC--1.0)-red.svg?style=for-the-badge)](LICENSE.txt)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10+-blue.svg?style=for-the-badge&logo=python)](https://python.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com)
 
@@ -116,7 +116,7 @@ career-engine/
 
 ## License
 
-This project is open-source and available under the [MIT License](LICENSE.txt).
+This project is source-available for personal and academic non-commercial use under the [Masri Systems Non-Commercial Source-Available License (MS-NC-1.0)](LICENSE.txt). Business and commercial environments are prohibited without a separate commercial license (`hallo@masrisystems.com`).
 
 ## Professional setup
 
